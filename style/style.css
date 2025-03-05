@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 300ms ease-in-out;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100vh;
+    width: 100vw;
+}
+:root{
+    --color-purple: rgb(96, 0, 128);
+    --color-grey: #787878;
+    --color-white: #e0e0e0;
+    --color-golden: rgb(255, 247, 0);
+}
+body{
+    background-image: url(../media/img/theater-standard-2.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+h1,p{
+    user-select: none;
+}
+header{
+    display: flex;
+    background-color: black;
+    height: 80px;
+}
+.hamburger-menu{
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.hamburger-menu > img{
+    height: 20px;
+    cursor: pointer;
+    filter: invert(100%);
+}
+header > .hamburger-menu{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+header > h1{
+    line-height: 80px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+header > h1 > span{
+    color: rgb(146, 0, 195);
+    font-size: 2.7rem;
+}
+#side-menu{
+    position: fixed;
+    top: 0;
+    left: -15%;
+    height: 100%;
+    width: 15%;
+    background-color: black;
+    transition: left 300ms ease-in-out;
+}
+#side-menu > .hamburger-menu{
+    margin-top: 20px;
+    left: auto;
+}
+#side-menu > h1{
+    margin-top: 25%;
+    color: white;
+}
+#side-menu > h1 > span{
+    color: rgb(146, 0, 195);
+    font-size: 2rem;
+}
+#login{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 50%;
+    left: 50%;
+    height: 40%;
+    width: 45%;
+    background-color: rgba(85, 0, 128, 0.76);
+    border: 1.6px solid white;
+    border-radius: 15px;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.801);
+    transform: translate(-50%,-50%);
+}
+#login > h1{
+    color: white;
+    width: 35%;
+    text-shadow: 5px 5px 3px black;
+}
+#login-form{
+    height: 80%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color-purple);
+    border: 1.6px solid black;
+    border-radius: 10px;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.649);
+}
+.login-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: center;
+    width: 80%;
+    color: white;
+}
+img{
+    user-select: none;
+}
+.login-div img{
+    margin-top: 3px;
+    height: 30px;
+    filter: invert(100%);
+}
+.login-div input{
+    height: 65%;
+    width: 65%;
+    border-radius: 4px; 
+    border: none;
+}
+#login-button{
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+}
+#login-button:hover{
+    color: black;
+    background-color: white;
+}
+#sign-up-button{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+footer{
+    background-color: black;
+    color: rgba(255, 255, 255, 0.69);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+@media screen and (min-width: 600px){
+    header{
+        height: 60px;
+    }
+    header > h1{
+        line-height: 60px;
+        font-size: 2rem;
+    }
+    #login{
+        width: 70%;
+    }
+}
+@media screen and (min-width: 1024px){
+    #login{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #login{
+        width: 50%;
+    }
+}
+
+@media screen and (min-height: 1200px){
+    #login{
+        height: 30%;
+    }
+}

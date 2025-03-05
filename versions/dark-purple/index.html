@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyCinemaList</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+</head>
+<body>
+    <header>
+        <button class="hamburger-menu" onClick="SideMenu()">
+            <img src="media/img/hamburger-menu-black.png" alt="menu icon">
+        </button>
+        <h1>My<span>CINEMA</span>List</h1>
+    </header>
+    <nav id="side-menu">
+        <button class="hamburger-menu" onClick="SideMenu()">
+            <img src="media/img/hamburger-menu-black.png" alt="menu icon">
+        </button>
+        <h1>M<span>C</span>L</h1>
+    </nav>
+    <main id="login">
+        <h1>Login</h1>
+        <form id="login-form" action="login.php">
+
+            <div id="email-div" class="login-div">
+                <label for="email-input"><img src="media/img/user-full-black.png" alt="user icon"></label>
+                <input type="email" name="email-input" id="email-input" placeholder="E-mail">
+            </div>
+
+            <div id="password-div" class="login-div">
+                <label for="password-input"><img src="media/img/password-full-black-2.png" alt=""></label>
+                <input type="password" name="password-input" id="password-input" placeholder="Password">
+            </div>
+            <button id="login-button" >LOGIN</button>
+            <a id="sign-up-button">SIGN UP &UpperRightArrow;</a>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; copyright 2025</p>
+    </footer>
+</body>
+<script>
+    function SideMenu(){
+        $sideMenu = document.getElementById('side-menu');
+
+        if ($sideMenu.style.left == '0px'){
+            $sideMenu.style.left = '-15%';
+        }else{
+            $sideMenu.style.left = '0px';
+        }
+    }
+</script>
+</html>
