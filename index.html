@@ -9,15 +9,21 @@
 </head>
 <body>
     <header>
-        <button class="hamburger-menu" onClick="SideMenu()">
-            <img src="media/img/hamburger-menu-black.png" alt="menu icon">
+        <button class="hamburguer-menu" onClick="SideMenu()">
+            <img class="hamburguer-icone invertido icon" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
         </button>
         <h1>My<span>CINEMA</span>List</h1>
+        <div id="header-direita">
+            <a class="link" id="botao-cadastro" target="#">CADASTRO</a>
+            <button id="mudar-modo" onClick="MudarModo()">
+                <img id="mudar-modo-icone" class="invertido" src="media/img/switch-mode.png" alt="mudar modo claro/escuro">
+            </button>
+        </div>
     </header>
     <nav id="side-menu">
         <header>
-            <button class="hamburger-menu" onClick="SideMenu()">
-                <img src="media/img/hamburger-menu-black.png" alt="menu icon">
+            <button class="hamburguer-menu" onClick="SideMenu()">
+                <img class="hamburguer-icone invertido icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
             <h1>M<span>C</span>L</h1>
         </header>
@@ -26,16 +32,21 @@
         <h1>Login</h1>
         <form id="login-form" action="login.php">
             <div id="email-div" class="login-div">
-                <label for="email-input"><img src="media/img/user-full-black.png" alt="user icon"></label>
-                <input type="email" name="email-input" id="email-input" placeholder="E-mail">
+                <label for="email-input">
+                    <img class="invertido icon" src="media/img/user-full-black.png" alt="ícone de usuário">
+                </label>
+                <input type="email" name="email-input" id="email-input" placeholder="E-mail" required>
             </div>
 
             <div id="password-div" class="login-div">
-                <label for="password-input"><img src="media/img/password-full-black-2.png" alt=""></label>
-                <input type="password" name="password-input" id="password-input" placeholder="Password">
+                <label for="password-input">
+                    <img class="invertido" src="media/img/password-full-black-2.png" alt="ícone de senha">
+                </label>
+                <input type="password" name="password-input" id="password-input" placeholder="Password" required>
             </div>
-            <button id="login-button" >LOGIN</button>
-            <a id="sign-up-button">SIGN UP &UpperRightArrow;</a>
+
+            <button id="login-button">LOGIN</button>
+            <a class="link" id="esqueci-senha" target="_blank">Esqueci minha senha</a>
         </form>
     </main>
     <footer>
@@ -50,6 +61,26 @@
             $sideMenu.style.left = '-15%';
         }else{
             $sideMenu.style.left = '0px';
+        }
+    }
+    function MudarModo(){
+        $body = document.body;
+        $mudarModoIcone = document.getElementById('mudar-modo-icone');
+        $hamburguerIcone = document.querySelectorAll('.hamburguer-icone');
+
+        $hamburguerIcone.forEach(element => {
+                element.classList.toggle('invertido');
+            });
+        $mudarModoIcone.classList.toggle('invertido')
+
+        if (!$mudarModoIcone.classList.contains('invertido')){
+            $body.style.backgroundImage = "url('media/img/theater-light-4.jpg')";
+            document.documentElement.style.setProperty('--cor-header', 'white');
+            document.documentElement.style.setProperty('--cor-h1', 'black');
+        }else{
+            $body.style.backgroundImage = "url('media/img/theater-standard-2.jpg')";
+            document.documentElement.style.setProperty('--cor-header', 'black');
+            document.documentElement.style.setProperty('--cor-h1', 'white');
         }
     }
 </script>

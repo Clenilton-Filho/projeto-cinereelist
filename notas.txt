@@ -1,0 +1,5 @@
+botão para mudar o tema da página:
+
+Ex:
+document.documentElement.style.setProperty('--cor-principal', 'purple');
+

@@ -11,10 +11,15 @@ html,body{
     width: 100vw;
 }
 :root{
-    --color-purple: rgb(96, 0, 128);
-    --color-grey: #787878;
-    --color-white: #e0e0e0;
+    --cor-principal: rgb(96, 0, 128);
+    --cor-principal-transparente: rgba(85, 0, 128, 0.76);
+    --cor-header: black;
+    --cor-h1: white;
+    --cor-login: white;
+    --cor-link: white;
+    --cor-cinema: rgb(146, 0, 195);
     --color-golden: rgb(255, 247, 0);
+    --cor-roxo: rgb(146, 0, 195);
 }
 body{
     background-image: url(../media/img/theater-standard-2.jpg);
@@ -26,35 +31,73 @@ h1,p{
 }
 header{
     display: flex;
-    background-color: black;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--cor-header);
     height: 80px;
 }
-.hamburger-menu{
+.hamburguer-menu{
     height: fit-content;
     width: fit-content;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
-.hamburger-menu > img{
-    height: 20px;
-    cursor: pointer;
+.invertido{
     filter: invert(100%);
 }
-header > .hamburger-menu{
-    margin-top: 20px;
+.hamburguer-menu > img{
+    height: 20px;
+    cursor: pointer;
+}
+header > .hamburguer-menu{
     margin-left: 20px;
 }
 header > h1{
     line-height: 80px;
-    color: white;
+    color: var(--cor-h1);
     position: absolute;
     left: 50%;
     transform: translate(-50%);
 }
 header > h1 > span{
-    color: rgb(146, 0, 195);
+    color: var(--cor-cinema);
     font-size: 2.7rem;
+}
+.link{
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 550;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#header-direita{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+#botao-cadastro{
+    color: var(--cor-h1);
+    position: relative;
+    right: 50px;
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+button{
+    border: none;
+    background-color: #78787800;
+}
+#mudar-modo{
+    position: relative;
+    right: 15px;
+    cursor: pointer;
+}
+#mudar-modo-icone{
+    height: 55px;
 }
 #side-menu{
     position: fixed;
@@ -62,7 +105,10 @@ header > h1 > span{
     left: -15%;
     height: 100%;
     width: 15%;
-    background-color: black;
+    background-color: var(--cor-header);
+    border: 3px solid black;
+    border-top: none;
+    border-bottom: none;
     transition: left 300ms ease-in-out;
 }
 #side-menu > .hamburger-menu{
@@ -71,10 +117,10 @@ header > h1 > span{
 }
 #side-menu > h1{
     margin-top: 25%;
-    color: white;
+    color: var(--cor-login);
 }
 #side-menu > h1 > span{
-    color: rgb(146, 0, 195);
+    color: var(--cor-cinema);
     font-size: 2rem;
 }
 #login{
@@ -86,14 +132,14 @@ header > h1 > span{
     left: 50%;
     height: 40%;
     width: 45%;
-    background-color: rgba(85, 0, 128, 0.76);
+    background-color: var(--cor-principal-transparente);
     border: 1.6px solid white;
     border-radius: 15px;
     box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.801);
     transform: translate(-50%,-50%);
 }
 #login > h1{
-    color: white;
+    color: var(--cor-login);
     width: 35%;
     text-shadow: 5px 5px 3px black;
 }
@@ -104,8 +150,8 @@ header > h1 > span{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--color-purple);
-    border: 1.6px solid black;
+    background-color: var(--cor-principal-transparente);
+    border: 2 solid black;
     border-radius: 10px;
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.649);
 }
@@ -115,7 +161,7 @@ header > h1 > span{
     align-items: center;
     justify-items: center;
     width: 80%;
-    color: white;
+    color: var(--cor-login);
 }
 img{
     user-select: none;
@@ -123,7 +169,6 @@ img{
 .login-div img{
     margin-top: 3px;
     height: 30px;
-    filter: invert(100%);
 }
 .login-div input{
     height: 65%;
@@ -132,7 +177,7 @@ img{
     border: none;
 }
 #login-button{
-    color: white;
+    color: var(--cor-login);
     background-color: black;
     padding: 5px;
     border-radius: 3px;
@@ -144,19 +189,13 @@ img{
     color: black;
     background-color: white;
 }
-#sign-up-button{
-    background-color: rgba(255, 255, 255, 0);
-    color: white;
-    font-size: 0.8rem;
-    text-decoration: underline;
-    cursor: pointer;
-}
 footer{
-    background-color: black;
-    color: rgba(255, 255, 255, 0.69);
+    background-color: var(--cor-header);
+    color: var(--cor-h1);
     position: absolute;
     bottom: 0;
     width: 100%;
+    border: 2px solid black;
 }
 @media screen and (min-width: 600px){
     header{
