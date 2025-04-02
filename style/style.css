@@ -11,23 +11,25 @@ html,body{
     width: 100vw;
 }
 :root{
-    --cor-principal: rgb(96, 0, 128);
-    --cor-principal-transparente: rgba(85, 0, 128, 0.76);
+    --cor-principal: #8B0000;
+    --cor-principal-destaque: #B22222;
+    --cor-principal-transparente: #f1050573;
+    --cor-secundaria: #E6B800;
+    --cor-secundaria-destaque: #FFD700;
     --cor-header: black;
-    --cor-h1: white;
+    --cor-h1: #B22222;
     --cor-login: white;
     --cor-link: white;
-    --cor-cinema: rgb(146, 0, 195);
-    --color-golden: rgb(255, 247, 0);
-    --cor-roxo: rgb(146, 0, 195);
 }
 body{
-    background-image: url(../media/img/theater-standard-2.jpg);
+    background-image: url(../media/img/background-template-darker.png);
     background-size: cover;
     overflow: hidden;
 }
-h1,p{
+h1{
     user-select: none;
+    text-shadow: 1px 7px 3px black;
+    color: var(--cor-h1);
 }
 header{
     display: flex;
@@ -35,8 +37,7 @@ header{
     justify-content: space-between;
     align-items: center;
     justify-items: center;
-    background-color: var(--cor-header);
-    height: 80px;
+    height: 150px;
 }
 .hamburguer-menu{
     height: fit-content;
@@ -56,15 +57,14 @@ header > .hamburguer-menu{
     margin-left: 20px;
 }
 header > h1{
-    line-height: 80px;
+    line-height: 150px;
     color: var(--cor-h1);
     position: absolute;
     left: 50%;
     transform: translate(-50%);
 }
 header > h1 > span{
-    color: var(--cor-cinema);
-    font-size: 2.7rem;
+    color: var(--cor-secundaria);
 }
 .link{
     color: white;
@@ -123,20 +123,28 @@ button{
     color: var(--cor-cinema);
     font-size: 2rem;
 }
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 100px);
+}
 #login{
     display: flex;
-    position: absolute;
+    flex-direction: column;
     align-items: center;
+    align-content: center;
     justify-content: space-evenly;
-    top: 50%;
-    left: 50%;
-    height: 40%;
-    width: 45%;
-    background-color: var(--cor-principal-transparente);
-    border: 1.6px solid white;
+    gap: 15px;
+    height: 60%;
+    max-width: 30%;
     border-radius: 15px;
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.801);
-    transform: translate(-50%,-50%);
+}
+#user-pfp{
+    height: 150px;
+    margin-top: 5%;
+    filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
 #login > h1{
     color: var(--cor-login);
@@ -144,35 +152,42 @@ button{
     text-shadow: 5px 5px 3px black;
 }
 #login-form{
-    height: 80%;
-    width: 50%;
+    height: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--cor-principal-transparente);
-    border: 2 solid black;
     border-radius: 10px;
-    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.649);
 }
 .login-div{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     justify-items: center;
-    width: 80%;
+    height: 50px;
+    width: 70%;
     color: var(--cor-login);
+    border: 2px solid var(--cor-secundaria-destaque);
+    border-radius: 30px;
 }
 img{
     user-select: none;
 }
+.icon{
+    filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
+}
 .login-div img{
-    margin-top: 3px;
+    margin-top: 5px;
+    margin-left: 15px;
     height: 30px;
 }
 .login-div input{
     height: 65%;
-    width: 65%;
+    width: 80%;
+    color: white;
+    font-size: 1.2rem;
+    background-color: transparent;
     border-radius: 4px; 
     border: none;
 }
@@ -189,11 +204,30 @@ img{
     color: black;
     background-color: white;
 }
+
+#boas-vindas-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:50px;
+}
+#boas-vindas-div h1{
+    color: var(--cor-secundaria-destaque);
+
+    text-shadow: none;
+    font-size: 2rem;
+}
+#boas-vindas-div p{
+    color: white;
+    font-size: 1.5rem;
+
+}
 footer{
     background-color: var(--cor-header);
     color: var(--cor-h1);
     position: absolute;
     bottom: 0;
+    height: 30px;
     width: 100%;
     border: 2px solid black;
 }
