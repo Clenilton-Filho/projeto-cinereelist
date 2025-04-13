@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineREEList - Cadastro</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <div id="header-esquerda">
+            <button class="hamburguer-menu" onClick="SideMenu()">
+                <img class="hamburguer-icone invertido icon" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
+            </button>
+        </div>
+        <div id="header-centro">
+            <h1>Cine<span>REEL</span>ist</h1>
+        </div>
+        <div id="header-direita">
+            <a class="link botao-cadastro-entrar" href="index.html">ENTRAR</a>
+            <button id="mudar-modo" onClick="MudarModo()">
+                <img id="mudar-modo-icone" class="invertido" src="media/img/switch-mode.png" alt="mudar modo claro/escuro">
+            </button>
+        </div>
+    </header>
+    <nav id="side-menu">
+        <header>
+            <button class="hamburguer-menu" onClick="SideMenu()">
+                <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
+            </button>
+            <h1>C<span>R</span>L</h1>
+        </header>
+    </nav>
+    <main>
+        <div id="login">
+            <form id="login-form" action="login.php">
+                <div id="email-div" class="login-div">
+                    <label for="email-input">
+                        <img class="invertido icon" src="media/img/email-icon.png" alt="ícone de usuário">
+                    </label>
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
+                </div>
+
+                <div id="password-div" class="login-div">
+                    <label for="password-input">
+                        <img class="invertido icon" src="media/img/password-full-black-2.png" alt="ícone de senha">
+                    </label>
+                    <input type="password" name="password-input" id="password-input" placeholder="SENHA" required>
+                </div>
+
+                <div id="repetir-senha-div" class="login-div">
+                    <input type="password" name="confirmar-senha" id="confirmar-senha" placeholder="CONFIRME A SENHA" required>
+                </div>
+
+                <button class="entrar-cadastrar">CADASTRAR-SE</button>
+            </form>
+        </div>
+
+        <div id="boas-vindas-div">
+            <h1>Bem-Vindo(a)!</h1>
+            <p>Site em manutenção, volte mais tarde!</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; copyright CineREEList&trade; 2025</p>
+    </footer>
+</body>
+<script>
+    function SideMenu(){
+        $sideMenu = document.getElementById('side-menu');
+
+        if ($sideMenu.style.left == '0px'){
+            $sideMenu.style.left = '-15%';
+        }else{
+            $sideMenu.style.left = '0px';
+        }
+    }
+    function MudarModo(){
+        $body = document.body;
+        $mudarModoIcone = document.getElementById('mudar-modo-icone');
+        $hamburguerIcone = document.querySelectorAll('.hamburguer-icone');
+
+        $hamburguerIcone.forEach(element => {
+                element.classList.toggle('invertido');
+            });
+        $mudarModoIcone.classList.toggle('invertido')
+
+        if (!$mudarModoIcone.classList.contains('invertido')){
+            $body.style.backgroundImage = "url('media/img/theater-light-4.jpg')";
+            document.documentElement.style.setProperty('--cor-header', 'white');
+            document.documentElement.style.setProperty('--cor-h1', 'black');
+        }else{
+            $body.style.backgroundImage = "url('media/img/theater-standard-2.jpg')";
+            document.documentElement.style.setProperty('--cor-header', 'black');
+            document.documentElement.style.setProperty('--cor-h1', 'white');
+        }
+    }
+</script>
+</html>
