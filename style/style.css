@@ -16,6 +16,7 @@ html,body{
     --cor-principal-transparente: #f1050573;
     --cor-secundaria: #E6B800;
     --cor-secundaria-destaque: #FFD700;
+    --cor-secundaria-transparente: #e6a100b1;
     --cor-header: black;
     --cor-h1: #B22222;
     --cor-login: white;
@@ -28,42 +29,22 @@ body{
 }
 h1{
     user-select: none;
-    text-shadow: 1px 7px 3px black;
+    text-shadow: 1px 5px 3px black;
     color: var(--cor-h1);
 }
 header{
+    position: absolute;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     justify-items: center;
-    height: 150px;
+    max-height: 50px;
+    background-color: black;
+    z-index: 2;
 }
-.hamburguer-menu{
-    height: fit-content;
-    width: fit-content;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-.invertido{
-    filter: invert(100%);
-}
-.hamburguer-menu > img{
-    height: 20px;
-    cursor: pointer;
-}
-header > .hamburguer-menu{
-    margin-left: 20px;
-}
-header > h1{
-    line-height: 150px;
-    color: var(--cor-h1);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-}
-header > h1 > span{
+header span{
     color: var(--cor-secundaria);
 }
 .link{
@@ -73,6 +54,33 @@ header > h1 > span{
     text-decoration: underline;
     cursor: pointer;
 }
+#header-esquerda{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    min-width: 18%;
+}
+#header-esquerda h1{
+    color: var(--cor-h1);
+    font-size: 1.6rem;
+}
+.hamburguer-menu{
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 40%;
+}
+.invertido{
+    filter: invert(100%);
+}
+.hamburguer-menu > img{
+    height: 100%;
+    cursor: pointer;
+}
 #header-direita{
     display: flex;
     flex-direction: row;
@@ -80,11 +88,10 @@ header > h1 > span{
     align-items: center;
     height: 80px;
 }
-#botao-cadastro{
-    color: var(--cor-h1);
+.botao-cadastrar-entrar{
     position: relative;
-    right: 50px;
-    font-size: 0.92rem;
+    right: 30px;
+    font-size: 1rem;
     text-decoration: none;
 }
 button{
@@ -136,29 +143,26 @@ main{
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
-    gap: 15px;
-    height: 60%;
-    max-width: 30%;
+    min-height: 65%;
+    min-width: 35%;
     border-radius: 15px;
 }
 #user-pfp{
-    height: 150px;
+    height: 180px;
     margin-top: 5%;
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
-#login > h1{
-    color: var(--cor-login);
-    width: 35%;
-    text-shadow: 5px 5px 3px black;
+#form-icon{
+    height: 120px;
 }
 #login-form{
-    height: 70%;
-    width: 100%;
+    min-height: 70%;
+    min-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 10px;
+    gap: 15px;
 }
 .login-div{
     display: flex;
@@ -178,64 +182,76 @@ img{
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
 .login-div img{
-    margin-top: 5px;
-    margin-left: 15px;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: 20px;
     height: 30px;
 }
 .login-div input{
-    height: 65%;
-    width: 80%;
+    min-height: 100%;
+    min-width: 100%;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: transparent;
-    border-radius: 4px; 
+    border-radius: 30px; 
     border: none;
 }
-#login-button{
+.entrar-cadastrar{
     color: var(--cor-login);
     background-color: black;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
     border: none;
     cursor: pointer;
     transition: all 150ms ease-in-out;
 }
-#login-button:hover{
+.entrar-cadastrar:hover{
     color: black;
     background-color: white;
 }
 
 #boas-vindas-div{
+    position: absolute;
+    right: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap:50px;
+    align-items: end;
+    justify-items: end;
+    height: 100vh;
+    width: 35vw;
+    overflow: hidden;
+    z-index: 1;
 }
 #boas-vindas-div h1{
-    color: var(--cor-secundaria-destaque);
-
+    color: var(--cor-secundaria);
     text-shadow: none;
     font-size: 2rem;
 }
 #boas-vindas-div p{
     color: white;
     font-size: 1.5rem;
-
+}
+#boas-vindas-div video{
+    height: 100%;
+    border-radius: 30px;
 }
 footer{
     background-color: var(--cor-header);
-    color: var(--cor-h1);
+    color: white;
     position: absolute;
     bottom: 0;
-    height: 30px;
+    height: 22px;
     width: 100%;
     border: 2px solid black;
 }
-@media screen and (min-width: 600px){
+footer p{
+    line-height: 22px;
+}
+@media screen and (max-width: 600px){
     header{
         height: 60px;
     }
-    header > h1{
+    header h1{
         line-height: 60px;
         font-size: 2rem;
     }
@@ -243,20 +259,20 @@ footer{
         width: 70%;
     }
 }
-@media screen and (min-width: 1024px){
-    #login{
-        width: 70%;
+
+@media screen and (min-width: 1280px){
+    header{
+        height: 40px;
+    }
+    #header-esquerda h1{
+        line-height: 60px;
+        font-size: 1.5rem;
     }
 }
-
-@media screen and (min-width: 1300px) {
-    #login{
-        width: 50%;
+@media screen and (min-width: 1360px){
+    header{
+        height: 45px;
     }
 }
-
-@media screen and (min-height: 1200px){
-    #login{
-        height: 30%;
-    }
+@media screen and (min-width: 1600px){
 }

@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINELOG</title>
+    <title>CineREEList - Entrar</title>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
     <header>
-        <button class="hamburguer-menu" onClick="SideMenu()">
-            <img class="hamburguer-icone invertido icon" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
-        </button>
-        <h1>CINE<span>LOG</span></h1>
-        <div id="header-direita">
-            <a class="link" id="botao-cadastro" target="#">CADASTRO</a>
-            <button id="mudar-modo" onClick="MudarModo()">
-                <img id="mudar-modo-icone" class="invertido" src="media/img/switch-mode.png" alt="mudar modo claro/escuro">
+        <div id="header-esquerda">
+            <button class="hamburguer-menu" onClick="SideMenu()">
+                <img class="hamburguer-icone invertido" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
+            <h1>Cine<span>REEL</span>ist</h1>
+        </div>
+        <div id="header-direita">
+            <a class="link botao-cadastrar-entrar" href="cadastro.html">CADASTRAR-SE</a>
         </div>
     </header>
     <nav id="side-menu">
@@ -25,29 +23,26 @@
             <button class="hamburguer-menu" onClick="SideMenu()">
                 <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
-            <h1>C<span>L</span></h1>
+            <h1>C<span>R</span>L</h1>
         </header>
     </nav>
     <main>
         <div id="login">
-            <img src="media/img/user-black.png" alt="user profile picture" id="user-pfp">
+            <img id="user-pfp" src="media/img/user-black.png" alt="Foto de usuário">
             <form id="login-form" action="login.php">
                 <div id="email-div" class="login-div">
                     <label for="email-input">
-                        <img class="invertido icon" src="media/img/user-full-black.png" alt="ícone de usuário">
+                        <img class="invertido icon" src="media/img/email-icon.png" alt="ícone de usuário">
                     </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-mail" required>
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
                 </div>
-
                 <div id="password-div" class="login-div">
                     <label for="password-input">
                         <img class="invertido icon" src="media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" placeholder="Password" required>
+                    <input type="password" name="password-input" id="password-input" placeholder="SENHA" required>
                 </div>
-
-                <button id="login-button">LOGIN</button>
-                <a class="link" id="esqueci-senha" target="_blank">Esqueci minha senha</a>
+                <button class="entrar-cadastrar">ENTRAR</button>
             </form>
         </div>
 
@@ -57,7 +52,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; copyright CINELOG&reg; 2025</p>
+        <p>&copy; copyright CineREEList&trade; 2025</p>
     </footer>
 </body>
 <script>
@@ -65,7 +60,7 @@
         $sideMenu = document.getElementById('side-menu');
 
         if ($sideMenu.style.left == '0px'){
-            $sideMenu.style.left = '-15%';
+            $sideMenu.style.left = '-100%';
         }else{
             $sideMenu.style.left = '0px';
         }
