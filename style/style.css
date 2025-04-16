@@ -10,6 +10,10 @@ html,body{
     height: 100vh;
     width: 100vw;
 }
+body{
+    max-height: 100vh;
+    overflow: hidden;
+}
 :root{
     --cor-principal: #8B0000;
     --cor-principal-destaque: #B22222;
@@ -22,11 +26,6 @@ html,body{
     --cor-login: white;
     --cor-link: white;
 }
-body{
-    background-image: url(../media/img/background-template-darker.png);
-    background-size: cover;
-    overflow: hidden;
-}
 h1{
     user-select: none;
     text-shadow: 1px 5px 3px black;
@@ -34,13 +33,13 @@ h1{
 }
 header{
     position: absolute;
-    width: 100vw;
+    min-height: 65px;
+    min-width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     justify-items: center;
-    max-height: 50px;
     background-color: black;
     z-index: 2;
 }
@@ -60,11 +59,11 @@ header span{
     align-items: center;
     justify-items: center;
     justify-content: space-evenly;
-    min-width: 18%;
+    min-width: 12%;
 }
-#header-esquerda h1{
+#header-esquerda > h1{
     color: var(--cor-h1);
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 .hamburguer-menu{
     height: fit-content;
@@ -131,11 +130,21 @@ button{
     font-size: 2rem;
 }
 main{
+    background-image: url(../media/img/background-template-darker.png);
+    background-size: contain;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    height: calc(100vh - 100px);
+    justify-content: space-between;
+    align-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+main > video{
+    z-index: 1;
+    min-height: 100vh;
+    overflow: hidden;
 }
 #login{
     display: flex;
@@ -143,17 +152,16 @@ main{
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
-    min-height: 65%;
-    min-width: 35%;
-    border-radius: 15px;
+    min-height: 60vh;
+    min-width: 36%;
+    z-index: 2;
 }
 #user-pfp{
-    height: 180px;
-    margin-top: 5%;
+    max-height: 210px;
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
 #form-icon{
-    height: 120px;
+    height: 185px;
 }
 #login-form{
     min-height: 70%;
@@ -162,15 +170,15 @@ main{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 .login-div{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     justify-items: center;
-    height: 50px;
-    width: 70%;
+    height: 65px;
+    width: 75%;
     color: var(--cor-login);
     border: 2px solid var(--cor-secundaria-destaque);
     border-radius: 30px;
@@ -183,15 +191,15 @@ img{
 }
 .login-div img{
     position: absolute;
-    margin-top: -15px;
-    margin-left: 20px;
-    height: 30px;
+    margin-top: -20px;
+    margin-left: 25px;
+    height: 40px;
 }
 .login-div input{
     min-height: 100%;
     min-width: 100%;
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
     background-color: transparent;
     border-radius: 30px; 
     border: none;
@@ -199,8 +207,9 @@ img{
 .entrar-cadastrar{
     color: var(--cor-login);
     background-color: black;
-    padding: 10px;
-    border-radius: 3px;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     transition: all 150ms ease-in-out;
@@ -208,32 +217,6 @@ img{
 .entrar-cadastrar:hover{
     color: black;
     background-color: white;
-}
-
-#boas-vindas-div{
-    position: absolute;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-items: end;
-    height: 100vh;
-    width: 35vw;
-    overflow: hidden;
-    z-index: 1;
-}
-#boas-vindas-div h1{
-    color: var(--cor-secundaria);
-    text-shadow: none;
-    font-size: 2rem;
-}
-#boas-vindas-div p{
-    color: white;
-    font-size: 1.5rem;
-}
-#boas-vindas-div video{
-    height: 100%;
-    border-radius: 30px;
 }
 footer{
     background-color: var(--cor-header);
@@ -243,10 +226,71 @@ footer{
     height: 22px;
     width: 100%;
     border: 2px solid black;
+    z-index: 2;
 }
 footer p{
     line-height: 22px;
 }
+
+@media screen and (orientation: portrait){
+    #header-esquerda{
+        margin: auto;
+        justify-content: space-between;
+        width: 90%;
+    }
+    #header-esquerda h1{
+        font-size: 1.55rem;
+    }
+    #header-direita{
+        display: none;
+    }
+    main{
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        overflow: hidden;
+    }
+    main > video{
+        position: absolute;
+        z-index: 1;
+    }
+    #video-1{
+        height: 100%;
+        width: auto;
+        bottom: 0;
+    }
+    #video-2{
+        display: none;
+    }
+    #login{
+        background-color: rgba(0, 0, 0, 0.63);
+        border: 2px solid var(--cor-secundaria);
+        border-right: none;
+        border-left: none;
+        min-width: 100vw;
+    }
+    #form-icon{
+        height: 15vh;
+    }
+    .login-div{
+        height: 6.5vh;
+        min-width: 90vw;
+    }
+    .login-div img{
+        position: absolute;
+        margin-top: -2vh;
+        margin-left: 5vw;
+        height: 4vh;
+    }
+    .login-div input{
+        font-size: 1rem;
+    }
+    .entrar-cadastrar{
+        background-color: var(--cor-principal);
+        font-size: 0.95rem;
+    }
+}
+
 @media screen and (max-width: 600px){
     header{
         height: 60px;
