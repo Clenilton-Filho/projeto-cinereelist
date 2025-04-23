@@ -27,8 +27,7 @@
         </header>
     </nav>
     <main>
-        <video id="video-1" src="media/videos/chairs-vertical.mp4" autoplay="on" muted loop playsinline></video>
-
+        <video id="video-1" src="media/videos/chairs-horizontal.mp4" autoplay="on" muted loop playsinline></video>
         <div id="login">
             <img src="media/img/form-icon.png" id="form-icon" class="icon" alt="ícone de cadastro">
             <form id="login-form" action="login.php">
@@ -53,42 +52,9 @@
                 <button class="entrar-cadastrar">CADASTRAR-SE</button>
             </form>
         </div>
-
-        <video id="video-2" src="media/videos/chairs-vertical.mp4" autoplay="on" muted loop playsinline></video>
     </main>
     <footer>
         <p>&copy; copyright CineREEList&trade; 2025</p>
     </footer>
 </body>
-<script>
-    function SideMenu(){
-        $sideMenu = document.getElementById('side-menu');
-
-        if ($sideMenu.style.left == '0px'){
-            $sideMenu.style.left = '-15%';
-        }else{
-            $sideMenu.style.left = '0px';
-        }
-    }
-    function MudarModo(){
-        $body = document.body;
-        $mudarModoIcone = document.getElementById('mudar-modo-icone');
-        $hamburguerIcone = document.querySelectorAll('.hamburguer-icone');
-
-        $hamburguerIcone.forEach(element => {
-                element.classList.toggle('invertido');
-            });
-        $mudarModoIcone.classList.toggle('invertido')
-
-        if (!$mudarModoIcone.classList.contains('invertido')){
-            $body.style.backgroundImage = "url('media/img/theater-light-4.jpg')";
-            document.documentElement.style.setProperty('--cor-header', 'white');
-            document.documentElement.style.setProperty('--cor-h1', 'black');
-        }else{
-            $body.style.backgroundImage = "url('media/img/theater-standard-2.jpg')";
-            document.documentElement.style.setProperty('--cor-header', 'black');
-            document.documentElement.style.setProperty('--cor-h1', 'white');
-        }
-    }
-</script>
 </html>
