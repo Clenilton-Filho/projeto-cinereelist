@@ -6,6 +6,7 @@
     transition: all 300ms ease-in-out;
     box-sizing: border-box;
 }
+
 html,body{
     max-height: 100vh;
     max-width: 100vw;
@@ -96,8 +97,11 @@ header span{
     text-decoration: none;
 }
 button{
-    border: none;
-    background-color: #78787800;
+    background-color: var(--cor-preto-transparente);
+    color: white;
+    border: 2px solid var(--cor-secundaria-destaque);
+    border-radius: 10px;
+    cursor: pointer;
 }
 #mudar-modo{
     position: relative;
@@ -156,7 +160,7 @@ main > video{
     align-items: center;
     align-content: center;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
     min-height: 100%;
     min-width: 70%;
     left: 50%;
@@ -198,7 +202,7 @@ img{
 .icon{
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
-.login-div img{
+.login-div label > img{
     position: absolute;
     margin-top: -15px;
     margin-left: 20px;
@@ -213,12 +217,30 @@ img{
     border-radius: 30px; 
     border: none;
 }
+#password-div{
+    display: flex;
+    justify-content: space-between;
+}
+#password-input{
+    width: 30px;
+}
+.mostrar-senha{
+    border: none;
+    background-color: transparent;
+    opacity: 50%;
+}
+.mostrar-senha:hover{
+    opacity: 100%;
+}
+.mostrar-senha img{
+    height: 22px;
+    margin-top: 3px;
+    margin-left: -60px;
+}
 .entrar-cadastrar{
     color: var(--cor-login);
-    background-color: var(--cor-preto-transparente-escuro);
     padding: 10px;
     border-radius: 10px;
-    border: none;
     cursor: pointer;
     transition: all 150ms ease-in-out;
 }
@@ -226,6 +248,31 @@ img{
     color: black;
     background-color: white;
     font-weight: bold;
+}
+.esqueci-senha{
+    padding: 5px 10px;
+    border: none;
+}
+.redefinir{
+    padding: 10px;
+    font-weight: 500;
+}
+.redefinir:hover{
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border-color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
 }
 footer{
     background-color: var(--cor-header);

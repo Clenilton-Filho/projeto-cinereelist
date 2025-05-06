@@ -41,31 +41,37 @@
                     <label for="password-input">
                         <img class="invertido icon" src="media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" placeholder="SENHA" required>
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha()">
+                    <input type="password"name="nova-senha" id="nova-senha" class="senha-input" placeholder="NOVA SENHA" required>
+                    
+                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
                         <img src="/media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido">
                     </button>
                 </div>
-                <button class="entrar-cadastrar">ENTRAR</button>
+                <div id="repetir-senha-div" class="login-div">
+                    <input type="password" name="confirmar-senha" id="confirmar-senha" class="senha-input" placeholder="CONFIRME A SENHA" required>
+                    
+                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
+                        <img src="/media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido">
+                    </button>
+                </div>
+                <button class="redefinir">REDEFINIR</button>
             </form>
-            <button class="esqueci-senha"><a href="/redefinir-senha.html" target="_blank">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
         </div>
     </main>
     <footer>
         <p>&copy; copyright CineREEList&trade; 2025</p>
     </footer>
-    
     <script>
-        function mostrarSenha(){
-            const $senhaInput = document.getElementById("password-input");
-            const $mostrarSenhaIcone = document.getElementById("mostrar-senha")
+        function mostrarSenha(event){
+            const $botaoMostrar = event.target.closest(".mostrar-senha");
+            const $senhaInput = $botaoMostrar.parentElement.querySelector(".senha-input");
 
             if ($senhaInput.type == "password"){
                 $senhaInput.type = "text";
-                $mostrarSenhaIcone.style.opacity = "100%"
+                $botaoMostrar.style.opacity = "100%"
             }else{
                 $senhaInput.type = "password";
-                $mostrarSenhaIcone.style.opacity = "50%"
+                $botaoMostrar.style.opacity = "50%"
             }
         }
     </script>

@@ -4,3 +4,5 @@ Ex:
 document.documentElement.style.setProperty('--cor-principal', 'purple');
 
 “reset” em um botão no cadastro para limpar o que foi digitado.
+
+botao mostrar senha
