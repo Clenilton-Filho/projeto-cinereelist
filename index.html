@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineREEList - Entrar</title>
     <link rel="stylesheet" href="style/style.css">
+
 </head>
 <body>
     <header>
         <div id="header-esquerda">
-            <button class="hamburguer-menu" onClick="SideMenu()">
+            <button class="hamburguer-menu">
                 <img class="hamburguer-icone invertido" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
             <h1>Cine<span>REEL</span>ist</h1>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="cadastro.html">CADASTRAR-SE</a>
+            <a class="link botao-cadastrar-entrar" href="pages/cadastro.html">CADASTRAR-SE</a>
         </div>
     </header>
     <nav id="side-menu">
         <header>
-            <button class="hamburguer-menu" onClick="SideMenu()">
+            <button class="hamburguer-menu">
                 <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
             <h1>C<span>R</span>L</h1>
@@ -33,44 +34,30 @@
                 <img id="perfil-icon" class="icon" src="media/img/user-black.png" alt="ícone de formulário">
                 <img id="imagem-preview" src="media/img/form-icon.png" alt="Preview da imagem">
             </div>
-            <form id="login-form" action="login.php">
+            <form id="login-form" action="login.php"> 
                 <div id="email-div" class="login-div">
                     <label for="email-input">
                         <img class="invertido icon" src="media/img/email-icon.png" alt="ícone de usuário">
                     </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
                 </div>
                 <div id="password-div" class="login-div">
                     <label for="password-input">
                         <img class="invertido icon" src="media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" placeholder="SENHA" required>
+                    <input type="password" name="password-input" id="password-input" placeholder="SENHA">
                     <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha()">
                         <img src="/media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido">
                     </button>
                 </div>
-                <button id="entrar-botao" class="entrar-cadastrar">ENTRAR</button>
+                <button type="submit" id="entrar-botao" class="entrar-cadastrar">ENTRAR</button>
             </form>
-            <button class="esqueci-senha"><a href="redefinir-senha.html">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
+            <button class="esqueci-senha"><a href="pages/redefinir-senha.html">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
         </div>
     </main>
     <footer>
         <p>&copy; copyright CineREEList&trade; 2025</p>
     </footer>
-    
-    <script>
-        function mostrarSenha(){
-            const $senhaInput = document.getElementById("password-input");
-            const $mostrarSenhaIcone = document.getElementById("mostrar-senha")
-
-            if ($senhaInput.type == "password"){
-                $senhaInput.type = "text";
-                $mostrarSenhaIcone.style.opacity = "100%"
-            }else{
-                $senhaInput.type = "password";
-                $mostrarSenhaIcone.style.opacity = "50%"
-            }
-        }
-    </script>
+<script src="js/index.js"></script>
 </body>
 </html>
