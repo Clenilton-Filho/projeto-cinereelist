@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <div id="header-esquerda">
-            <button class="hamburguer-menu" onClick="SideMenu()">
+            <button class="hamburguer-menu" onClick="sideMenu()">
                 <img class="hamburguer-icone invertido" class="icon" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
             <h1>Cine<span>REEL</span>ist</h1>
@@ -20,11 +20,14 @@
     </header>
     <nav id="side-menu">
         <header>
-            <button class="hamburguer-menu" onClick="SideMenu()">
+            <button class="hamburguer-menu" onClick="sideMenu()">
                 <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
-            <h1>C<span>R</span>L</h1>
         </header>
+        <section id="links">
+            <a class="link botao-cadastrar-entrar" href="../index.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/cadastro.html">CADASTRAR-SE</a>
+        </section>
     </nav>
     <main>
         <video id="video-1" src="../media/videos/chairs-horizontal.mp4" autoplay="on" muted loop playsinline></video>
@@ -64,6 +67,6 @@
     <footer>
         <p>&copy; copyright CineREEList&trade; 2025</p>
     </footer>
-<script src="..js/redefinir-senha"></script>
+<script src="../js/redefinir-senha.js"></script>
 </body>
 </html>
