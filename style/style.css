@@ -168,12 +168,25 @@ main > video{
     z-index: 1;
     transform: translate(-50%);
 }
-#user-pfp{
-    max-height: 170px;
-    filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
+#imagem-div{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#imagem-preview{
+    height: 180px;
+    opacity: 0;
+}
+#perfil-icon{
+    height: 180px;
 }
 #form-icon{
-    height: 175px;
+    position: absolute;
+    left: 50%;
+    height: 170px;
+    opacity: 100%;
+    transform: translate(-50%,0);
 }
 #login-form{
     max-height: 100%;
@@ -195,6 +208,9 @@ main > video{
     color: var(--cor-login);
     border: 2px solid var(--cor-secundaria-destaque);
     border-radius: 30px;
+}
+.login-div:hover{
+    border-color: white;
 }
 img{
     user-select: none;
@@ -224,6 +240,13 @@ img{
 #password-input{
     width: 30px;
 }
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+}
 .mostrar-senha{
     border: none;
     background-color: transparent;
@@ -248,6 +271,13 @@ img{
     color: black;
     background-color: white;
     font-weight: bold;
+    border-color: transparent;
+}
+#entrar-botao{
+    height: 45px;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 50px;
 }
 .esqueci-senha{
     padding: 5px 10px;
@@ -267,12 +297,27 @@ a{
     text-decoration: none;
     color: white;
 }
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-  display: none;
+#imagem-input-div{
+    height: 45px;
+    width: 100%;
 }
-input[type="password"]::-webkit-credentials-auto-fill-button {
-  visibility: hidden;
+#imagem-input-botao{
+    display: inline-block;
+    background-color: var(--cor-preto-transparente);
+    color: white;
+    height: 100%;
+    width: 100%;
+    font-weight: 500;
+    line-height: 40px;
+    border: 2px solid var(--cor-secundaria-destaque);
+    border-radius: 40px;
+    cursor: pointer;
+}
+#imagem-input-botao:hover{
+    border-color: white;
+}
+#imagem-input{
+    display: none;
 }
 footer{
     background-color: var(--cor-header);

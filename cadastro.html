@@ -29,7 +29,10 @@
     <main>
         <video id="video-1" src="media/videos/chairs-horizontal.mp4" autoplay="on" muted loop playsinline></video>
         <div id="login">
-            <img src="media/img/form-icon.png" id="form-icon" class="icon" alt="ícone de cadastro">
+            <div id="imagem-div">
+                <img id="form-icon" class="icon" src="media/img/form-icon.png" alt="ícone de formulário">
+                <img id="imagem-preview" src="media/img/form-icon.png" alt="Preview da imagem">
+            </div>
             <form id="login-form" action="login.php">
                 <div id="email-div" class="login-div">
                     <label for="email-input">
@@ -48,7 +51,12 @@
                 <div id="repetir-senha-div" class="login-div">
                     <input type="password" name="confirmar-senha" id="confirmar-senha" placeholder="CONFIRME A SENHA" required>
                 </div>
-
+                <div id="imagem-input-div">
+                    <label id="imagem-input-botao" for="imagem-input">
+                        ENVIAR IMAGEM
+                    </label>
+                    <input type="file" name="imagem-input" id="imagem-input" accept="image/*" onchange="previewImagem(event)">
+                </div>
                 <button class="entrar-cadastrar">CADASTRAR-SE</button>
             </form>
         </div>
@@ -56,5 +64,20 @@
     <footer>
         <p>&copy; copyright CineREEList&trade; 2025</p>
     </footer>
+    <script>
+        function previewImagem(event) {
+            const reader = new FileReader();
+            const formIcon = document.getElementById("form-icon");
+            const previewDaImagem = document.getElementById("imagem-preview");
+
+            reader.onload = function() {
+                previewDaImagem.src = reader.result;
+                formIcon.style.opacity = "0";
+                previewDaImagem.style.opacity = "100%";
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+
 </body>
 </html>
