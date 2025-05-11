@@ -179,22 +179,22 @@ main > video{
     transform: translate(-50%);
 }
 #imagem-div{
-    height: 180px;
-    width: 180px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
     overflow: hidden;
 }
 #imagem-preview{
-    height: 180px;
+    height: 150px;
     opacity: 0;
 }
 #perfil-icon{
-    height: 180px;
+    height: 150px;
 }
 #form-icon{
     position: absolute;
     left: 50%;
-    height: 170px;
+    height: 150px;
     opacity: 100%;
     transform: translate(-50%,0);
 }
@@ -367,14 +367,7 @@ footer p{
         justify-content: center;
         overflow: hidden;
     }
-    main > video{
-        position: absolute;
-        z-index: 1;
-    }
-    #video-1{
-        display: none;
-    }
-    #video-2{
+    video{
         display: none;
     }
     #login{
@@ -384,88 +377,160 @@ footer p{
         border-left: none;
         min-width: 100vw;
     }
-    #form-icon{
-        height: 15vh;
-    }
     .login-div{
-        height: 6.5vh;
-        min-width: 90vw;
+        height: 5.5vh;
+        min-width: 95vw;
     }
-    .login-div img{
+    .login-div label{
+        padding-top: 0px;
+    }
+    .login-icone{
         position: absolute;
-        margin-top: -2vh;
         margin-left: 5vw;
-        height: 4vh;
+        max-height: 4vh;
     }
     .login-div input{
-        font-size: 1rem;
-    }
-    .entrar-cadastrar{
-        background-color: var(--cor-principal);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     #imagem-input-div{
-        height: 6.5vh;
+        max-height: 5.5vh;
     }
     #imagem-input-div label{
-        height: 6.5vh;
-        line-height: 6.3vh;
+        height: 5.5vh;
+        line-height: 5.2vh;
     }
     .entrar-cadastrar{
-        height: 6.5vh;
+        min-height: 5.5vh;
+        background-color: var(--cor-principal-destaque);
+    }
+    #entrar-botao{
+        background-color: var(--cor-principal);
+        font-size: 0.9rem;
     }
 }
-@media screen and (max-height: 570px) {
+@media screen and (orientation: landscape) and (max-height: 411px){
+    #header{
+        height: 35px;
+    }
+    #header h1{
+        font-size: 1.22rem;
+        padding-left: 10px;
+    }
     #login{
+        min-width: 65%;
         gap: 25px;
     }
     #imagem-div{
-        max-height: 120px;
-        max-width: 120px;
+        max-height: 90px;
+        max-width: 90px;
     }
     #imagem-div img{
-        max-height: 120px;
+        max-height: 90px;
+    }
+    .login-div{
+        min-height: 25px;
+    }
+    .login-div label{
+        padding-top: 10px;
+    }
+    .login-icone{
+        max-height: 18px;
+        margin-left: 15px !important;
+    }
+    #login-form{
+        height: 42vh;
+        min-width: 45% !important;
+    }
+    .login-div input{
+        font-size: 0.6rem;
+        font-weight: 550;
+    }
+    .mostrar-senha-icone{
+        max-height: 15px;
+        margin-right: -25px !important;
+    }
+    #imagem-input-div{
+        min-height: 25px;
+    }
+    #imagem-input-div label{
+        font-size: 0.6rem;
+        font-weight: 550;
+       line-height: 23px;
+    }
+    .entrar-cadastrar{
+        height: 20px;
+        line-height: 0px;
+        font-size: 0.55rem;
+        font-weight: 550;
+    }
+    footer{
+        font-size: 0.6rem;
+        font-weight: 550;
+    }
+}
+
+@media screen and (orientation: landscape) and (min-height: 412px) and (max-height: 570px){
+    #header{
+        height: 35px;
+    }
+    #header h1{
+        font-size: 1.22rem;
+        padding-left: 10px;
+    }
+    .botao-cadastrar-entrar{
+        font-size: 0.9rem;
+    }
+    #login{
+        min-width: 70%;
+        gap: 35px;
+    }
+    #imagem-div{
+        max-height: 90px;
+        max-width: 90px;
+    }
+    #imagem-div img{
+        max-height: 90px;
     }
     .login-div{
         min-height: 30px;
     }
     .login-div label{
         padding-top: 10px;
-        margin-left: -5px;
     }
     .login-icone{
-        max-height: 20px;
+        max-height: 18px;
     }
     #login-form{
-        height: 40vh;
+        height: 42vh;
     }
     .login-div input{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         font-weight: 550;
     }
     .mostrar-senha-icone{
-        max-height: 18px;
+        max-height: 15px;
+        margin-right: -20px !important;
     }
     #imagem-input-div{
         min-height: 30px;
     }
     #imagem-input-div label{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         font-weight: 550;
-       line-height: 25px;
+       line-height: 27px;
     }
     .entrar-cadastrar{
-        height: 30px;
-        line-height: 5px;
-        font-size: 0.7rem;
+        min-height: 30px !important;
+        line-height: 0px;
+        font-size: 0.55rem;
         font-weight: 550;
     }
     footer{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         font-weight: 550;
     }
 }
-@media screen and (min-height: 571px){
+@media screen and (orientation: landscape) and (min-height: 571px){
     #login{
         gap: 50px !important;
     }
@@ -516,7 +581,7 @@ footer p{
     }
 }
 
-@media screen and (min-height: 720px){
+@media screen and (orientation: landscape) and (min-height: 720px){
     #login{
         gap: 60px;
     }
@@ -559,7 +624,7 @@ footer p{
         font-size: 0.7rem;
     }
 }
-@media screen and (min-height: 721px) {
+@media screen and (orientation: landscape) and (min-height: 721px) {
     #login{
         gap: 30px;
     }
@@ -602,7 +667,7 @@ footer p{
         font-size: 0.9rem;
     }
 }
-@media screen and (min-height: 900px){
+@media screen and (orientation: landscape) and (min-height: 900px){
     #header{
         height: 70px;
     }
@@ -650,7 +715,7 @@ footer p{
         height: 50px;
     }
 }
-@media screen and (max-width: 800px){
+@media screen and (orientation: landscape) and (max-width: 800px){
     #header-direita{
         min-width: 28vw;
     }
@@ -661,7 +726,7 @@ footer p{
         min-width: 55%;
     }
 }
-@media screen and (min-width: 801px){
+@media screen and (orientation: landscape) and (min-width: 801px){
     #header-direita{
         min-width: 18vw;
     }
@@ -669,10 +734,10 @@ footer p{
         min-width: 70%;
     }
     #login-form{
-        min-width: 45%;
+        min-width: 40%;
     }
 }
-@media screen and (min-width: 1366px){
+@media screen and (orientation: landscape) and (min-width: 1366px){
     #header-direita{
         min-width: 15vw;
     }
@@ -683,7 +748,7 @@ footer p{
         min-width: 43%;
     }
 }
-@media screen and (min-width: 1367px){
+@media screen and (orientation: landscape) and (min-width: 1367px){
     .botao-cadastrar-entrar{
         min-width: 9vw;
     }

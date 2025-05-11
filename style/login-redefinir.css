@@ -1,28 +1,30 @@
-@media screen and (max-height: 601px) {
+@media screen and (orientation: landscape) and (max-height: 570px) {
+    .botao-cadastrar-entrar{
+        min-width: 12vw;
+        font-size: 0.8rem;
+    }
     #login{
-        gap: 15px;
+        gap: 25px;
     }
     #imagem-div{
-        max-height: 120px;
-        max-width: 120px;
+        max-height: 70px;
+        max-width: 70px;
     }
     #imagem-div img{
-        max-height: 120px;
+        max-height: 70px;
     }
     .login-div{
         max-height: 35px;
-    }
-    .login-div label{
-        padding-top: 10px;
     }
     .login-icone{
         max-height: 20px;
     }
     #login-form{
         height: 35vh;
+        width: 45%;
     }
     .login-div input{
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         font-weight: 550;
     }
     .mostrar-senha-icone{
@@ -32,11 +34,14 @@
     #entrar-botao{
         max-height: 35px;
         line-height: 5px;
-        font-size: 0.75rem;
+        font-size: 0.65rem;
         font-weight: 550;
     }
+    .esqueci-senha{
+        font-size: 0.65rem;
+    }
     .redefinir{
-        font-size: 0.75rem;
+        font-size: 0.65rem;
         line-height: 5px;
         height: 30px;
     }
@@ -45,9 +50,12 @@
         font-weight: 550;
     }
 }
-@media screen and (min-height: 601px){
+@media screen and (orientation: landscape) and (min-height: 571px){
     #login{
-        gap: 30px;
+        gap: 7vh !important;
+    }
+    #login-form{
+        height: 30vh;
     }
     #imagem-div{
         max-height: 150px;
@@ -64,7 +72,6 @@
         padding-top: 5px;
     }
     .login-icone{
-        position: relative;
         max-height: 25px;
         margin-left: 0px;
     }
@@ -96,7 +103,7 @@
     }
 }
 
-@media screen and (min-height: 620px){
+@media screen and (orientation: landscape) and (min-height: 620px){
     #login{
         gap: 50px;
     }
@@ -132,7 +139,7 @@
         font-size: 0.9rem;
     }
 }
-@media screen and (min-height: 621px){
+@media screen and (orientation: landscape) and (min-height: 621px){
     #login{
         gap: 20px;
     }
@@ -168,7 +175,7 @@
         font-size: 0.9rem;
     }
 }
-@media screen and (min-height: 750px){
+@media screen and (orientation: landscape) and (min-height: 750px){
     #login{
         gap: 50px;
     }
@@ -203,7 +210,7 @@
         min-height: 35px;
     }
 }
-@media screen and (min-height: 900px){
+@media screen and (orientation: landscape) and (min-height: 900px){
     #login{
         gap: 60px !important;
     }
