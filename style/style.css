@@ -88,10 +88,11 @@ header span{
 }
 #header-direita{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    width: 16vw;
 }
 .botao-cadastrar-entrar{
     position: relative;
@@ -261,9 +262,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     background-color: transparent;
     opacity: 50%;
 }
-.mostrar-senha:hover{
-    opacity: 100%;
-}
 .mostrar-senha img{
     height: 22px;
     margin-top: 3px;
@@ -327,6 +325,13 @@ a{
 }
 #imagem-input{
     display: none;
+}
+.esqueci-senha{
+    border: 2px solid transparent;
+}
+.esqueci-senha:hover{
+    text-decoration: underline;
+    border-color: white;
 }
 footer{
     background-color: var(--cor-header);
@@ -410,13 +415,59 @@ footer p{
         height: 6.5vh;
     }
 }
-
-@media screen and (min-height: 600px) and (max-height: 720px) {
+@media screen and (max-height: 570px) {
     #login{
-        min-width: 60%;
+        gap: 25px;
+    }
+    #imagem-div{
+        max-height: 120px;
+        max-width: 120px;
+    }
+    #imagem-div img{
+        max-height: 120px;
+    }
+    .login-div{
+        min-height: 30px;
+    }
+    .login-div label{
+        padding-top: 10px;
+        margin-left: -5px;
+    }
+    .login-icone{
+        max-height: 20px;
     }
     #login-form{
-        width: 50%;
+        height: 40vh;
+    }
+    .login-div input{
+        font-size: 0.7rem;
+        font-weight: 550;
+    }
+    .mostrar-senha-icone{
+        max-height: 18px;
+    }
+    #imagem-input-div{
+        min-height: 30px;
+    }
+    #imagem-input-div label{
+        font-size: 0.7rem;
+        font-weight: 550;
+       line-height: 25px;
+    }
+    .entrar-cadastrar{
+        height: 30px;
+        line-height: 5px;
+        font-size: 0.7rem;
+        font-weight: 550;
+    }
+    footer{
+        font-size: 0.7rem;
+        font-weight: 550;
+    }
+}
+@media screen and (min-height: 571px){
+    #login{
+        gap: 50px !important;
     }
     #imagem-div{
         max-height: 150px;
@@ -426,51 +477,220 @@ footer p{
         max-height: 150px;
     }
     .login-div{
-        height: 30px;
+        min-height: 40px;
     }
     .login-div label{
-        margin-left: -10px;
-        max-height: 30px;
-        padding-top: 10px;
-        padding-left: 5px;
+        max-height: 40px;
+        padding-top: 5px;
+    }
+    .login-icone{
+        max-height: 25px;
+        margin-left: 0px;
+    }
+    #login-form{
+        height: 40vh;
+    }
+    .login-div input{
+        font-size: 0.8rem;
+        font-weight: 550;
+    }
+    .mostrar-senha-icone{
+        max-height: 20px;
+    }
+    #imagem-input-div{
+        min-height: 40px;
+    }
+    #imagem-input-div label{
+        font-size: 0.8rem;
+        font-weight: 550;
+       line-height: 35px;
+    }
+    .entrar-cadastrar{
+        height: 40px;
+        font-size: 0.8rem;
+        font-weight: 550;
+    }
+    footer{
+        font-size: 0.7rem;
+        font-weight: 550;
+    }
+}
+
+@media screen and (min-height: 720px){
+    #login{
+        gap: 60px;
+    }
+    #imagem-div{
+        max-height: 200px;
+        max-width: 200px;
+    }
+    #imagem-div img{
+        max-height: 200px;
+    }
+    .login-div{
+        min-height: 45px;
+    }
+    .login-div label{
+        max-height: 45px;
+        padding-top: 5px;
+        padding-left: 0px;
     }
     .login-div img{
         position: relative;
-        max-height: 20px;
+        max-height: 25px;
     }
     #login-form{
-        height: 38vh;
+        height: 35vh;
     }
     .login-div input{
-        font-size: 0.6rem;
+        font-size: 0.75rem;
     }
     #imagem-input-div{
-        height: 30px;
+        min-height: 45px;
     }
     #imagem-input-div label{
-       font-size: 0.6rem;
-       line-height: 30px;
+       font-size: 0.75rem;
+       line-height: 45px;
+    }
+    .entrar-cadastrar{
+        height: 45px;
+    }
+    footer{
+        font-size: 0.7rem;
     }
 }
-@media screen and (min-width: 1300px){
-    header{
-        height: 60px;
-    }
-    header h1{
-        line-height: 60px;
-        font-size: 2rem;
-    }
+@media screen and (min-height: 721px) {
     #login{
-        width: 70%;
+        gap: 30px;
+    }
+    #imagem-div{
+        max-height: 220px;
+        max-width: 220px;
+    }
+    #imagem-div img{
+        max-height: 220px;
+    }
+    .login-div{
+        min-height: 50px;
+    }
+    .login-div label{
+        max-height: 50px;
+        padding-top: 0px;
+        padding-left: 5px;
+        padding-right: -10px;
+    }
+    .login-div img{
+        max-height: 30px;
     }
     #login-form{
-        width: 40%;
+        height: 40vh;
     }
-    .hamburger-menu{
-        max-height: 40px;
+    .login-div input{
+        font-size: 0.9rem;
     }
-    .hamburguer-menu > img{
-        max-height: 40px;
-        cursor: pointer;
+    #imagem-input-div{
+        min-height: 45px;
+    }
+    #imagem-input-div label{
+        font-size: 0.9rem;
+       line-height: 40px;
+    }
+    .entrar-cadastrar{
+        height: 45px;
+    }
+    footer{
+        font-size: 0.9rem;
+    }
+}
+@media screen and (min-height: 900px){
+    #header{
+        height: 70px;
+    }
+    #header h1{
+        line-height: 70px;
+        font-size: 2.2rem;
+    }
+    #login{
+        gap: 30px;
+    }
+    #imagem-div{
+        max-height: 250px;
+        max-width: 250px;
+    }
+    #imagem-div img{
+        max-height: 250px;
+    }
+    .login-div{
+        min-height: 55px;
+    }
+    .login-div label{
+        max-height: 55px;
+        margin-top: -5px;
+    }
+    .login-icone{
+        min-height: 35px;
+    }
+    .mostrar-senha-icone{
+        min-height: 25px;
+    }
+    #login-form{
+        height: 40vh;
+    }
+    .login-div input{
+        font-size: 1rem;
+    }
+    #imagem-input-div{
+        min-height: 55px;
+    }
+    #imagem-input-div label{
+        font-size: 1rem;
+       line-height: 50px;
+    }
+    .entrar-cadastrar{
+        height: 50px;
+    }
+}
+@media screen and (max-width: 800px){
+    #header-direita{
+        min-width: 28vw;
+    }
+    #login{
+        min-width: 70%;
+        }
+    #login-form{
+        min-width: 55%;
+    }
+}
+@media screen and (min-width: 801px){
+    #header-direita{
+        min-width: 18vw;
+    }
+    #login{
+        min-width: 70%;
+    }
+    #login-form{
+        min-width: 45%;
+    }
+}
+@media screen and (min-width: 1366px){
+    #header-direita{
+        min-width: 15vw;
+    }
+    #login{
+        min-width: 70%;
+    }
+    #login-form{
+        min-width: 43%;
+    }
+}
+@media screen and (min-width: 1367px){
+    .botao-cadastrar-entrar{
+        min-width: 9vw;
+    }
+    #login{
+        min-width: 65%;
+    }
+    #login-form{
+        min-width: 45%;
     }
 }

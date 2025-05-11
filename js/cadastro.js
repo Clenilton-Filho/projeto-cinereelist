@@ -7,16 +7,16 @@ function sideMenu(){
         $sideMenu.style.left = '0%';
     }
 }
-function mostrarSenha(){
-    const $senhaInput = document.getElementById("password-input");
-    const $mostrarSenhaIcone = document.getElementById("mostrar-senha")
+function mostrarSenha(event){
+    const $senhaInput = event.currentTarget.closest(".login-div").querySelector(".password-input");
+    const $mostrarSenhaIcone = event.currentTarget.closest(".login-div").querySelector(".mostrar-senha");
 
     if ($senhaInput.type == "password"){
         $senhaInput.type = "text";
-        $mostrarSenhaIcone.style.opacity = "100%"
+        $mostrarSenhaIcone.style.opacity = "100%";
     }else{
         $senhaInput.type = "password";
-        $mostrarSenhaIcone.style.opacity = "50%"
+        $mostrarSenhaIcone.style.opacity = "50%";
     }
 }
 

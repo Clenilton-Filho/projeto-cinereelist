@@ -6,6 +6,7 @@
     <title>CineREEList - Entrar</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/login-redefinir.css">
+
 </head>
 <body>
     <header id="header">
@@ -17,7 +18,6 @@
         </div>
         <div id="header-direita">
             <a class="link botao-cadastrar-entrar" href="cadastro.html">CADASTRAR-SE</a>
-            <a class="link botao-cadastrar-entrar" href="login.html">ENTRAR</a>
         </div>
     </header>
     <nav id="side-menu">
@@ -27,8 +27,7 @@
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../login.html">ENTRAR</a>
-            <a class="link botao-cadastrar-entrar" href="../pages/cadastro.html">CADASTRAR-SE</a>
+            <a class="link botao-cadastrar-entrar" href="cadastro.html">CADASTRAR-SE</a>
         </section>
     </nav>
     <main>
@@ -38,37 +37,30 @@
                 <img id="perfil-icon" class="icon" src="../media/img/user-black.png" alt="ícone de formulário">
                 <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
             </div>
-            <form id="login-form" action="../login.php">
+            <form id="login-form" action="../login.php"> 
                 <div id="email-div" class="login-div">
                     <label for="email-input">
                         <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
                     </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
                 </div>
                 <div id="password-div" class="login-div">
                     <label for="password-input">
                         <img class="invertido icon login-icone" src="../media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password"name="nova-senha" id="nova-senha" class="senha-input" placeholder="NOVA SENHA" required>
-                    
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
+                    <input type="password" name="password-input" id="password-input" placeholder="SENHA">
+                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha()">
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido mostrar-senha-icone">
                     </button>
                 </div>
-                <div id="repetir-senha-div" class="login-div">
-                    <input type="password" name="confirmar-senha" id="confirmar-senha" class="senha-input" placeholder="CONFIRME A SENHA" required>
-                    
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
-                        <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido mostrar-senha-icone">
-                    </button>
-                </div>
-                <button class="redefinir">REDEFINIR</button>
+                <button type="submit" id="entrar-botao" class="entrar-cadastrar">ENTRAR</button>
             </form>
+            <button class="esqueci-senha"><a href="redefinir-senha.html">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
         </div>
     </main>
     <footer>
-        <p>&copy; copyright CineREEList&trade; 2025</p>
+        <p>&copy; CineREEList&trade; 2025</p>
     </footer>
-<script src="../js/redefinir-senha.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>

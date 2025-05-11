@@ -15,7 +15,7 @@
             <h1>Cine<span>REEL</span>ist</h1>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="index.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="login.html">ENTRAR</a>
         </div>
     </header>
     <nav id="side-menu">
@@ -25,7 +25,7 @@
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../index.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="login.html">ENTRAR</a>
         </section>
     </nav>
     <main>
@@ -38,20 +38,26 @@
             <form id="login-form" action="../login.php">
                 <div id="email-div" class="login-div">
                     <label for="email-input">
-                        <img class="invertido icon" src="../media/img/email-icon.png" alt="ícone de usuário">
+                        <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
                     </label>
                     <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
                 </div>
 
                 <div id="password-div" class="login-div">
                     <label for="password-input">
-                        <img class="invertido icon" src="../media/img/password-full-black-2.png" alt="ícone de senha">
+                        <img class="invertido icon login-icone" src="../media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" placeholder="SENHA" required>
+                    <input type="password" name="password-input" id="password-input" class="password-input" placeholder="SENHA" required>
+                    <button type="button" class="mostrar-senha" onclick="mostrarSenha(event)">
+                        <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
+                    </button>
                 </div>
 
                 <div id="repetir-senha-div" class="login-div">
-                    <input type="password" name="confirmar-senha" id="confirmar-senha" placeholder="CONFIRME A SENHA" required>
+                    <input type="password" name="confirmar-senha" id="confirmar-senha" class="password-input" placeholder="CONFIRME A SENHA" required>
+                    <button type="button" class="mostrar-senha" onclick="mostrarSenha(event)">
+                        <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
+                    </button>
                 </div>
                 <div id="imagem-input-div">
                     <label id="imagem-input-botao" for="imagem-input">
