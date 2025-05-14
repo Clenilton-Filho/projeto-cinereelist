@@ -416,9 +416,17 @@ footer p{
         font-size: 1.22rem;
         padding-left: 10px;
     }
+    #header-direita{
+        min-width: 22vw;
+    }
+    .botao-cadastrar-entrar{
+        font-size: 0.95rem;
+        min-width: 13vw !important;
+    }
     #login{
+        flex-direction: row;
         min-width: 65%;
-        gap: 25px;
+        gap: 10%;
     }
     #imagem-div{
         max-height: 90px;
@@ -426,9 +434,14 @@ footer p{
     }
     #imagem-div img{
         max-height: 90px;
+        left: auto;
+        transform: translate(0,0);
+    }
+    #login-form{
+        margin-top: 5%;
     }
     .login-div{
-        min-height: 25px;
+        min-height: 32px;
     }
     .login-div label{
         padding-top: 10px;
@@ -438,8 +451,9 @@ footer p{
         margin-left: 15px !important;
     }
     #login-form{
-        height: 42vh;
+        max-height: 32vh !important;
         min-width: 45% !important;
+        gap: 17px;
     }
     .login-div input{
         font-size: 0.6rem;
@@ -450,15 +464,15 @@ footer p{
         margin-right: -25px !important;
     }
     #imagem-input-div{
-        min-height: 25px;
+        min-height: 32px;
     }
     #imagem-input-div label{
         font-size: 0.6rem;
         font-weight: 550;
-       line-height: 23px;
+       line-height: 30px;
     }
     .entrar-cadastrar{
-        height: 20px;
+        min-height: 32px;
         line-height: 0px;
         font-size: 0.55rem;
         font-weight: 550;
@@ -482,7 +496,7 @@ footer p{
     }
     #login{
         min-width: 70%;
-        gap: 35px;
+        gap: 5vh;
     }
     #imagem-div{
         max-height: 90px;
@@ -502,6 +516,7 @@ footer p{
     }
     #login-form{
         height: 42vh;
+        gap: 10px;
     }
     .login-div input{
         font-size: 0.6rem;
@@ -716,6 +731,9 @@ footer p{
     }
 }
 @media screen and (orientation: landscape) and (max-width: 800px){
+    #header h1{
+        margin-left: 20px;
+    }
     #header-direita{
         min-width: 28vw;
     }
@@ -723,21 +741,26 @@ footer p{
         min-width: 70%;
         }
     #login-form{
-        min-width: 55%;
+        min-width: 65%;
     }
 }
 @media screen and (orientation: landscape) and (min-width: 801px){
     #header-direita{
-        min-width: 18vw;
+        min-width: 22vw;
     }
     #login{
-        min-width: 70%;
+        min-width: 60%;
     }
     #login-form{
-        min-width: 40%;
+        min-width: 55%;
     }
 }
-@media screen and (orientation: landscape) and (min-width: 1366px){
+@media screen and (orientation: landscape) and (min-width: 1280px){
+    #login-form{
+        min-width: 48%;
+    }
+}
+@media screen and (orientation: landscape) and (min-width: 1360px){
     #header-direita{
         min-width: 15vw;
     }
@@ -745,7 +768,7 @@ footer p{
         min-width: 70%;
     }
     #login-form{
-        min-width: 43%;
+        min-width: 47%;
     }
 }
 @media screen and (orientation: landscape) and (min-width: 1367px){

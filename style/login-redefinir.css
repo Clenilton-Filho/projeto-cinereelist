@@ -4,7 +4,8 @@
         font-size: 0.8rem;
     }
     #login{
-        gap: 25px;
+        flex-direction: column;
+        gap: 10px;
     }
     #imagem-div{
         max-height: 70px;
@@ -20,7 +21,8 @@
         max-height: 20px;
     }
     #login-form{
-        height: 35vh;
+        margin-top: 35px;
+        height: 45vh;
         width: 45%;
     }
     .login-div input{
@@ -38,6 +40,7 @@
         font-weight: 550;
     }
     .esqueci-senha{
+        margin-top: 20px;
         font-size: 0.65rem;
     }
     .redefinir{
