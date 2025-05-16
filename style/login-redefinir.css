@@ -1,6 +1,8 @@
 @media screen and (orientation: landscape) and (max-height: 570px) {
+    #header-direita{
+        min-width: 25vw;
+    }
     .botao-cadastrar-entrar{
-        min-width: 12vw;
         font-size: 0.8rem;
     }
     #login{
@@ -8,25 +10,25 @@
         gap: 10px;
     }
     #imagem-div{
-        max-height: 70px;
-        max-width: 70px;
+        max-height: 100px;
+        max-width: 100px;
     }
     #imagem-div img{
-        max-height: 70px;
+        max-height: 100px;
     }
     .login-div{
         max-height: 35px;
     }
     .login-icone{
-        max-height: 20px;
+        max-height: 23px;
     }
     #login-form{
-        margin-top: 35px;
-        height: 45vh;
-        width: 45%;
+        gap: 20px;
+        height: 35vh;
+        min-width: 60%;
     }
     .login-div input{
-        font-size: 0.6rem;
+        font-size: 0.75rem;
         font-weight: 550;
     }
     .mostrar-senha-icone{
@@ -213,12 +215,15 @@
         min-height: 35px;
     }
 }
-@media screen and (orientation: landscape) and (min-height: 900px){
+@media screen and (orientation: landscape) and (min-height: 850px) {
     #login{
-        gap: 60px !important;
+        gap: 60px;
+    }
+    #login-form{
+        gap: 20px;
     }
     .login-div{
-        min-height: 60px;
+        min-height: 50px;
     }
     .login-div label{
         max-height: 60px;
@@ -231,14 +236,73 @@
         min-height: 25vh;
     }
     #entrar-botao{
-        height: 60px;
+        height: 50px;
     }
     .esqueci-senha{
-        min-height: 50px;
         font-size: 0.95rem;
     }
     .redefinir{
         min-height: 50px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (min-height: 920px){
+    #login{
+        gap: 30px;
+    }
+    #login-form{
+        min-width: 45%;
+    }
+    #imagem-div{
+        min-height: 200px;
+        min-width: 200px;
+        max-height: 200px; 
+        max-width: 200px;
+    }
+    #imagem-div img{
+        min-height: 200px;
+        min-width: 200px;
+        max-height:  200px;
+    }
+    .login-div{
+        min-height: 60px;
+    }
+    .login-div label{
+        margin-top: -10px;
+        max-height: 60px;
+    }
+    .login-icone{
+        min-height: 40px;
+        margin-left: 30px !important;
+    }
+    .mostrar-senha-icone{
+        min-height: 30px;
+        margin-right: 30px;
+    }
+    #login-form{
+        height: 28vh;
+    }
+    .login-div input{
+        font-size: 1.05rem;
+    }
+    #imagem-input-div{
+        min-height: 60px;
+    }
+    #imagem-input-div label{
+        font-size: 1.05rem;
+       line-height: 60px;
+    }
+    #entrar-botao{
+        height: 60px;
+        font-size: 1rem;
+    }
+    .entrar-cadastrar,.redefinir{
+        height: 65px;
+        font-size: 1.1rem;
+        border-radius: 20px;
+    }
+    .esqueci-senha{
         font-size: 1rem;
     }
 }

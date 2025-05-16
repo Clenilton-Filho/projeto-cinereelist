@@ -1,3 +1,4 @@
+/*Estilos para todos os elementos*/
 *{
     margin: 0;
     padding: 0;
@@ -6,15 +7,16 @@
     transition: all 300ms ease-in-out;
     box-sizing: border-box;
 }
-
+/*Configurando para a página preencher toda a tela*/
 html,body{
     max-height: 100vh;
     max-width: 100vw;
 }
+/*Prevenindo contra rolagem lateral*/
 body{
-    max-height: 100vh;
     overflow: hidden;
 }
+/*definindo variáveis para as cores*/
 :root{
     --cor-principal: #8B0000;
     --cor-principal-destaque: #B22222;
@@ -29,16 +31,23 @@ body{
     --cor-login: white;
     --cor-link: white;
 }
+/*removendo estilos padrões para links*/
+a{
+    text-decoration: none;
+    color: white;
+}
 h1{
     user-select: none;
     text-shadow: 1px 5px 3px black;
     color: var(--cor-h1);
 }
+/*estilos para todos os headers*/
 header{
     align-items: center;
     height: 50px;
     justify-items: center;
 }
+/*estilos para o header principal*/
 #header{
     position: absolute;
     width: 100vw;
@@ -48,6 +57,7 @@ header{
     background-color: black;
     z-index: 2;
 }
+/*cor para os textos destacados*/
 header span{
     color: var(--cor-secundaria);
 }
@@ -70,6 +80,7 @@ header span{
     color: var(--cor-h1);
     font-size: 1.6rem;
 }
+/*solução temporária para inverter as cores de elementos específicos*/
 .invertido{
     filter: invert(100%);
 }
@@ -94,6 +105,7 @@ header span{
     height: 80px;
     width: 16vw;
 }
+/*links para as páginas 'cadastrar-se' e 'entrar'*/
 .botao-cadastrar-entrar{
     position: relative;
     right: 30px;
@@ -107,6 +119,7 @@ button{
     border-radius: 10px;
     cursor: pointer;
 }
+/*menu lateral no celular*/
 #side-menu{
     position: fixed;
     display: flex;
@@ -128,6 +141,7 @@ button{
     width: 100%;
     height: 50px;
 }
+/*div com os links no menu lateral*/
 #links{
     display: flex;
     flex-direction: column;
@@ -139,11 +153,16 @@ button{
     text-align: center;
     height: 30px;
     width: 100%;
-    border: 1px solid var(--cor-principal-destaque);
+    border: 1px solid var(--cor-secundaria);
     border-right: none;
     border-left: none;
     line-height: 30px;
 }
+/*tirar a borda de cima para os links a cada 2 links*/
+#links :nth-child(even){
+    border-top: none;
+}
+/*onde ficam as divs relevantes para a página*/
 main{
     background-color: black;
     display: flex;
@@ -154,6 +173,7 @@ main{
     width: 100vw;
     overflow: hidden;
 }
+/*video de fundo nas páginas*/
 main > video{
     position: absolute;
     width: 100%;
@@ -161,6 +181,7 @@ main > video{
     bottom: 0;
     z-index: 1;
 }
+/*div de login, cadastro e redefinição de senha*/
 #login{
     position: relative;
     background-image: url(../media/img/background-template-darker.png);
@@ -178,6 +199,11 @@ main > video{
     z-index: 1;
     transform: translate(-50%);
 }
+/*Qualquer imagem não vai poder ser selecionada pelo usuário*/
+img{
+    user-select: none;
+}
+/*imagem na div de login*/
 #imagem-div{
     height: 150px;
     width: 150px;
@@ -191,6 +217,7 @@ main > video{
 #perfil-icon{
     height: 150px;
 }
+/*ícone de formulário*/
 #form-icon{
     position: absolute;
     left: 50%;
@@ -198,6 +225,7 @@ main > video{
     opacity: 100%;
     transform: translate(-50%,0);
 }
+/*elemento form na div login*/
 #login-form{
     max-height: 100%;
     min-width: 35%;
@@ -207,6 +235,7 @@ main > video{
     align-items: center;
     gap: 15px;
 }
+/*divs onde ficam os input*/
 .login-div{
     background-color: var(--cor-preto-transparente);
     display: flex;
@@ -222,18 +251,18 @@ main > video{
 .login-div:hover{
     border-color: white;
 }
-img{
-    user-select: none;
-}
+/*solução temporária para transformar a cor dos ícones na cor secundária*/
 .icon{
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
+/*ícones dos inputs*/
 .login-div label > img{
     position: absolute;
     margin-top: -15px;
     margin-left: 20px;
     height: 30px;
 }
+/*inputs*/
 .login-div input{
     min-height: 100%;
     min-width: 100%;
@@ -243,13 +272,16 @@ img{
     border-radius: 30px; 
     border: none;
 }
+/*div de senha*/
 #password-div{
     display: flex;
     justify-content: space-between;
 }
+/*input de senha*/
 #password-input{
     width: 30px;
 }
+/*desabilitar função nativa de mostrar senha em alguns navegadores*/
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
   display: none;
@@ -257,6 +289,7 @@ input[type="password"]::-ms-clear {
 input[type="password"]::-webkit-credentials-auto-fill-button {
   visibility: hidden;
 }
+/*ícone de mostrar senha*/
 .mostrar-senha{
     border: none;
     background-color: transparent;
@@ -267,6 +300,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     margin-top: 3px;
     margin-left: -60px;
 }
+/*botão de login e cadastro*/
 .entrar-cadastrar{
     color: var(--cor-login);
     padding: 10px;
@@ -286,10 +320,16 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     font-size: 1rem;
     border-radius: 50px;
 }
+/*link para a página de redefinição de senha*/
 .esqueci-senha{
     padding: 5px 10px;
-    border: none;
+    border: 2px solid transparent;
 }
+.esqueci-senha:hover{
+    text-decoration: underline;
+    border-color: white;
+}
+/*botão de redefinir senha*/
 .redefinir{
     padding: 10px;
     font-weight: 500;
@@ -300,14 +340,12 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     font-weight: 600;
     border-color: white;
 }
-a{
-    text-decoration: none;
-    color: white;
-}
+/*div de input de imagem*/
 #imagem-input-div{
     height: 45px;
     width: 100%;
 }
+/*label para o input de imagem (botão)*/
 #imagem-input-botao{
     display: inline-block;
     background-color: var(--cor-preto-transparente);
@@ -323,15 +361,9 @@ a{
 #imagem-input-botao:hover{
     border-color: white;
 }
+/*input de imagem padrão é ocultado*/ 
 #imagem-input{
     display: none;
-}
-.esqueci-senha{
-    border: 2px solid transparent;
-}
-.esqueci-senha:hover{
-    text-decoration: underline;
-    border-color: white;
 }
 footer{
     background-color: var(--cor-header);
@@ -345,7 +377,7 @@ footer{
 footer p{
     line-height: 22px;
 }
-
+/*estilos para celular na vertical*/
 @media screen and (orientation: portrait){
     #header-esquerda{
         margin: auto;
@@ -408,6 +440,7 @@ footer p{
         font-size: 0.9rem;
     }
 }
+/*celulares menores na horizontal*/
 @media screen and (orientation: landscape) and (max-height: 411px){
     #header{
         height: 35px;
@@ -482,8 +515,7 @@ footer p{
         font-weight: 550;
     }
 }
-
-@media screen and (orientation: landscape) and (min-height: 412px) and (max-height: 570px){
+@media screen and (orientation: landscape) and (min-height: 412px) and (max-height: 549px){
     #header{
         height: 35px;
     }
@@ -545,22 +577,26 @@ footer p{
         font-weight: 550;
     }
 }
-@media screen and (orientation: landscape) and (min-height: 571px){
+@media screen and (orientation: landscape) and (min-height: 550px){
+    .botao-cadastrar-entrar{
+        min-width: 12vw;
+        font-size: 0.9rem;
+    }
     #login{
-        gap: 50px !important;
+        gap: 50px;
     }
     #imagem-div{
-        max-height: 150px;
-        max-width: 150px;
+        max-height: 100px;
+        max-width: 100px;
     }
     #imagem-div img{
-        max-height: 150px;
+        max-height: 100px;
     }
     .login-div{
-        min-height: 40px;
+        min-height: 35px;
     }
     .login-div label{
-        max-height: 40px;
+        max-height: 35px;
         padding-top: 5px;
     }
     .login-icone{
@@ -571,23 +607,23 @@ footer p{
         height: 40vh;
     }
     .login-div input{
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 550;
     }
     .mostrar-senha-icone{
         max-height: 20px;
     }
     #imagem-input-div{
-        min-height: 40px;
+        min-height: 35px;
     }
     #imagem-input-div label{
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 550;
        line-height: 35px;
     }
     .entrar-cadastrar{
-        height: 40px;
-        font-size: 0.8rem;
+        height: 35px;
+        font-size: 0.75rem;
         font-weight: 550;
     }
     footer{
@@ -595,8 +631,7 @@ footer p{
         font-weight: 550;
     }
 }
-
-@media screen and (orientation: landscape) and (min-height: 720px){
+@media screen and (orientation: landscape) and (min-height: 710px){
     #login{
         gap: 60px;
     }
@@ -639,6 +674,7 @@ footer p{
         font-size: 0.7rem;
     }
 }
+
 @media screen and (orientation: landscape) and (min-height: 721px) {
     #login{
         gap: 30px;
@@ -682,13 +718,21 @@ footer p{
         font-size: 0.9rem;
     }
 }
-@media screen and (orientation: landscape) and (min-height: 900px){
+@media screen and (orientation: landscape) and (min-height: 840px){
     #header{
         height: 70px;
     }
     #header h1{
         line-height: 70px;
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-left: 25px;
+    }
+    #header-direita{
+        min-width: 18vw !important;
+    }
+    .botao-cadastrar-entrar{
+        font-size: 1.1rem;
+        min-width: 5vw;
     }
     #login{
         gap: 30px;
@@ -701,10 +745,10 @@ footer p{
         max-height: 250px;
     }
     .login-div{
-        min-height: 55px;
+        min-height: 50px;
     }
     .login-div label{
-        max-height: 55px;
+        max-height: 50px;
         margin-top: -5px;
     }
     .login-icone{
@@ -717,17 +761,85 @@ footer p{
         height: 40vh;
     }
     .login-div input{
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     #imagem-input-div{
-        min-height: 55px;
+        min-height: 50px;
     }
     #imagem-input-div label{
-        font-size: 1rem;
-       line-height: 50px;
+        font-size: 0.95rem;
+       line-height: 45px;
     }
     .entrar-cadastrar{
         height: 50px;
+        font-size: 0.95rem;
+    }
+    footer{
+        height: 30px;
+    }
+    footer p{
+        line-height: 30px;
+    }
+}
+@media screen and (orientation: landscape) and (min-height: 1020px){
+    #header{
+        height: 90px;
+    }
+    #header h1{
+        font-size: 2.3rem;
+    }
+    #login{
+        gap: 30px;
+    }
+    #imagem-div{
+        min-height: 250px;
+        min-width: 250px;
+        max-height: 250px; 
+        max-width: 250px;
+    }
+    #imagem-div img{
+        min-height: 250px;
+        min-width: 250px;
+        max-height:  250px;
+    }
+    .login-div{
+        min-height: 65px;
+    }
+    .login-div label{
+        margin-top: -10px;
+        max-height: 65px;
+    }
+    .login-icone{
+        min-height: 40px;
+        margin-left: 30px !important;
+    }
+    .mostrar-senha-icone{
+        min-height: 30px;
+        margin-right: 30px;
+    }
+    #login-form{
+        height: 40vh;
+    }
+    .login-div input{
+        font-size: 1.2rem;
+    }
+    #imagem-input-div{
+        min-height: 65px;
+    }
+    #imagem-input-div label{
+        font-size: 1.2rem;
+       line-height: 65px;
+    }
+    .entrar-cadastrar{
+        height: 65px;
+        font-size: 1.2rem;
+        border-radius: 20px;
+    }
+    footer{
+        height: 30px;
+    }
+    footer p{
+        line-height: 30px;
     }
 }
 @media screen and (orientation: landscape) and (max-width: 800px){
@@ -741,7 +853,7 @@ footer p{
         min-width: 70%;
         }
     #login-form{
-        min-width: 65%;
+        min-width: 60%;
     }
 }
 @media screen and (orientation: landscape) and (min-width: 801px){
@@ -764,16 +876,31 @@ footer p{
     #header-direita{
         min-width: 15vw;
     }
+    .botao-cadastrar-entrar{
+        min-width: 5vw;
+    }
     #login{
         min-width: 70%;
     }
     #login-form{
-        min-width: 47%;
+        min-width: 45%;
     }
 }
 @media screen and (orientation: landscape) and (min-width: 1367px){
     .botao-cadastrar-entrar{
         min-width: 9vw;
+    }
+    #login{
+        min-width: 65%;
+    }
+    #login-form{
+        min-width: 45%;
+    }
+}
+@media screen and (orientation: landscape) and (min-width: 1601px){
+    .botao-cadastrar-entrar{
+        min-width: 9vw;
+        font-size: 1.2rem;
     }
     #login{
         min-width: 65%;

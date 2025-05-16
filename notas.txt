@@ -1,8 +1,15 @@
-botão para mudar o tema da página:
-
-Ex:
-document.documentElement.style.setProperty('--cor-principal', 'purple');
-
 “reset” em um botão no cadastro para limpar o que foi digitado.
 
-botao mostrar senha
+
+página principal:
+
+vídeo ao fundo da aba em 'em alta':
+O vídeo muda conforme o mouse muda entre os filmes, mas fica caso o mouse saia e não pare em outro filme
+
+Botão para 'puxar' a tela pra baixo
+
+Header:
+
+Botões para entrar e cadastrar ou foto do perfil, nome e botão sair caso já esteja logado:
+A página principal vai ter essas duas div. Se uma aparecer, a outra desaparece (js), mas as duas ficam na mesma posição.
+
