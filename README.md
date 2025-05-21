@@ -1,6 +1,6 @@
-# projeto-mycinemalist
+# projeto-cinereelist
  
 # GitHub Pages
 
 link:
-https://clenilton-filho.github.io/projeto-mycinemalist/
+https://clenilton-filho.github.io/projeto-cinereelist/
