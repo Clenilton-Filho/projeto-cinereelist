@@ -49,8 +49,8 @@
                     <label for="password-input">
                         <img class="invertido icon login-icone" src="../media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" placeholder="SENHA">
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha()">
+                    <input type="password" name="password-input" id="password-input" class="senha-input" placeholder="SENHA">
+                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido mostrar-senha-icone">
                     </button>
                 </div>
@@ -63,5 +63,7 @@
         <p>&copy; CineREEList&trade; 2025</p>
     </footer>
     <script src="../js/login.js"></script>
+    <script src="../js/sideMenu.js"></script>
+    <script src="../js/mostrarSenha.js"></script>
 </body>
 </html>

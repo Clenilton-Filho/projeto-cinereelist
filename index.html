@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineREEList - Entrar</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/login-redefinir.css">
     <link rel="stylesheet" href="style/login.css">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
 </head>
 <body>
     <header id="header">
@@ -31,7 +32,7 @@
         </section>
     </nav>
     <main>
-        <video id="video-1" src="media/videos/chairs-horizontal.mp4" autoplay="on" muted loop playsinline></video>
+        <video id="video-1" src="media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
         <div id="login">
             <div id="imagem-div">
                 <img id="perfil-icon" class="icon" src="media/img/user-black.png" alt="ícone de formulário">
@@ -48,8 +49,8 @@
                     <label for="password-input">
                         <img class="invertido icon" src="media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" placeholder="SENHA">
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha()">
+                    <input type="password" name="password-input" id="password-input" class="senha-input" placeholder="SENHA">
+                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
                         <img src="media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido">
                     </button>
                 </div>
@@ -62,5 +63,7 @@
         <p>&copy; CineREEList&trade; 2025</p>
     </footer>
     <script src="js/login.js"></script>
+    <script src="js/mostrarSenha.js"></script>
+    <script src="js/sideMenu.js"></script>
 </body>
 </html>
