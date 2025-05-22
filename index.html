@@ -1,69 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineREEList - Entrar</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/login-redefinir.css">
-    <link rel="stylesheet" href="style/login.css">
-    <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title>CineREEList</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
 </head>
 <body>
-    <header id="header">
-        <div id="header-esquerda">
-            <button class="hamburguer-menu" onClick="sideMenu()">
-                <img class="hamburguer-icone invertido" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
-            </button>
-            <h1>Cine<span>REEL</span>ist</h1>
+  <header id="header">
+    <div id="header-esquerda">
+        <button class="hamburguer-menu" onClick="sideMenu()">
+            <img class="hamburguer-icone invertido" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
+        </button>
+        <a href="index.html">
+          <h1>Cine<span>REEL</span>ist</h1>
+        </a>
+    </div>
+    <div id="header-direita">
+      <div id="div-usuario">
+        <span id="nome-usuario-header">Usuário</span>
+        <div id="div-foto-perfil">
+          <a href="pages/perfil.html">
+            <img id="foto-perfil-header" src="media/img/user-black.png" class="icon" alt="foto de perfil do usuário">
+          </a>
         </div>
-        <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="pages/cadastro.html">CADASTRAR-SE</a>
-        </div>
+      </div>
+      <a class="link botao-cadastrar-entrar" href="pages/cadastro.html">CADASTRAR-SE</a>
+      <a class="link botao-cadastrar-entrar" href="pages/login.html">ENTRAR</a>
+    </div>
+  </header>
+  <nav id="side-menu">
+    <header>
+        <button class="hamburguer-menu" onClick="sideMenu()">
+            <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
+        </button>
     </header>
-    <nav id="side-menu">
-        <header>
-            <button class="hamburguer-menu" onClick="sideMenu()">
-                <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
-            </button>
-        </header>
-        <section id="links">
-            <a class="link botao-cadastrar-entrar" href="pages/cadastro.html">CADASTRAR-SE</a>
-        </section>
-    </nav>
-    <main>
-        <video id="video-1" src="media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
-        <div id="login">
-            <div id="imagem-div">
-                <img id="perfil-icon" class="icon" src="media/img/user-black.png" alt="ícone de formulário">
-                <img id="imagem-preview" src="media/img/form-icon.png" alt="Preview da imagem">
-            </div>
-            <form id="login-form" action="login.php"> 
-                <div id="email-div" class="login-div">
-                    <label for="email-input">
-                        <img class="invertido icon" src="media/img/email-icon.png" alt="ícone de usuário">
-                    </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
-                </div>
-                <div id="password-div" class="login-div">
-                    <label for="password-input">
-                        <img class="invertido icon" src="media/img/password-full-black-2.png" alt="ícone de senha">
-                    </label>
-                    <input type="password" name="password-input" id="password-input" class="senha-input" placeholder="SENHA">
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
-                        <img src="media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido">
-                    </button>
-                </div>
-                <button type="submit" id="entrar-botao" class="entrar-cadastrar">ENTRAR</button>
-            </form>
-            <button class="esqueci-senha"><a href="pages/redefinir-senha.html">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
-        </div>
-    </main>
-    <footer>
-        <p>&copy; CineREEList&trade; 2025</p>
-    </footer>
-    <script src="js/login.js"></script>
-    <script src="js/mostrarSenha.js"></script>
-    <script src="js/sideMenu.js"></script>
+    <section id="links">
+      <a class="link botao-cadastrar-entrar" href="pages/login.html">CADASTRAR-SE</a>
+      <a class="link botao-cadastrar-entrar" href="pages/cadastro.html">CADASTRAR-SE</a>
+    </section>
+  </nav>
+
+  <section class="main">
+    <div class="box">
+      <div class="icon">🎞</div>
+      <div class="title">
+        o <strong>MELHOR</strong> catálogo de filmes<br>
+        está à sua espera!
+      </div>
+      <div class="carousel">
+        <div class="card">1º<br>CAPA</div>
+        <div class="card">2º<br>CAPA</div>
+        <div class="card">3º<br>CAPA</div>
+        <div class="card">4º<br>CAPA</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; CineREEList&trade; 2025</p>
+  </footer>
+  <script src="js/sideMenu.js"></script>
 </body>
 </html>

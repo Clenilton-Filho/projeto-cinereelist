@@ -1,16 +1,35 @@
+/*importando os diferentes pesos da fonte*/
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/Quicksand-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/Quicksand-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/Quicksand-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 /*Estilos para todos os elementos*/
 *{
     margin: 0;
     padding: 0;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Quicksand';
     transition: all 300ms ease-in-out;
     box-sizing: border-box;
 }
 /*Configurando para a página preencher toda a tela*/
 html,body{
-    max-height: 100vh;
-    max-width: 100vw;
+    height: 100vh;
+    width: 100vw;
 }
 /*Prevenindo contra rolagem lateral*/
 body{
@@ -102,15 +121,16 @@ header span{
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    gap: 2vw;
     height: 80px;
-    width: 16vw;
+    width: fit-content;
+    margin-right: 30px;
 }
 /*links para as páginas 'cadastrar-se' e 'entrar'*/
 .botao-cadastrar-entrar{
-    position: relative;
-    right: 30px;
     font-size: 1rem;
     text-decoration: none;
+    min-width: fit-content;
 }
 button{
     background-color: var(--cor-preto-transparente);
@@ -118,6 +138,26 @@ button{
     border: 2px solid var(--cor-secundaria-destaque);
     border-radius: 10px;
     cursor: pointer;
+}
+/*foto e nome de usuário no header*/
+#div-usuario{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  min-height: 70%;
+  min-width: 5vw;
+}
+#nome-usuario-header{
+    font-size: 1.35rem;
+}
+#foto-perfil-header{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 45px;
+  max-width: 45px;
 }
 /*menu lateral no celular*/
 #side-menu{
@@ -162,208 +202,13 @@ button{
 #links :nth-child(even){
     border-top: none;
 }
-/*onde ficam as divs relevantes para a página*/
-main{
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-}
-/*video de fundo nas páginas*/
-main > video{
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    bottom: 0;
-    z-index: 1;
-}
-/*div de login, cadastro e redefinição de senha*/
-#login{
-    position: relative;
-    background-image: url(../media/img/background-template-darker.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    gap: 20px;
-    min-height: 100%;
-    min-width: 70%;
-    left: 50%;
-    color: rgb(255, 100, 0);
-    z-index: 1;
-    transform: translate(-50%);
-}
 /*Qualquer imagem não vai poder ser selecionada pelo usuário*/
 img{
     user-select: none;
 }
-/*imagem na div de login*/
-#imagem-div{
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-#imagem-preview{
-    height: 150px;
-    opacity: 0;
-}
-#perfil-icon{
-    height: 150px;
-}
-/*ícone de formulário*/
-#form-icon{
-    position: absolute;
-    left: 50%;
-    height: 150px;
-    opacity: 100%;
-    transform: translate(-50%,0);
-}
-/*elemento form na div login*/
-#login-form{
-    max-height: 100%;
-    min-width: 35%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 15px;
-}
-/*divs onde ficam os input*/
-.login-div{
-    background-color: var(--cor-preto-transparente);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    justify-items: center;
-    height: 45px;
-    width: 100%;
-    color: var(--cor-login);
-    border: 2px solid var(--cor-secundaria-destaque);
-    border-radius: 30px;
-}
-.login-div:hover{
-    border-color: white;
-}
 /*solução temporária para transformar a cor dos ícones na cor secundária*/
 .icon{
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
-}
-/*ícones dos inputs*/
-.login-div label > img{
-    position: absolute;
-    margin-top: -15px;
-    margin-left: 20px;
-    height: 30px;
-}
-/*inputs*/
-.login-div input{
-    min-height: 100%;
-    min-width: 100%;
-    color: white;
-    font-size: 1rem;
-    background-color: transparent;
-    border-radius: 30px; 
-    border: none;
-}
-/*div de senha*/
-#password-div{
-    display: flex;
-    justify-content: space-between;
-}
-/*input de senha*/
-#password-input{
-    width: 30px;
-}
-/*desabilitar função nativa de mostrar senha em alguns navegadores*/
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-  display: none;
-}
-input[type="password"]::-webkit-credentials-auto-fill-button {
-  visibility: hidden;
-}
-/*ícone de mostrar senha*/
-.mostrar-senha{
-    border: none;
-    background-color: transparent;
-    opacity: 50%;
-}
-.mostrar-senha img{
-    height: 22px;
-    margin-top: 3px;
-    margin-left: -60px;
-}
-/*botão de login e cadastro*/
-.entrar-cadastrar{
-    color: var(--cor-login);
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 150ms ease-in-out;
-}
-.entrar-cadastrar:hover{
-    color: black;
-    background-color: white;
-    font-weight: bold;
-    border-color: transparent;
-}
-#entrar-botao{
-    height: 45px;
-    width: 100%;
-    font-size: 1rem;
-    border-radius: 50px;
-}
-/*link para a página de redefinição de senha*/
-.esqueci-senha{
-    padding: 5px 10px;
-    border: 2px solid transparent;
-}
-.esqueci-senha:hover{
-    text-decoration: underline;
-    border-color: white;
-}
-/*botão de redefinir senha*/
-.redefinir{
-    padding: 10px;
-    font-weight: 500;
-}
-.redefinir:hover{
-    background-color: white;
-    color: black;
-    font-weight: 600;
-    border-color: white;
-}
-/*div de input de imagem*/
-#imagem-input-div{
-    height: 45px;
-    width: 100%;
-}
-/*label para o input de imagem (botão)*/
-#imagem-input-botao{
-    display: inline-block;
-    background-color: var(--cor-preto-transparente);
-    color: white;
-    height: 100%;
-    width: 100%;
-    font-weight: 500;
-    line-height: 40px;
-    border: 2px solid var(--cor-secundaria-destaque);
-    border-radius: 40px;
-    cursor: pointer;
-}
-#imagem-input-botao:hover{
-    border-color: white;
-}
-/*input de imagem padrão é ocultado*/ 
-#imagem-input{
-    display: none;
 }
 footer{
     background-color: var(--cor-header);
@@ -393,52 +238,6 @@ footer p{
     .hamburguer-menu{
         display: inline-block;
     }
-    main{
-        height: 100vh;
-        width: 100vw;
-        justify-content: center;
-        overflow: hidden;
-    }
-    video{
-        display: none;
-    }
-    #login{
-        background-color: rgba(0, 0, 0, 0.63);
-        border: 2px solid var(--cor-secundaria);
-        border-right: none;
-        border-left: none;
-        min-width: 100vw;
-    }
-    .login-div{
-        height: 5.5vh;
-        min-width: 95vw;
-    }
-    .login-div label{
-        padding-top: 0px;
-    }
-    .login-icone{
-        position: absolute;
-        margin-left: 5vw;
-        max-height: 4vh;
-    }
-    .login-div input{
-        font-size: 0.9rem;
-    }
-    #imagem-input-div{
-        max-height: 5.5vh;
-    }
-    #imagem-input-div label{
-        height: 5.5vh;
-        line-height: 5.2vh;
-    }
-    .entrar-cadastrar{
-        min-height: 5.5vh;
-        background-color: var(--cor-principal-destaque);
-    }
-    #entrar-botao{
-        background-color: var(--cor-principal);
-        font-size: 0.9rem;
-    }
 }
 /*celulares menores na horizontal*/
 @media screen and (orientation: landscape) and (max-height: 411px){
@@ -449,66 +248,8 @@ footer p{
         font-size: 1.22rem;
         padding-left: 10px;
     }
-    #header-direita{
-        min-width: 22vw;
-    }
     .botao-cadastrar-entrar{
         font-size: 0.95rem;
-        min-width: 13vw !important;
-    }
-    #login{
-        flex-direction: row;
-        min-width: 65%;
-        gap: 10%;
-    }
-    #imagem-div{
-        max-height: 90px;
-        max-width: 90px;
-    }
-    #imagem-div img{
-        max-height: 90px;
-        left: auto;
-        transform: translate(0,0);
-    }
-    #login-form{
-        margin-top: 5%;
-    }
-    .login-div{
-        min-height: 32px;
-    }
-    .login-div label{
-        padding-top: 10px;
-    }
-    .login-icone{
-        max-height: 18px;
-        margin-left: 15px !important;
-    }
-    #login-form{
-        max-height: 32vh !important;
-        min-width: 45% !important;
-        gap: 17px;
-    }
-    .login-div input{
-        font-size: 0.6rem;
-        font-weight: 550;
-    }
-    .mostrar-senha-icone{
-        max-height: 15px;
-        margin-right: -25px !important;
-    }
-    #imagem-input-div{
-        min-height: 32px;
-    }
-    #imagem-input-div label{
-        font-size: 0.6rem;
-        font-weight: 550;
-       line-height: 30px;
-    }
-    .entrar-cadastrar{
-        min-height: 32px;
-        line-height: 0px;
-        font-size: 0.55rem;
-        font-weight: 550;
     }
     footer{
         font-size: 0.6rem;
@@ -523,317 +264,63 @@ footer p{
         font-size: 1.22rem;
         padding-left: 10px;
     }
+    #nome-usuario-header{
+        font-size: 0.8rem;
+    }
+    #foto-perfil-header{
+        max-height: 27px;
+        max-width: 27px;
+    }
     .botao-cadastrar-entrar{
-        font-size: 0.9rem;
-    }
-    #login{
-        min-width: 70%;
-        gap: 5vh;
-    }
-    #imagem-div{
-        max-height: 90px;
-        max-width: 90px;
-    }
-    #imagem-div img{
-        max-height: 90px;
-    }
-    .login-div{
-        min-height: 30px;
-    }
-    .login-div label{
-        padding-top: 10px;
-    }
-    .login-icone{
-        max-height: 18px;
-    }
-    #login-form{
-        height: 42vh;
-        gap: 10px;
-    }
-    .login-div input{
-        font-size: 0.6rem;
-        font-weight: 550;
-    }
-    .mostrar-senha-icone{
-        max-height: 15px;
-        margin-right: -20px !important;
-    }
-    #imagem-input-div{
-        min-height: 30px;
-    }
-    #imagem-input-div label{
-        font-size: 0.6rem;
-        font-weight: 550;
-       line-height: 27px;
-    }
-    .entrar-cadastrar{
-        min-height: 30px !important;
-        line-height: 0px;
-        font-size: 0.55rem;
-        font-weight: 550;
+        font-size: 0.75rem;
     }
     footer{
         font-size: 0.6rem;
         font-weight: 550;
     }
 }
+/*1366x768*/
 @media screen and (orientation: landscape) and (min-height: 550px){
     .botao-cadastrar-entrar{
-        min-width: 12vw;
         font-size: 0.9rem;
     }
-    #login{
-        gap: 50px;
-    }
-    #imagem-div{
-        max-height: 100px;
-        max-width: 100px;
-    }
-    #imagem-div img{
-        max-height: 100px;
-    }
-    .login-div{
-        min-height: 35px;
-    }
-    .login-div label{
-        max-height: 35px;
-        padding-top: 5px;
-    }
-    .login-icone{
-        max-height: 25px;
-        margin-left: 0px;
-    }
-    #login-form{
-        height: 40vh;
-    }
-    .login-div input{
-        font-size: 0.75rem;
-        font-weight: 550;
-    }
-    .mostrar-senha-icone{
-        max-height: 20px;
-    }
-    #imagem-input-div{
-        min-height: 35px;
-    }
-    #imagem-input-div label{
-        font-size: 0.75rem;
-        font-weight: 550;
-       line-height: 35px;
-    }
-    .entrar-cadastrar{
-        height: 35px;
-        font-size: 0.75rem;
-        font-weight: 550;
-    }
     footer{
         font-size: 0.7rem;
-        font-weight: 550;
+        font-weight: normal;
     }
 }
-@media screen and (orientation: landscape) and (min-height: 710px){
-    #login{
-        gap: 60px;
-    }
-    #imagem-div{
-        max-height: 200px;
-        max-width: 200px;
-    }
-    #imagem-div img{
-        max-height: 200px;
-    }
-    .login-div{
-        min-height: 45px;
-    }
-    .login-div label{
-        max-height: 45px;
-        padding-top: 5px;
-        padding-left: 0px;
-    }
-    .login-div img{
-        position: relative;
-        max-height: 25px;
-    }
-    #login-form{
-        height: 35vh;
-    }
-    .login-div input{
-        font-size: 0.75rem;
-    }
-    #imagem-input-div{
-        min-height: 45px;
-    }
-    #imagem-input-div label{
-       font-size: 0.75rem;
-       line-height: 45px;
-    }
-    .entrar-cadastrar{
-        height: 45px;
-    }
-    footer{
-        font-size: 0.7rem;
-    }
-}
-
+/*1600x900*/
 @media screen and (orientation: landscape) and (min-height: 721px) {
-    #login{
-        gap: 30px;
+    #nome-usuario-header{
+        font-size: 1.10rem;
     }
-    #imagem-div{
-        max-height: 220px;
-        max-width: 220px;
+    #foto-perfil-header{
+        height: 35px;
     }
-    #imagem-div img{
-        max-height: 220px;
-    }
-    .login-div{
-        min-height: 50px;
-    }
-    .login-div label{
-        max-height: 50px;
-        padding-top: 0px;
-        padding-left: 5px;
-        padding-right: -10px;
-    }
-    .login-div img{
-        max-height: 30px;
-    }
-    #login-form{
-        height: 40vh;
-    }
-    .login-div input{
-        font-size: 0.9rem;
-    }
-    #imagem-input-div{
-        min-height: 45px;
-    }
-    #imagem-input-div label{
-        font-size: 0.9rem;
-       line-height: 40px;
-    }
-    .entrar-cadastrar{
-        height: 45px;
+    .botao-cadastrar-entrar{
+        font-size: 1rem;
     }
     footer{
         font-size: 0.9rem;
     }
 }
-@media screen and (orientation: landscape) and (min-height: 840px){
+/*1980x1080*/
+@media screen and (orientation: landscape) and (min-height: 920px){
     #header{
         height: 70px;
     }
     #header h1{
-        line-height: 70px;
-        font-size: 2rem;
-        margin-left: 25px;
+        font-size: 2.0rem;
     }
-    #header-direita{
-        min-width: 18vw !important;
+    #nome-usuario-header{
+        font-size: 1.35rem;
+    }
+    #foto-perfil-header{
+        height: 55px;
+        width: 55px;
     }
     .botao-cadastrar-entrar{
-        font-size: 1.1rem;
-        min-width: 5vw;
-    }
-    #login{
-        gap: 30px;
-    }
-    #imagem-div{
-        max-height: 250px;
-        max-width: 250px;
-    }
-    #imagem-div img{
-        max-height: 250px;
-    }
-    .login-div{
-        min-height: 50px;
-    }
-    .login-div label{
-        max-height: 50px;
-        margin-top: -5px;
-    }
-    .login-icone{
-        min-height: 35px;
-    }
-    .mostrar-senha-icone{
-        min-height: 25px;
-    }
-    #login-form{
-        height: 40vh;
-    }
-    .login-div input{
-        font-size: 0.95rem;
-    }
-    #imagem-input-div{
-        min-height: 50px;
-    }
-    #imagem-input-div label{
-        font-size: 0.95rem;
-       line-height: 45px;
-    }
-    .entrar-cadastrar{
-        height: 50px;
-        font-size: 0.95rem;
-    }
-    footer{
-        height: 30px;
-    }
-    footer p{
-        line-height: 30px;
-    }
-}
-@media screen and (orientation: landscape) and (min-height: 1020px){
-    #header{
-        height: 90px;
-    }
-    #header h1{
-        font-size: 2.3rem;
-    }
-    #login{
-        gap: 30px;
-    }
-    #imagem-div{
-        min-height: 250px;
-        min-width: 250px;
-        max-height: 250px; 
-        max-width: 250px;
-    }
-    #imagem-div img{
-        min-height: 250px;
-        min-width: 250px;
-        max-height:  250px;
-    }
-    .login-div{
-        min-height: 65px;
-    }
-    .login-div label{
-        margin-top: -10px;
-        max-height: 65px;
-    }
-    .login-icone{
-        min-height: 40px;
-        margin-left: 30px !important;
-    }
-    .mostrar-senha-icone{
-        min-height: 30px;
-        margin-right: 30px;
-    }
-    #login-form{
-        height: 40vh;
-    }
-    .login-div input{
-        font-size: 1.2rem;
-    }
-    #imagem-input-div{
-        min-height: 65px;
-    }
-    #imagem-input-div label{
-        font-size: 1.2rem;
-       line-height: 65px;
-    }
-    .entrar-cadastrar{
-        height: 65px;
-        font-size: 1.2rem;
-        border-radius: 20px;
+        font-size: 1.25rem;
     }
     footer{
         height: 30px;
@@ -848,64 +335,5 @@ footer p{
     }
     #header-direita{
         min-width: 28vw;
-    }
-    #login{
-        min-width: 70%;
-        }
-    #login-form{
-        min-width: 60%;
-    }
-}
-@media screen and (orientation: landscape) and (min-width: 801px){
-    #header-direita{
-        min-width: 22vw;
-    }
-    #login{
-        min-width: 60%;
-    }
-    #login-form{
-        min-width: 55%;
-    }
-}
-@media screen and (orientation: landscape) and (min-width: 1280px){
-    #login-form{
-        min-width: 48%;
-    }
-}
-@media screen and (orientation: landscape) and (min-width: 1360px){
-    #header-direita{
-        min-width: 15vw;
-    }
-    .botao-cadastrar-entrar{
-        min-width: 5vw;
-    }
-    #login{
-        min-width: 70%;
-    }
-    #login-form{
-        min-width: 45%;
-    }
-}
-@media screen and (orientation: landscape) and (min-width: 1367px){
-    .botao-cadastrar-entrar{
-        min-width: 9vw;
-    }
-    #login{
-        min-width: 65%;
-    }
-    #login-form{
-        min-width: 45%;
-    }
-}
-@media screen and (orientation: landscape) and (min-width: 1601px){
-    .botao-cadastrar-entrar{
-        min-width: 9vw;
-        font-size: 1.2rem;
-    }
-    #login{
-        min-width: 65%;
-    }
-    #login-form{
-        min-width: 45%;
     }
 }

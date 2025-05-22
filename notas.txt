@@ -1,15 +1,26 @@
 “reset” em um botão no cadastro para limpar o que foi digitado.
 
+fonte: Monomaniac One
 
 página principal:
 
-vídeo ao fundo da aba em 'em alta':
+vídeo ao fundo da aba em 'em alta' e de gêneros:
 O vídeo muda conforme o mouse muda entre os filmes, mas fica caso o mouse saia e não pare em outro filme
 
 Botão para 'puxar' a tela pra baixo
+
+imagem (não a gradiente)
 
 Header:
 
 Botões para entrar e cadastrar ou foto do perfil, nome e botão sair caso já esteja logado:
 A página principal vai ter essas duas div. Se uma aparecer, a outra desaparece (js), mas as duas ficam na mesma posição.
 
+página perfil:
+
+bio abaixo da foto 
+
+-sem prioridade-
+e um bloco para gêneros favoritos
+
+gradiente de fundo
