@@ -1,46 +1,40 @@
-function sideMenu(){
-    $sideMenu = document.getElementById('side-menu');
 
-    if ($sideMenu.style.left == '0%'){
-        $sideMenu.style.left = '-50%';
-    }else{
-        $sideMenu.style.left = '0%';
-    }
+
+//deixar as animações de rolagem mais lentas
+
+function rolarEsquerda(event){
+    const $rolarDireita = document.getElementById('mudar-em-alta-direita');
+    const $conteiner = event.target.closest('.div-filmes').children[0].children[0];
+    const quantidade = $conteiner.offsetWidth;
+
+    //rola o contêiner para a esquerda pelo tamanho do contêiner
+    $conteiner.scrollLeft -= quantidade;
+
+    //desabilitando o botão depois de clicado
+    event.target.style.opacity = 0;
+    event.target.style.pointerEvents = 'none';
+
+    //habilitando o outro botão
+    $rolarDireita.style.opacity = 1;
+    $rolarDireita.style.pointerEvents = 'auto';
 }
-function mostrarSenha(){
-    const $senhaInput = document.getElementById("password-input");
-    const $mostrarSenhaIcone = document.getElementById("mostrar-senha")
+      
+function rolarDireita(event){
+    const $rolarEsquerda = document.getElementById('mudar-em-alta-esquerda');
+    const $conteiner = event.target.closest('.div-filmes').children[0].children[0];
+    const quantidade = $conteiner.offsetWidth;
 
-    if ($senhaInput.type == "password"){
-        $senhaInput.type = "text";
-        $mostrarSenhaIcone.style.opacity = "100%"
-    }else{
-        $senhaInput.type = "password";
-        $mostrarSenhaIcone.style.opacity = "50%"
-    }
+    //rola o contêiner para a direita pelo tamanho do contêiner
+    $conteiner.scrollLeft += quantidade;
+
+    //desabilitando o botão depois de clicado
+    event.target.style.opacity = 0;
+    event.target.style.pointerEvents = 'none';
+
+    //habilitanto o outro botão
+    $rolarEsquerda.style.opacity = 1;
+    $rolarEsquerda.style.pointerEvents = 'auto';
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    const $emailInput = document.querySelector("#email-input");
-    const $senhaInput = document.querySelector("#password-input");
-    $emailInput.setAttribute("required", "true");
-    $senhaInput.setAttribute("required", "true");
-
-    /* Verificar ao submit
-    const form = document.querySelector("#login-form")
-    form.addEventListener("submit", (event)=>{
-        const emailVazio = emailInput.value.trim() === "";
-        const senhaVazia = senhaInput.value.trim() === "";
-        event.preventDefault();
-        if (emailVazio || senhaVazia)
-        {
-            alert("Por favor, preencha os campos obrigatórios.");
-        }
-    })
-    */ 
-});
-
-
 
 /*
 document.addEventListener("DOMContentLoaded", () => {

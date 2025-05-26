@@ -42,25 +42,114 @@
     </section>
   </nav>
 
-  <section class="main">
-    <div class="box">
-      <div class="icon">🎞</div>
-      <div class="title">
-        o <strong>MELHOR</strong> catálogo de filmes<br>
-        está à sua espera!
+  <main id="main">
+    <section id="secao-em-alta">
+      <div id="div-trailer-1" class="div-trailer">
+        <video id="trailer-1" class="trailer" src="media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
       </div>
-      <div class="carousel">
-        <div class="card">1º<br>CAPA</div>
-        <div class="card">2º<br>CAPA</div>
-        <div class="card">3º<br>CAPA</div>
-        <div class="card">4º<br>CAPA</div>
+      <div id="div-boas-vindas">
+        <div id="div-logo">
+          <img src="media/img/logo-1.png" alt="Logo CineREEList">
+        </div>
+        <h1>
+          o <strong>MELHOR</strong> catálogo de filmes<br>
+          está à sua espera!
+        </h1>
       </div>
-    </div>
-  </section>
+
+      <div id="conteiner-transparente-em-alta">
+        <h2 id="titulo-filmes-em-alta">Em alta</h2>
+        <div class="div-filmes">
+          <div id="conteiner-capas-1-em-alta" class="conteiner-capas-1">
+            <div id="conteiner-capas-2-em-alta" class="conteiner-capas-2">
+              <div class="div-capa-filme-em-alta">1ª CAPA</div>
+              <div class="div-capa-filme-em-alta">2ª CAPA</div>
+              <div class="div-capa-filme-em-alta">3ª CAPA</div>
+              <div class="div-capa-filme-em-alta">4ª CAPA</div>
+              <div class="div-capa-filme-em-alta">5ª CAPA</div>
+              <div class="div-capa-filme-em-alta">6ª CAPA</div>
+              <div class="div-capa-filme-em-alta">7ª CAPA</div>
+              <div class="div-capa-filme-em-alta">8ª CAPA</div>
+              <div class="div-capa-filme-em-alta">9ª CAPA</div>
+            </div>
+          </div>
+          <button id="mudar-em-alta-esquerda" class="botao-mudar-filmes" onclick="rolarEsquerda(event)">
+              &leftarrow;
+            </button>
+          <button id="mudar-em-alta-direita" class="botao-mudar-filmes" onclick="rolarDireita(event)">
+            &rightarrow;
+          </button>
+        </div>
+      </div>
+    </section>
+    <a href="#secao-generos">
+      <button id="rolar-tela-baixo" class="rolar-tela">
+        &DownArrow;
+      </button>
+    </a>
+
+    <section id="secao-generos">
+      <div id="div-trailer-2" class="div-trailer" >
+        <video id="trailer-2" class="trailer" src="media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
+      </div>
+      <h2 class="titulo-genero">Ação</h2>
+      <div class="div-filmes">
+        <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
+          <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
+            <div class="div-capa-filme-generos">1ª CAPA</div>
+            <div class="div-capa-filme-generos">2ª CAPA</div>
+            <div class="div-capa-filme-generos">3ª CAPA</div>
+            <div class="div-capa-filme-generos">4ª CAPA</div>
+            <div class="div-capa-filme-generos">5ª CAPA</div>
+            <div class="div-capa-filme-generos">6ª CAPA</div>
+            <div class="div-capa-filme-generos">7ª CAPA</div>
+            <div class="div-capa-filme-generos">8ª CAPA</div>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-genero">Terror</h2>
+      <div class="div-filmes">
+        <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
+          <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
+            <div class="div-capa-filme-generos">1ª CAPA</div>
+            <div class="div-capa-filme-generos">2ª CAPA</div>
+            <div class="div-capa-filme-generos">3ª CAPA</div>
+            <div class="div-capa-filme-generos">4ª CAPA</div>
+            <div class="div-capa-filme-generos">5ª CAPA</div>
+            <div class="div-capa-filme-generos">6ª CAPA</div>
+            <div class="div-capa-filme-generos">7ª CAPA</div>
+            <div class="div-capa-filme-generos">8ª CAPA</div>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-genero">Comé</h2>
+      <div class="div-filmes">
+        <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
+          <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
+            <div class="div-capa-filme-generos">1ª CAPA</div>
+            <div class="div-capa-filme-generos">2ª CAPA</div>
+            <div class="div-capa-filme-generos">3ª CAPA</div>
+            <div class="div-capa-filme-generos">4ª CAPA</div>
+            <div class="div-capa-filme-generos">5ª CAPA</div>
+            <div class="div-capa-filme-generos">6ª CAPA</div>
+            <div class="div-capa-filme-generos">7ª CAPA</div>
+            <div class="div-capa-filme-generos">8ª CAPA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <a href="#main">
+      <button id="rolar-tela-cima" class="rolar-tela">
+        &UpArrow;
+      </button>
+    </a>
+  </main>
 
   <footer>
     <p>&copy; CineREEList&trade; 2025</p>
   </footer>
   <script src="js/sideMenu.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

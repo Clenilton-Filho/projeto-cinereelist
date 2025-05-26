@@ -1,61 +1,226 @@
 body{
     background: linear-gradient(to right, #7a2f00, #3e0000);
-}
-.main{
-  min-height: calc(100vh - 50px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    overflow-y: scroll;
 }
 
-.box{
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  padding: 40px 30px;
-  width: 90%;
-  max-width: 1000px;
+#header{
+  position: fixed;
 }
 
-.box .icon{
-  font-size: 60px;
-  margin-bottom: 15px;
+#header-direita{
+  margin-right: 3vw;
 }
 
-.box .title{
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 40px;
-}
-
-.carousel{
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.card{
-  width: 120px;
-  height: 160px;
-  background-color: #ccc;
-  border-radius: 16px;
-  color: black;
-  font-weight: bold;
+main{
   display: flex;
   flex-direction: column;
+  min-height: 185vh;
+  padding-top: 10vh;
+  flex-direction: column;
+  justify-content: top;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  gap: 10vh;
+}
+
+#secao-em-alta{
+  display: flex;
+  height: 720px;
+  width: 1280px;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  border-radius: 20px;
+  gap: 140px;
+}
+
+.div-trailer{
+  position: absolute;
+  height: 768px;
+  width: 1366px;
+  z-index: -1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.trailer{
+  height: 768px;
+}
+
+#div-trailer-1{
+  position: absolute;
+  height: 768px;
+  width: 1366px;
+  z-index: -1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#div-boas-vindas{
+  display: flex;
+  height: 25vh;
+  flex-direction: column;
+  padding-top: 5vh;
+  gap: 4vh;
+}
+
+#div-logo img{
+  height: 180px;
+}
+
+#div-boas-vindas h1{
+  color: white;
+  font-size: 1.3rem;
+}
+
+#conteiner-transparente-em-alta{
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+#titulo-filmes-em-alta{
+  color: white;
+  text-align: left;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 1.3rem;
+  padding-left: 10px;
+}
+
+.div-filmes{
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#conteiner-capas-1-em-alta{
+  background-color: rgba(255, 255, 255, 0.397);
+  height: 255px;
+  width: 875px;
+  border-radius: 20px;
+}
+
+#conteiner-capas-2-em-alta{
+  display: flex;
+  height: 230px;
+  width: 790px;
+  margin: auto;
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 5px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.botao-mudar-filmes{
+  height: 225px;
+  width: 60px;
+  border: none;
+}
+
+/*começa invisível e sem clique*/
+#mudar-em-alta-esquerda{
+  opacity: 0;
+  margin-top: -240px;
+  margin-left: 15px;
+  pointer-events: none;
+}
+
+#mudar-em-alta-direita{
+  margin-top: -225px;
+  margin-left: calc(100% - 72px);
+}
+
+.div-capa-filme-em-alta{
+  min-width: 150px;
+  height: 225px;
+  background-color: #ccc;
+  border-radius: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
 }
 
-.card:last-child{
-  background: linear-gradient(to right, #ccc 60%, #444 60%);
-  color: white;
-  position: relative;
-}
-
-.card:last-child::after{
-  content: "→";
+.rolar-tela{
   position: absolute;
-  right: 15px;
-  font-size: 20px;
+  height: 70px;
+  width: 70px;
+  right: 5.5vw;
+  border: 2px solid rgba(255, 255, 255, 0.295);
+  border-radius: 50%;
+}
+
+#rolar-tela-baixo{
+  top: 75vh;
+}
+
+#secao-generos{
+  height: 100%;
+  padding: 0px 20px;
+}
+
+#div-trailer-2{
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.titulo-genero{
+  position: relative;
+  right: 45%;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.conteiner-transparente-generos{
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.conteiner-capas-1-generos{
+  background-color: rgba(255, 255, 255, 0.397);
+  height: 200px;
+  border-radius: 20px;
+}
+
+.conteiner-capas-2-generos{
+  display: flex;
+  height: 180px;
+  width: 1050px;
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.div-capa-filme-generos{
+  min-width: 120px;
+  height: 180px;
+  background-color: #ccc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: black;
+}
+
+#rolar-tela-cima{
+  top: 110vh;
+}
+
+footer{
+  position: fixed;
 }
