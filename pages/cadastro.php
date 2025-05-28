@@ -11,35 +11,39 @@
 <body>
     <header id="header">
         <div id="header-esquerda">
-            <button class="hamburguer-menu" onClick="sideMenu()">
-                <img class="hamburguer-icone invertido" class="icon" src="../media/img/hamburger-menu-black.png" alt="menu icon">
+            <button class="hamburguer-menu" onclick="sideMenu()">
+                <img class="hamburguer-icone invertido icon" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
             <a href="../index.html">
                 <h1>Cine<span>REEL</span>ist</h1>
             </a>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="login.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/login.html">ENTRAR</a>
         </div>
     </header>
+
     <nav id="side-menu">
         <header>
-            <button class="hamburguer-menu" onClick="sideMenu()">
+            <button class="hamburguer-menu" onclick="sideMenu()">
                 <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="login.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/login.html">ENTRAR</a>
         </section>
     </nav>
+
     <main>
-        <video id="video-1" src="../media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
+        <video id="video-1" src="../media/videos/chairs-loop.mp4" autoplay muted loop playsinline></video>
+
         <div id="login">
             <div id="imagem-div">
                 <img id="form-icon" class="icon" src="../media/img/form-icon.png" alt="ícone de formulário">
                 <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
             </div>
-            <form id="login-form" action="../login.php">
+
+            <form id="login-form" action="" method="post" enctype="multipart/form-data">
                 <div id="email-div" class="login-div">
                     <label for="email-input">
                         <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
@@ -63,12 +67,14 @@
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
                     </button>
                 </div>
+
                 <div id="imagem-input-div">
                     <label id="imagem-input-botao" for="imagem-input">
                         ENVIAR IMAGEM
                     </label>
                     <input type="file" name="imagem-input" id="imagem-input" accept="image/*" onchange="previewImagem(event)">
                 </div>
+
                 <button class="entrar-cadastrar">CADASTRAR-SE</button>
             </form>
         </div>
@@ -76,6 +82,18 @@
     <footer>
         <p>&copy; CineREEList&trade; 2025</p>
     </footer>
+    
+    <?php
+        include "../php/dataContext.php";
+        include "../php/cadastrar.php";
+        
+        //Testar se teve algum post para rodar o cadastro
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $pdo = conectar();
+            cadastrar($pdo);
+        }
+    ?>
+    <!-- Scripts -->
     <script src="../js/cadastro.js"></script>
     <script src="../js/sideMenu.js"></script>
     <script src="../js/mostrarSenha.js"></script>
