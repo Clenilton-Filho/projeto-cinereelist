@@ -48,21 +48,21 @@
                     <label for="email-input">
                         <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
                     </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
                 </div>
 
                 <div id="password-div" class="login-div">
                     <label for="password-input">
                         <img class="invertido icon login-icone" src="../media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password" name="password-input" id="password-input" class="password-input senha-input" placeholder="SENHA" required>
+                    <input type="password" name="password-input" id="password-input" class="password-input senha-input" placeholder="SENHA">
                     <button type="button" class="mostrar-senha" onclick="mostrarSenha(event)">
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
                     </button>
                 </div>
 
                 <div id="repetir-senha-div" class="login-div">
-                    <input type="password" name="confirmar-senha" id="confirmar-senha" class="password-input senha-input" placeholder="CONFIRME A SENHA" required>
+                    <input type="password" name="confirmar-senha" id="confirmar-senha" class="password-input senha-input" placeholder="CONFIRME A SENHA">
                     <button type="button" class="mostrar-senha" onclick="mostrarSenha(event)">
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
                     </button>
@@ -86,10 +86,11 @@
     <?php
         include "../php/dataContext.php";
         include "../php/cadastrar.php";
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $conn = conectar();
-            cadastrar($conn);
+        
+        //Testar se teve algum post para rodar o cadastro
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            $pdo = conectar();
+            cadastrar($pdo);
         }
     ?>
     <!-- Scripts -->

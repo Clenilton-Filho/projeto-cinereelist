@@ -1,14 +1,14 @@
 <?php
+//PÁGINA FEITA PARA DEBUG, CHECAR SE A CONEXÃO E ENTRE OUTROS DO BANCO ESTÁ CORRETA
+
 // Ativa todos os erros
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 echo "<h2>Teste de Conexão com o Banco de Dados</h2>";
 
-// Caminho ABSOLUTO corrigido para Windows
 $caminho_absoluto = __DIR__ . '\php\dataContext.php';
 
-// Verificação extra
 echo "<p>Verificando arquivo em:<br><code>" . htmlspecialchars($caminho_absoluto) . "</code></p>";
 
 if (file_exists($caminho_absoluto)) {
@@ -22,17 +22,15 @@ if (file_exists($caminho_absoluto)) {
         echo "<p style='color:green'>✔ Função 'conectar()' disponível</p>";
         
         try {
-            $conn = conectar();
+            $pdo = conectar();
             echo "<p style='color:green'>✔ Conexão estabelecida com sucesso!</p>";
             
             // Teste simples
-            $result = $conn->query("SELECT 1+1 AS resultado");
+            $result = $pdo->query("SELECT 1+1 AS resultado");
             if ($result) {
-                $row = $result->fetch_assoc();
+                $row = $result->fetch();
                 echo "<p>Teste de consulta OK: 1+1 = " . $row['resultado'] . "</p>";
             }
-            
-            $conn->close();
         } catch (Exception $e) {
             echo "<p style='color:red'>Erro na conexão: " . $e->getMessage() . "</p>";
         }

@@ -1,17 +1,23 @@
 <?php
 function conectar(){
-    $hostname = "localhost";
-    $username = "root";
-    $password = "TrueCalefactor83";
-    $banco = "CineReelist";
+    //Informaçoes do Banco de dados
+    $host = "aws-0-sa-east-1.pooler.supabase.com";
+    $db   = "postgres";
+    $user = "postgres.zacizdfejqkjguyujkoy";
+    $pass = "TrueCalefactor83";
+    $port = "6543";
 
-    // Objeto com as informações de conexão
-    $conn = new mysqli($hostname, $username, $password, $banco);
+    // Connection string
+    $dsn = "pgsql:host=$host;port=$port;dbname=$db;sslmode=require";
 
-    if (!$conn){
-        die("Conexão falhou, erros: " . $conn->connect_error);
+    try {
+        $pdo = new pdo($dsn, $user, $pass);
+        echo "Conectado";
+        return $pdo;
+    }catch(PDOException $e){
+        echo "Erro: ". $e->getMessage();
+        return false;
     }
-
-    return $conn;
+    
 }
 ?>
