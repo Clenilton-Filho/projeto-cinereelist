@@ -4,7 +4,7 @@
 
 function rolarEsquerda(event){
     const $rolarDireita = document.getElementById('mudar-em-alta-direita');
-    const $conteiner = event.target.closest('.div-filmes').children[0].children[0];
+    const $conteiner = document.getElementById("conteiner-capas-2-em-alta");
     const quantidade = $conteiner.offsetWidth;
 
     //rola o contêiner para a esquerda pelo tamanho do contêiner
@@ -21,7 +21,7 @@ function rolarEsquerda(event){
       
 function rolarDireita(event){
     const $rolarEsquerda = document.getElementById('mudar-em-alta-esquerda');
-    const $conteiner = event.target.closest('.div-filmes').children[0].children[0];
+    const $conteiner = document.getElementById("conteiner-capas-2-em-alta");
     const quantidade = $conteiner.offsetWidth;
 
     //rola o contêiner para a direita pelo tamanho do contêiner

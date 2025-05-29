@@ -21,18 +21,18 @@ main{
   justify-items: center;
   align-items: center;
   text-align: center;
-  gap: 10vh;
+  gap: 70px;
 }
 
 #secao-em-alta{
   display: flex;
-  height: 720px;
-  width: 1280px;
+  height: 768px;
+  width: 1366px;
   flex-direction: column;
-  justify-items: center;
   align-items: center;
+  justify-content: center;
   border-radius: 20px;
-  gap: 140px;
+  gap: 70px;
 }
 
 .div-trailer{
@@ -48,21 +48,12 @@ main{
   height: 768px;
 }
 
-#div-trailer-1{
-  position: absolute;
-  height: 768px;
-  width: 1366px;
-  z-index: -1;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
 #div-boas-vindas{
   display: flex;
-  height: 25vh;
+  min-height: 270px;
   flex-direction: column;
-  padding-top: 5vh;
-  gap: 4vh;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 #div-logo img{
@@ -71,12 +62,12 @@ main{
 
 #div-boas-vindas h1{
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
 #conteiner-transparente-em-alta{
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.781);
+  padding: 25px;
   border-radius: 20px;
 }
 
@@ -89,50 +80,63 @@ main{
   padding-left: 10px;
 }
 
-.div-filmes{
+#div-filmes-em-alta{
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
 }
 
 #conteiner-capas-1-em-alta{
+  display: flex;
   background-color: rgba(255, 255, 255, 0.397);
-  height: 255px;
-  width: 875px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  height: 245px;
+  width: 810px;
   border-radius: 20px;
 }
 
 #conteiner-capas-2-em-alta{
   display: flex;
-  height: 230px;
+  height: 225px;
   width: 790px;
   margin: auto;
   margin-top: 10px;
   flex-direction: row;
   align-items: start;
   justify-content: start;
-  padding: 5px;
   gap: 10px;
   overflow: hidden;
 }
 
 .botao-mudar-filmes{
+  background-color: rgba(0, 0, 0, 0.911);
+  color: var(--cor-secundaria);
   height: 225px;
   width: 60px;
-  border: none;
+  border-color: var(--cor-secundaria);
 }
 
 /*começa invisível e sem clique*/
 #mudar-em-alta-esquerda{
   opacity: 0;
-  margin-top: -240px;
-  margin-left: 15px;
+  margin-top: -235px;
+  margin-left: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
   pointer-events: none;
 }
 
 #mudar-em-alta-direita{
   margin-top: -225px;
-  margin-left: calc(100% - 72px);
+  margin-left: calc(100% - 70px);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
 }
 
 .div-capa-filme-em-alta{
@@ -146,6 +150,13 @@ main{
   font-weight: bold;
   font-size: 1rem;
   color: black;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.div-capa-filme-em-alta img{
+  width: 150px;
+  height: 225px;
 }
 
 .rolar-tela{
@@ -162,6 +173,9 @@ main{
 }
 
 #secao-generos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   padding: 0px 20px;
 }
@@ -176,17 +190,17 @@ main{
   right: 45%;
   color: white;
   font-size: 1.2rem;
-  padding: 10px;
-}
-
-.conteiner-transparente-generos{
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 30px;
-  border-radius: 20px;
+  padding: 18px;
+  padding-bottom: 10px;
 }
 
 .conteiner-capas-1-generos{
+  display: flex;
   background-color: rgba(255, 255, 255, 0.397);
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
   height: 200px;
   border-radius: 20px;
 }
@@ -195,18 +209,14 @@ main{
   display: flex;
   height: 180px;
   width: 1050px;
-  margin-top: 10px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 5px;
   gap: 10px;
   overflow: hidden;
 }
 
 .div-capa-filme-generos{
-  min-width: 120px;
-  height: 180px;
   background-color: #ccc;
   border-radius: 10px;
   display: flex;
@@ -215,12 +225,154 @@ main{
   font-weight: bold;
   font-size: 1rem;
   color: black;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.div-capa-filme-generos img{
+  width: 120px;
+  height: 180px;
 }
 
 #rolar-tela-cima{
-  top: 110vh;
+  top: 115vh;
 }
 
 footer{
   position: fixed;
+}
+
+@media screen and (max-width: 1370px) {
+  main{
+    padding-top: 80px;
+    height: 200vh;
+  }
+
+  #secao-em-alta{
+    height: 500px;
+    width: 800px;
+    gap: 20px;
+  }
+
+  .div-trailer{
+    height: 500px;
+    width: 800px;
+  }
+
+  .trailer{
+    height: 600px;
+  }
+  
+  #div-boas-vindas{
+    min-height: 180px;
+  }
+
+  #div-logo img{
+    height: 120px;
+  }
+
+  #div-boas-vindas h1{
+    font-size: 1rem;
+  }
+
+  #conteiner-transparente-em-alta{
+    padding: 15px;
+  }
+
+  #titulo-filmes-em-alta{
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  #conteiner-capas-1-em-alta{
+    height: 170px;
+    width: 560px;
+  }
+
+  #conteiner-capas-2-em-alta{
+    height: 150px;
+    width: 540px;
+    margin-top: auto;
+    gap: 10px;
+  }
+  
+  .botao-mudar-filmes{
+    height: 150px;
+    width: 40px;
+  }
+
+  /*começa invisível e sem clique*/
+  #mudar-em-alta-esquerda{
+    opacity: 0;
+    margin-top: -160px;
+    margin-left: 10px;
+    pointer-events: none;
+  }
+
+  #mudar-em-alta-direita{
+    margin-top: -150px;
+    margin-left: 91%;
+  }
+
+  .div-capa-filme-em-alta{
+    min-width: 100px;
+    height: 150px;
+    background-color: #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+  }
+
+  .div-capa-filme-em-alta img{
+    height: 150px;
+    width: 100px;
+  }
+
+  .rolar-tela{
+    height: 50px;
+    width: 50px;
+    right: 5.5vw;
+  }
+
+  #secao-generos{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 600px;
+    width: 800px;
+    padding: 0px 0px;
+  }
+
+  .titulo-genero{
+    display: flex;
+    left: 15%;
+    font-size: 0.75rem;
+  }
+
+  .conteiner-capas-1-generos{
+    height: 110px;
+    margin: auto;
+    width: fit-content;
+  }
+
+  .conteiner-capas-2-generos{
+    min-height: 90px;
+    width: 570px;
+    gap: 10px;
+  }
+
+  .div-capa-filme-generos{
+    font-size: 0.7rem;
+  }
+
+  .div-capa-filme-generos img{
+    width: 60px;
+    height: 90px;
+  }
+
 }
