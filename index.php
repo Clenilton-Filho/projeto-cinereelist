@@ -8,6 +8,12 @@
   <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
 </head>
 <body>
+  <?php
+    include "php/dataContext.php";
+    include "php/pegar_imagem.php";  
+    $pdo = conectar();
+    
+  ?>
   <header id="header">
     <div id="header-esquerda">
         <button class="hamburguer-menu" onClick="sideMenu()">
@@ -114,30 +120,7 @@
       <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_reloaded.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_revolutions.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/enter_the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme">
-            </div>
+            <?= imagemAcaoIndex($pdo); ?>
           </div>
         </div>
       </div>
@@ -215,6 +198,8 @@
   <footer>
     <p>&copy; CineREEList&trade; 2025</p>
   </footer>
+
+  <!--Scripts-->
   <script src="js/sideMenu.js"></script>
   <script src="js/index.js"></script>
 </body>
