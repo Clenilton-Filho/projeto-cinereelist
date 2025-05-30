@@ -12,7 +12,6 @@ function conectar(){
 
     try {
         $pdo = new pdo($dsn, $user, $pass);
-        echo "Conectado";
         return $pdo;
     }catch(PDOException $e){
         echo "Erro: ". $e->getMessage();

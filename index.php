@@ -129,35 +129,7 @@
       <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
-<<<<<<< HEAD:index.html
-            <div class="div-capa-filme-generos">
-              <span class="curti material-symbols-outlined">thumb_up</span>
-              <img src="media/img/the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_reloaded.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_revolutions.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/enter_the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme">
-            </div>
-=======
             <?= imagemAcaoIndex($pdo); ?>
->>>>>>> ae9f6e26f08897232cd320003599824d3a1e5ba9:index.php
           </div>
         </div>
       </div>
