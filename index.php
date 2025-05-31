@@ -11,9 +11,9 @@
 <body>
   <?php
     include "php/dataContext.php";
-    include "php/pegar_imagem.php";  
+    include "php/pegar_imagem.php";
+    include "php/statusUser.php";  
     $pdo = conectar();
-    
   ?>
   <header id="header">
     <div id="header-esquerda">
@@ -48,8 +48,7 @@
           <button id="tela-cheia-em-alta" class="tela-cheia" onClick="telaCheia()"><span class="material-symbols-outlined">open_in_full</span>Tela Cheia</button>
 
           <button id="favoritar-em-alta" class="favoritar"><span class="material-symbols-outlined">star</span> Favoritar</button>
-
-          
+         
         </div>
         <video id="trailer-1" class="trailer" src="media/videos/the_matrix_trailer_2.mp4" autoplay="on" muted loop playsinline></video>
       </div>
@@ -129,7 +128,7 @@
       <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
-            <?= imagemAcaoIndex($pdo); ?>
+            <?= imagemIndex("Ação",$pdo); ?>
           </div>
         </div>
       </div>
@@ -137,62 +136,15 @@
       <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
-            <div class="div-capa-filme-generos">
-              <span class="curti material-symbols-outlined">thumb_up</span>
-              <img src="media/img/the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_reloaded.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_revolutions.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/enter_the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme">
-            </div>
+            <?= imagemIndex("Terror",$pdo); ?>
           </div>
         </div>
       </div>
-      <h2 class="titulo-genero">Comé</h2>
+      <h2 class="titulo-genero">Comédia</h2>
       <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_reloaded.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_revolutions.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/enter_the_matrix.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex.jpg" alt="capa de filme">
-            </div>
-            <div class="div-capa-filme-generos">
-              <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme">
-            </div>
+            <?= imagemIndex("Comédia",$pdo); ?>
           </div>
         </div>
       </div>
@@ -209,6 +161,12 @@
     <p>&copy; CineREEList&trade; 2025</p>
   </footer>
 
+  <?php
+    //Se teve algum post, faz a função
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+      status($pdo);
+    }
+  ?>
   <!--Scripts-->
   <script src="js/sideMenu.js"></script>
   <script src="js/index.js"></script>

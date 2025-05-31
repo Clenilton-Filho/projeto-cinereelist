@@ -1,6 +1,4 @@
-
-
-
+let filmeSelecionadoId = null;
 
 function telaCheia(){
     $trailer = document.getElementById("trailer-1");
@@ -33,6 +31,38 @@ function mudarFilme(event){
         }
     }
 }
+
+function pegarId(elemento){
+    const dataId = elemento.getAttribute("data-id");
+    filmeSelecionadoId = dataId;
+    console.log(`Teste ${filmeSelecionadoId}`);
+}
+
+function postInteresses(elemento, func, usuario_id){
+    elemento.addEventListener("click", () =>{
+        if(filmeSelecionadoId){
+            fetch("", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `id=${filmeSelecionadoId}&func=${func}&usuario_id=${usuario_id}`
+            });
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () =>{
+    const favoritoElement = document.getElementById("favoritar-em-alta");
+    const maisTardeElement = document.getElementById("mais-tarde-em-alta");
+    const curtidoElements = document.querySelectorAll(".curti");
+    postInteresses(favoritoElement, 'favorito', 5);
+    postInteresses(maisTardeElement, 'assistir_mais_tarde', 5);
+    curtidoElements.forEach(element => {
+        postInteresses(element, 'curtido', 5);
+    });
+});
+
 
 function rolarEsquerda(event){
     const $rolarDireita = document.getElementById('mudar-em-alta-direita');

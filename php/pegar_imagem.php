@@ -1,9 +1,9 @@
 <?php
-    function imagemAcaoIndex(PDO $pdo){
+    function imagemIndex(string $genero, PDO $pdo){
         //Fazer o select com o gênero ação
         $stmt = $pdo->prepare("SELECT id, imagem_url FROM filme WHERE genero LIKE :genero ORDER BY id DESC");
         //Ação com porcentagem, para puxar qualquer filme que tenha genero ação no meio
-        $stmt->bindValue(":genero", "%Ação%");
+        $stmt->bindValue(":genero", "%$genero%");
         $stmt->execute();
 
         //Transformar em array
@@ -22,21 +22,10 @@
             $imagem_url = $filme["imagem_url"];
                 
             //Html que será imprimido com echo
-            $bloco = "<div class='div-capa-filme-generos'>
-            <img src='$imagem_url'>
-            </div>";
+            $bloco = "<div class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarId(this)'>
+             <img src='$imagem_url'> </div>";
 
             echo $bloco; 
         }    
-    }
-
-    function imagemComediaIndex(PDO $pdo){
-        //Fazer 
-    }
-    function imagemTerrorIndex(PDO $pdo){
-        //Fazer
-    }
-    function imagemSuspenseIndex(PDO $pdo){
-        //Fazer
     }
 ?>
