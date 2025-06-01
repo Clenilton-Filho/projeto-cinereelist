@@ -1,13 +1,16 @@
 const trailersNomes = [
     "the_matrix",
     "revenge_of_the_sith",
-    "interstellar"
+    "interstellar",
+    "the_batman"
 ]
 
 const trailersSrc = [
-    "media/videos/the_matrix_trailer_2.mp4",
+    "media/videos/the_matrix.mp4",
     "media/videos/revenge_of_the_sith.mp4",
-    "media/videos/interstellar.mp4"
+    "media/videos/interstellar.mp4",
+    "media/videos/the_batman.mp4",
+    "media/videos/duna_parte_2.mp4"
 ];
 
 
@@ -28,7 +31,7 @@ document.addEventListener('fullscreenchange', () => {
     }
 });
 
-function mudarFilme(event){
+function mudarTrailer(event){
     const $trailer = document.getElementById("trailer-1");
     const capaSrc = event.target.src;
     

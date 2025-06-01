@@ -50,14 +50,14 @@
           <button id="favoritar-em-alta" class="favoritar"><span class="material-symbols-outlined icone-em-alta">star</span> Favoritar</button>
          
         </div>
-        <video id="trailer-1" class="trailer" src="media/videos/the_matrix_trailer_2.mp4" autoplay="on" muted loop playsinline></video>
+        <video id="trailer-1" class="trailer" src="media/videos/the_matrix.mp4" autoplay="on" muted loop playsinline></video>
       </div>
       <div id="div-boas-vindas">
         <div id="div-logo">
           <img src="media/img/logo-1.png" alt="Logo CineREEList">
         </div>
         <h1>
-          o <strong>MELHOR</strong> catálogo de filmes<br>
+          o <strong>MELHOR</strong> catálogo de filmes e séries<br>
           está à sua espera!
         </h1>
       </div>
@@ -69,39 +69,39 @@
             <div id="conteiner-capas-2-em-alta" class="conteiner-capas-2">
               <div class="div-capa-filme-em-alta" >
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/the_matrix.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/the_matrix.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/revenge_of_the_sith.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/revenge_of_the_sith.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/interstellar.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/interstellar.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/the_batman.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/duna_parte_2.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/enter_the_matrix.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/andor.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/deus_ex.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/round_6.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/the_chosen.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
                 <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/img/deus_ex_mankind_divided.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
+                <img src="media/capas/voce.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
             </div>
           </div>

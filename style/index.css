@@ -499,14 +499,14 @@ footer{
   }
 
   .conteiner-capas-1-generos{
-    height: 120px;
+    height: 122px;
     width: fit-content;
     border-radius: 10px;
   }
 
   .conteiner-capas-2-generos{
     min-height: 110px;
-    width: 670px;
+    width: 695px;
     gap: 10px;
   }
 

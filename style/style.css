@@ -150,6 +150,7 @@ button{
   min-width: 5vw;
 }
 #nome-usuario-header{
+    color: var(--cor-secundaria-destaque);
     font-size: 1.35rem;
 }
 #foto-perfil-header{
@@ -281,6 +282,12 @@ footer p{
 }
 /*1366x768*/
 @media screen and (orientation: landscape) and (min-height: 550px){
+    #nome-usuario-header{
+        font-size: 1rem;
+    }
+    #foto-perfil-header{
+        height: 35px;
+    }
     .botao-cadastrar-entrar{
         font-size: 0.9rem;
     }
