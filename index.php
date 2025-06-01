@@ -11,8 +11,8 @@
 <body>
   <?php
     include "php/dataContext.php";
-    include "php/pegar_imagem.php";
-    include "php/statusUser.php";  
+    include "php/pegarImagem.php";
+    include "php/statusUsuario.php";  
     $pdo = conectar();
   ?>
   <header id="header">
@@ -67,42 +67,7 @@
         <div id="div-filmes-em-alta">
           <div id="conteiner-capas-1-em-alta" class="conteiner-capas-1">
             <div id="conteiner-capas-2-em-alta" class="conteiner-capas-2">
-              <div class="div-capa-filme-em-alta" >
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/the_matrix.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/revenge_of_the_sith.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/interstellar.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/the_batman.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/duna_parte_2.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/andor.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/round_6.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/the_chosen.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
-              <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
-                <img src="media/capas/voce.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
-              </div>
+              <?= imagemAlta($pdo); ?>
             </div>
           </div>
           <button id="mudar-em-alta-esquerda" class="botao-mudar-filmes material-symbols-outlined" onclick="rolarEsquerda(event)">
