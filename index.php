@@ -43,11 +43,11 @@
     <section id="secao-em-alta" class="secao">
       <div id="div-trailer-1" class="div-trailer">
         <div id="div-botoes-trailer-em-alta" class="div-botoes-trailer"> 
-          <button id="mais-tarde-em-alta" class="assistir-mais-tarde"><span class="material-symbols-outlined">library_add</span> Assistir mais tarde</button>
+          <button id="mais-tarde-em-alta" class="assistir-mais-tarde"><span class="material-symbols-outlined icone-em-alta">library_add</span> Assistir mais tarde</button>
 
-          <button id="tela-cheia-em-alta" class="tela-cheia" onClick="telaCheia()"><span class="material-symbols-outlined">open_in_full</span>Tela Cheia</button>
+          <button id="tela-cheia-em-alta" class="tela-cheia" onClick="telaCheia()"><span class="material-symbols-outlined icone-em-alta">open_in_full</span>Tela Cheia</button>
 
-          <button id="favoritar-em-alta" class="favoritar"><span class="material-symbols-outlined">star</span> Favoritar</button>
+          <button id="favoritar-em-alta" class="favoritar"><span class="material-symbols-outlined icone-em-alta">star</span> Favoritar</button>
          
         </div>
         <video id="trailer-1" class="trailer" src="media/videos/the_matrix_trailer_2.mp4" autoplay="on" muted loop playsinline></video>
@@ -68,40 +68,40 @@
           <div id="conteiner-capas-1-em-alta" class="conteiner-capas-1">
             <div id="conteiner-capas-2-em-alta" class="conteiner-capas-2">
               <div class="div-capa-filme-em-alta" >
-                <span class="curti material-symbols-outlined">thumb_up</span>
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/img/the_matrix.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/img/revenge_of_the_sith.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/the_matrix_revolutions.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/interstellar.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/the_matrix_resurrections.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/the_matrix_path_of_neo.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/enter_the_matrix.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/enter_the_matrix.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/deus_ex.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/deus_ex.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/deus_ex_human_revolution.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined">thumb_up</span>
-                <img src="media/img/deus_ex_mankind_divided.jpg" alt="capa de filme">
+                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <img src="media/img/deus_ex_mankind_divided.jpg" alt="capa de filme" onMouseEnter="mudarFilme(event)">
               </div>
             </div>
           </div>
@@ -124,24 +124,24 @@
       <div id="div-trailer-2" class="div-trailer" >
         <video id="trailer-2" class="trailer" src="media/videos/the_matrix_trailer_2.mp4" autoplay="on" muted loop playsinline></video>
       </div>
-      <h2 class="titulo-genero">Ação</h2>
-      <div class="div-filmes">
+
+      <div id="div-titulos-generos">
+        <h2 class="titulo-genero">Ação</h2>
+        <h2 class="titulo-genero">Terror</h2>
+        <h2 class="titulo-genero">Comé</h2>
+      </div>
+
+      <div id="div-generos">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
             <?= imagemIndex("Ação",$pdo); ?>
           </div>
         </div>
-      </div>
-      <h2 class="titulo-genero">Terror</h2>
-      <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
             <?= imagemIndex("Terror",$pdo); ?>
           </div>
         </div>
-      </div>
-      <h2 class="titulo-genero">Comédia</h2>
-      <div class="div-filmes">
         <div class="conteiner-capas-1-generos" class="conteiner-capas-1">
           <div class="conteiner-capas-2-generos" class="conteiner-capas-2">
             <?= imagemIndex("Comédia",$pdo); ?>

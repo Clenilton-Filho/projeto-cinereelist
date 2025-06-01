@@ -1,3 +1,16 @@
+const trailersNomes = [
+    "the_matrix",
+    "revenge_of_the_sith",
+    "interstellar"
+]
+
+const trailersSrc = [
+    "media/videos/the_matrix_trailer_2.mp4",
+    "media/videos/revenge_of_the_sith.mp4",
+    "media/videos/interstellar.mp4"
+];
+
+
 let filmeSelecionadoId = null;
 
 function telaCheia(){
@@ -15,19 +28,17 @@ document.addEventListener('fullscreenchange', () => {
     }
 });
 
-//mudar os filmes ((((((teste))))))
-
-
 function mudarFilme(event){
-    $trailer = document.getElementById("trailer-1");
+    const $trailer = document.getElementById("trailer-1");
+    const capaSrc = event.target.src;
     
-    if (event.target.src.includes("revenge_of_the_sith.jpg")){
-        if (!$trailer.src.includes("revenge_of_the_sith.mp4")){
-            $trailer.src = "media/videos/revenge_of_the_sith.mp4";
-        }
-    }else if (event.target.src.includes("the_matrix.jpg")){
-        if (!$trailer.src.includes("the_matrix_trailer_2.mp4")){
-            $trailer.src = "media/videos/the_matrix_trailer_2.mp4";
+    for (i = 0; i < trailersNomes.length; i++){
+        if (capaSrc.includes(trailersNomes[i])){
+            if (!$trailer.src.includes(trailersSrc[i])){
+                $trailer.src = trailersSrc[i];
+                $trailer.load();
+                break;
+            }
         }
     }
 }
@@ -105,21 +116,8 @@ function rolarDireita(event){
     $rolarEsquerda.style.pointerEvents = 'auto';
 
     //reposicionando os botões de curtir
-    //reposicionando os botões curtir
     curti.forEach($botao => {
         $botao.style.marginRight = "66.5%";
     });
 
 }
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    const botaoMenu = document.querySelector(".hamburguer-menu");
-    const sideMenu = document.getElementById("side-menu");
-
-    botaoMenu.addEventListener("click", () => {
-        sideMenu.classList.toggle("side-menu.ativo");
-        console.log("Menu hamburguer clicado!");
-    });
-});
-*/ 

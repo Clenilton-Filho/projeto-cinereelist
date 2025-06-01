@@ -1,5 +1,6 @@
 body{
-    background: linear-gradient(to right, #7a2f00, #3e0000);
+    background-image: url(../media/img/background-template-darker.png);
+    background-size: contain;
     overflow-y: scroll;
 }
 
@@ -38,7 +39,7 @@ main{
 
 .secao{
   height: 768px;
-  width: 1360px;
+  width: 1366px;
   box-shadow:
     0px 0px 50px black,
     0px 0px 50px black,
@@ -49,13 +50,10 @@ main{
 #secao-em-alta{
   background-color: black;
   display: flex;
-  height: 768px;
-  width: 1360px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border-radius: 20px;
-  gap: 70px;
   box-shadow:
     0px 0px 50px black,
     0px 0px 50px black,
@@ -66,7 +64,7 @@ main{
 .div-trailer{
   position: absolute;
   height: 768px;
-  width: 1360px;
+  width: 1366px;
   z-index: -1;
   border-radius: 20px;
   overflow: hidden;
@@ -78,9 +76,8 @@ main{
 }
 
 .trailer{
-  width: 1360px;
+  width: 1366px;
 }
-
 
 #div-botoes-trailer-em-alta{
   position: absolute;
@@ -116,7 +113,6 @@ main{
   min-height: 270px;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 50px;
 }
 
 #div-logo img{
@@ -130,6 +126,7 @@ main{
 
 #conteiner-transparente-em-alta{
   background-color: rgba(0, 0, 0, 0.781);
+  margin-bottom: -40px;
   padding: 25px;
   border-radius: 20px;
 }
@@ -212,15 +209,12 @@ main{
   min-width: 150px;
   height: 225px;
   background-color: #ccc;
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1rem;
-  color: black;
+  border: 2px solid lightgrey;
+  border-radius: 10px;
   overflow: hidden;
-  border: 2px solid transparent;
 }
 
 .div-capa-filme-em-alta:hover{
@@ -241,6 +235,7 @@ main{
   background-color: rgba(0, 0, 0, 0.726);
   padding: 10px;
   opacity: 0;
+  border-radius: 5px;
   pointer-events: none;
   z-index: 1;
 }
@@ -274,26 +269,44 @@ main{
 }
 
 #secao-generos{
+  background-color: black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px 20px;
+  gap: 20px;
+  z-index: 1;
 }
 
 #div-trailer-2{
-  left: 50%;
-  transform: translate(-50%,0);
-  opacity: 50%;
+  z-index: 2;
+}
+
+
+#div-titulos-generos{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  z-index: 2;
 }
 
 .titulo-genero{
-  position: relative;
-  right: 35%;
+  line-height: 200px;
+  width: 100px;
   color: white;
-  font-size: 1.2rem;
-  padding: 18px;
-  padding-bottom: 10px;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-left: -50px;
+}
+
+#div-generos{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  z-index: 2;
 }
 
 .conteiner-capas-1-generos{
@@ -310,8 +323,8 @@ main{
 
 .conteiner-capas-2-generos{
   display: flex;
-  height: 180px;
-  width: 1050px;
+  height: 184px;
+  width: 1080px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -321,6 +334,7 @@ main{
 
 .div-capa-filme-generos{
   background-color: #ccc;
+  border: 2px solid lightgrey;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -329,6 +343,10 @@ main{
   font-size: 1rem;
   color: black;
   overflow: hidden;
+}
+
+.div-capa-filme-generos:hover{
+  border-color: var(--cor-secundaria);
 }
 
 .div-capa-filme-generos img{
@@ -346,16 +364,16 @@ footer{
 
 @media screen and (max-width: 1370px) {
   main{
-    padding-top: 80px;
+    padding-top: 90px;
     height: 200vh;
   }
 
-  #secao-em-alta{
-    height: 500px;
-    width: 800px;
-    gap: 20px;
+  .secao{
+    height: 480px;
+    width: 854px;
+    overflow: hidden;
   }
-  
+
   #div-botoes-trailer-em-alta{
     right: 10px;
     padding: 10px;
@@ -366,19 +384,23 @@ footer{
 
   #div-botoes-trailer-em-alta > button{
     height: 25px;
-    padding: 5px;
+    font-size: 0.7rem;
+    line-height: 25px;
+    padding: 12px 5px;
     gap: 5px;
   }
 
+  .icone-em-alta{
+    font-size: 20px !important;
+  }
+
   .div-trailer{
-    display: flex;
-    justify-content: center;
-    height: 500px;
-    width: 800px;
+    height: 480px;
+    width: 854px;
   }
 
   .trailer{
-    height: 500px;
+    width: 854px;
   }
   
   #div-boas-vindas{
@@ -395,6 +417,7 @@ footer{
 
   #conteiner-transparente-em-alta{
     padding: 15px;
+    margin-bottom: -20px;
   }
 
   #titulo-filmes-em-alta{
@@ -435,14 +458,13 @@ footer{
   .div-capa-filme-em-alta{
     min-width: 100px;
     height: 150px;
-    background-color: #ccc;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1rem;
-    color: black;
+  }
+
+  .curti{
+    margin-top: 100px;
+    margin-left: 50px;
+    padding: 5px;
   }
 
   .div-capa-filme-em-alta img{
@@ -456,47 +478,45 @@ footer{
     right: 5.5vw;
   }
 
-  #secao-generos{
+  #div-titulos-generos{
     display: flex;
-    justify-items: center;
-    justify-content: center;
-    align-content: center;
-    height: 600px;
-    width: 800px;
-    padding: 0px 0px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   .titulo-genero{
-    display: flex;
-    left: 15%;
-    font-size: 0.75rem;
+    line-height: 120px;
+    width: 50px;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-left: -30px;
+  }
+
+  #div-generos{
+    justify-content: space-evenly;
   }
 
   .conteiner-capas-1-generos{
-    height: 110px;
-    margin: auto;
+    height: 120px;
     width: fit-content;
+    border-radius: 10px;
   }
 
   .conteiner-capas-2-generos{
-    min-height: 90px;
-    width: 570px;
+    min-height: 110px;
+    width: 670px;
     gap: 10px;
   }
 
   .div-capa-filme-generos{
     font-size: 0.7rem;
-  }
-
-  .curti{
-    margin-top: 130px;
-    margin-left: 50px;
-    padding: 5px;
+    border-radius: 10px;
   }
 
   .div-capa-filme-generos img{
-    width: 60px;
-    height: 90px;
+    width: 73px;
+    height: 110px;
   }
-
 }
