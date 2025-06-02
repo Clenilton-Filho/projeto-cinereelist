@@ -23,8 +23,12 @@
                 
             //Html que será imprimido com echo
             $bloco = "
-            <div class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarId(this)'>
-                <img src='$imagem_url'> 
+            <div style='background-image: url($imagem_url)' class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarId(this)'>
+                <div class='div-botoes-generos'>
+                    <button class='curti material-symbols-outlined botao-generos botao-capas'>thumb_up</button>
+                    <button class='favoritar material-symbols-outlined botao-generos botao-capas'>star</button>
+                    <button class='assistir-mais-tarde material-symbols-outlined botao-generos botao-capas'>library_add</button>
+                </div>
             </div>";
 
             echo $bloco; 
@@ -50,7 +54,7 @@
             //Html que será imprimido com echo
             $bloco = "
             <div class='div-capa-filme-em-alta' data-id='{$filme['id']}' onmouseover='pegarId(this)'>
-                <span class='curti material-symbols-outlined icone-em-alta'>thumb_up</span>
+                <span class='curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta'>thumb_up</span>
                 <img src='$imagem_url' onMouseEnter='mudarTrailer(event)')'>
             </div>";
 
