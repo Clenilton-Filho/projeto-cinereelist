@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/index.css">
   <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=starlibrary_adddouble_arrowkeyboard_double_arrow_left" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=starlibrary_adddouble_arrowkeyboard_double_arrow_left" />
 </head>
 <body>
   <?php
@@ -68,39 +68,39 @@
           <div id="conteiner-capas-1-em-alta" class="conteiner-capas-1">
             <div id="conteiner-capas-2-em-alta" class="conteiner-capas-2">
               <div class="div-capa-filme-em-alta" >
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/the_matrix.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/revenge_of_the_sith.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/interstellar.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/the_batman.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/duna_parte_2.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/andor.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/round_6.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/the_chosen.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
               <div class="div-capa-filme-em-alta">
-                <span class="curti material-symbols-outlined icone-em-alta">thumb_up</span>
+                <span class="curti curti-em-alta botao-capas material-symbols-outlined icone-em-alta">thumb_up</span>
                 <img src="media/capas/voce.jpg" alt="capa de filme/série" onMouseEnter="mudarTrailer(event)">
               </div>
             </div>

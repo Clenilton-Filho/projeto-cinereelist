@@ -227,21 +227,40 @@ main{
   cursor: pointer;
 }
 
-.curti{
-  position: absolute;
+.botao-capas{
   color: white;
-  margin-top: 150px;
-  margin-left: 75px;
   background-color: rgba(0, 0, 0, 0.726);
-  padding: 10px;
-  opacity: 0;
-  border-radius: 5px;
-  pointer-events: none;
-  z-index: 1;
+  opacity: 100;
+  z-index: 3;
+  border: none;
 }
 
-.curti:hover{
+.botao-capas:hover{
   color: var(--cor-secundaria);
+}
+
+.div-botoes-generos{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-top: 45px;
+  margin-left: 70px;
+}
+
+.botao-generos{
+  margin: 5px;
+  padding: 5px;
+  opacity: 0;
+}
+
+.curti-em-alta{
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 75px;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .div-capa-filme-em-alta img{
@@ -324,7 +343,7 @@ main{
 .conteiner-capas-2-generos{
   display: flex;
   height: 184px;
-  width: 1080px;
+  width: 1050px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -333,15 +352,11 @@ main{
 }
 
 .div-capa-filme-generos{
-  background-color: #ccc;
+  background-size: 100% 100%;
+  width: 120px;
+  height: 180px;
   border: 2px solid lightgrey;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1rem;
-  color: black;
   overflow: hidden;
 }
 
@@ -349,9 +364,8 @@ main{
   border-color: var(--cor-secundaria);
 }
 
-.div-capa-filme-generos img{
-  width: 120px;
-  height: 180px;
+.div-capa-filme-generos:hover .botao-generos{
+  opacity: 100%;
 }
 
 #rolar-tela-cima{
@@ -461,10 +475,22 @@ footer{
     border-radius: 10px;
   }
 
-  .curti{
+  .curti-em-alta{
     margin-top: 100px;
     margin-left: 50px;
     padding: 5px;
+  }
+
+  .div-botoes-generos{
+    margin-top: 30px;
+    margin-left: 42px;
+  }
+
+  .botao-generos{
+    font-size: 13px !important;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 5px;
   }
 
   .div-capa-filme-em-alta img{
@@ -499,24 +525,21 @@ footer{
   }
 
   .conteiner-capas-1-generos{
-    height: 122px;
+    height: 120px;
     width: fit-content;
     border-radius: 10px;
   }
 
   .conteiner-capas-2-generos{
     min-height: 110px;
-    width: 695px;
+    width: 667px;
     gap: 10px;
   }
 
   .div-capa-filme-generos{
-    font-size: 0.7rem;
-    border-radius: 10px;
-  }
-
-  .div-capa-filme-generos img{
     width: 73px;
     height: 110px;
+    font-size: 0.7rem;
+    border-radius: 7px;
   }
 }

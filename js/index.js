@@ -2,7 +2,8 @@ const trailersNomes = [
     "the_matrix",
     "revenge_of_the_sith",
     "interstellar",
-    "the_batman"
+    "the_batman",
+    "duna_parte_2"
 ]
 
 const trailersSrc = [
@@ -67,11 +68,15 @@ function postInteresses(elemento, func, usuario_id){
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
-    const favoritoElement = document.getElementById("favoritar-em-alta");
-    const maisTardeElement = document.getElementById("mais-tarde-em-alta");
+    const favoritoElements = document.querySelectorAll(".favoritar");
+    const maisTardeElements = document.querySelectorAll(".assistir-mais-tarde");
     const curtidoElements = document.querySelectorAll(".curti");
-    postInteresses(favoritoElement, 'favorito', 5);
-    postInteresses(maisTardeElement, 'assistir_mais_tarde', 5);
+    favoritoElements.forEach(element => {
+        postInteresses(element, 'favorito', 5);
+    });
+    maisTardeElements.forEach(element => {
+        postInteresses(element, 'assistir_mais_tarde', 5);
+    });
     curtidoElements.forEach(element => {
         postInteresses(element, 'curtido', 5);
     });
@@ -81,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 function rolarEsquerda(event){
     const $rolarDireita = document.getElementById('mudar-em-alta-direita');
     const $conteiner = document.getElementById("conteiner-capas-2-em-alta");
-    const curti = document.querySelectorAll(".curti");
+    const curti = document.querySelectorAll(".curti-em-alta");
     const quantidade = $conteiner.offsetWidth;
 
     //rola o contêiner para a esquerda pelo tamanho do contêiner
@@ -104,8 +109,9 @@ function rolarEsquerda(event){
 function rolarDireita(event){
     const $rolarEsquerda = document.getElementById('mudar-em-alta-esquerda');
     const $conteiner = document.getElementById("conteiner-capas-2-em-alta");
-    const curti = document.querySelectorAll(".curti");
+    const curti = document.querySelectorAll(".curti-em-alta");
     const quantidade = $conteiner.offsetWidth;
+    const mainWidth = document.getElementById('main').offsetWidth;
 
     //rola o contêiner para a direita pelo tamanho do contêiner
     $conteiner.scrollLeft += quantidade;
@@ -119,8 +125,20 @@ function rolarDireita(event){
     $rolarEsquerda.style.pointerEvents = 'auto';
 
     //reposicionando os botões de curtir
-    curti.forEach($botao => {
-        $botao.style.marginRight = "66.5%";
-    });
-
+    switch (mainWidth){
+        case 1360:
+            curti.forEach($botao => {
+                $botao.style.marginRight = "64.5%";
+            });
+            break
+        case 1366:
+            curti.forEach($botao => {
+                $botao.style.marginRight = "64.5%";
+            });
+            break
+        default:
+            curti.forEach($botao => {
+                $botao.style.marginRight = "66.5%";
+            });
+    }
 }
