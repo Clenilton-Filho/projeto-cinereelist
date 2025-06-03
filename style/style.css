@@ -150,11 +150,11 @@ button{
   min-width: 5vw;
 }
 #nome-usuario-header{
-    color: var(--cor-secundaria-destaque);
+    
     font-size: 1.35rem;
 }
 #foto-perfil-header{
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   max-height: 45px;

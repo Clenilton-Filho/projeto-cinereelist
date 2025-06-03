@@ -44,6 +44,13 @@
             </div>
 
             <form id="login-form" action="" method="post" enctype="multipart/form-data">
+                <div id="nome-div" class="login-div">
+                    <label for="nome-input">
+                        <img class="invertido icon login-icone" src="../media/img/user-full-black.png">
+                    </label>
+                    <input type="text" name="nome-input" id="nome-input" placeholder="NOME" required="true">
+                </div>
+            
                 <div id="email-div" class="login-div">
                     <label for="email-input">
                         <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">

@@ -85,8 +85,7 @@ function postInteresses(elemento, func, usuario_id){
     });
 }
 
-document.addEventListener("DOMContentLoaded", () =>{
-    document.cookie = "idUsuario=7; max-age=60; path=/";
+document.addEventListener("DOMContentLoaded", () =>{ 
     const favoritoElements = document.querySelectorAll(".favoritar");
     const maisTardeElements = document.querySelectorAll(".assistir-mais-tarde");
     const curtidoElements = document.querySelectorAll(".curti");

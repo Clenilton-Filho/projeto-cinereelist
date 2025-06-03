@@ -22,14 +22,7 @@
         </a>
     </div>
     <div id="header-direita">
-      <div id="div-usuario">
-        <span id="nome-usuario-header">Usuário</span>
-        <div id="div-foto-perfil">
-          <a href="pages/perfil.html">
-            <img id="foto-perfil-header" src="media/img/user-black.png" class="icon" alt="foto de perfil do usuário">
-          </a>
-        </div>
-      </div>
+      <?= imagemIcone($pdo);?>
       <a class="link botao-cadastrar-entrar" href="pages/cadastro.php">CADASTRAR-SE</a>
       <a class="link botao-cadastrar-entrar" href="pages/login.html">ENTRAR</a>
     </div>

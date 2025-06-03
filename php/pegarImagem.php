@@ -37,9 +37,9 @@
         }    
     }
     function imagemAlta(PDO $pdo){
-        //Fazer o select com o gênero ação
+        //Fazer o select com o gênero Alta
         $stmt = $pdo->prepare("SELECT id, imagem_url FROM filme WHERE genero LIKE :genero ORDER BY id ASC");
-        //Ação com porcentagem, para puxar qualquer filme que tenha genero ação no meio
+
         $stmt->bindValue(":genero", "%Alta%");
         $stmt->execute();
 
@@ -62,5 +62,34 @@
 
             echo $bloco; 
         }    
+    }
+
+    function imagemIcone(PDO $pdo){
+        $_COOKIE['idUsuario'] = '7';
+        $id = $_COOKIE["idUsuario"];
+
+        //Fazer o select com o id do cookie
+        $stmt = $pdo->prepare("SELECT id, nome, imagem_url FROM usuario WHERE id = :id");
+        $stmt->bindValue(":id", "$id");
+        $stmt->execute();
+
+        //Receber um resultado
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        //Pega o valor da url no banco
+        $imagem_url = $resultado['imagem_url'];
+        $nome = $resultado['nome'];
+        
+        $bloco = "
+        <div id='div-usuario'>
+            <span id='nome-usuario-header'>$nome</span>
+            <div id='div-foto-perfil'>
+                <a href='pages/perfil.html'>
+                    <img id='foto-perfil-header' src='$imagem_url' alt='foto de perfil do usuário'>
+                </a>
+            </div>
+        </div>";
+        echo $bloco; 
+        
     }
 ?>
