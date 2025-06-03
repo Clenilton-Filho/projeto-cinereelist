@@ -47,10 +47,28 @@ function mudarTrailer(event){
     }
 }
 
-function pegarId(elemento){
+function pegarIdFilme(elemento){
     const dataId = elemento.getAttribute("data-id");
     filmeSelecionadoId = dataId;
-    console.log(`Teste ${filmeSelecionadoId}`);
+}
+
+function pegarIdUsuario(){
+    //Pega a string de cookie e separa
+    const cookieNome = "idUsuario" + "=";
+    const cookies = document.cookie.split(";");
+    
+    //Percorro a string de cookies separados
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        
+        while (cookie.charAt(0) == ' ') { //Checar e retorar espaço em branco
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(cookieNome) == 0) { //Se o Cookie for encontrado, retorno seu valor
+            return cookie.substring(cookieNome.length, cookie.length);
+        }
+    }
+    return null;
 }
 
 function postInteresses(elemento, func, usuario_id){
@@ -68,17 +86,21 @@ function postInteresses(elemento, func, usuario_id){
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
+    document.cookie = "idUsuario=7; max-age=60; path=/";
     const favoritoElements = document.querySelectorAll(".favoritar");
     const maisTardeElements = document.querySelectorAll(".assistir-mais-tarde");
     const curtidoElements = document.querySelectorAll(".curti");
+    
+    //Verificar se algum botão de favorito foi clicado
     favoritoElements.forEach(element => {
-        postInteresses(element, 'favorito', 5);
+        //Passa o id do usuário, o status e cria um post pro PH
+        postInteresses(element, 'favorito', pegarIdUsuario());
     });
     maisTardeElements.forEach(element => {
-        postInteresses(element, 'assistir_mais_tarde', 5);
+        postInteresses(element, 'assistir_mais_tarde', pegarIdUsuario());
     });
     curtidoElements.forEach(element => {
-        postInteresses(element, 'curtido', 5);
+        postInteresses(element, 'curtido', pegarIdUsuario());
     });
 });
 
