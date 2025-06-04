@@ -43,7 +43,7 @@
                 <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
             </div>
 
-            <form id="login-form" action="" method="post" enctype="multipart/form-data">
+            <form id="login-form" class='cadastro' action="" method="post" enctype="multipart/form-data">
                 <div id="nome-div" class="login-div">
                     <label for="nome-input">
                         <img class="invertido icon login-icone" src="../media/img/user-full-black.png">

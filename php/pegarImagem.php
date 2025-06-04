@@ -82,8 +82,10 @@
         
         $bloco = "
         <div id='div-usuario'>
-            <span id='nome-usuario-header'>$nome</span>
-            <div id='div-foto-perfil'>
+            <a href='pages/perfil.html'>
+                <span id='nome-usuario-header' class='usuario'>$nome</span>
+            </a>
+            <div id='div-foto-perfil-header' class='usuario'>
                 <a href='pages/perfil.html'>
                     <img id='foto-perfil-header' src='$imagem_url' alt='foto de perfil do usuário'>
                 </a>

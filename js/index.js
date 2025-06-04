@@ -157,6 +157,11 @@ function rolarDireita(event){
                 $botao.style.marginRight = "64.5%";
             });
             break
+        case 1600:
+            curti.forEach($botao => {
+                $botao.style.marginRight = "64.7%";
+            });
+            break
         default:
             curti.forEach($botao => {
                 $botao.style.marginRight = "66.5%";

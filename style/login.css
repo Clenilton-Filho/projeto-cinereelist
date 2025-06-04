@@ -7,3 +7,11 @@
         margin-bottom: -3.5vh;
     }
 }
+@media screen and (orientation: landscape) and (max-width: 1370px){
+    #login{
+        min-width: 70%;
+    }
+    #login-form{
+        min-width: 42%;
+    }
+}

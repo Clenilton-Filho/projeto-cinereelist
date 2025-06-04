@@ -45,6 +45,7 @@ main{
     0px 0px 50px black,
     0px 0px 50px black;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 #secao-em-alta{
@@ -164,7 +165,6 @@ main{
   height: 225px;
   width: 790px;
   margin: auto;
-  margin-top: 10px;
   flex-direction: row;
   align-items: start;
   justify-content: start;
@@ -260,6 +260,7 @@ main{
   padding: 10px;
   border-radius: 5px;
   opacity: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -376,7 +377,7 @@ footer{
   position: fixed;
 }
 
-@media screen and (max-width: 1370px) {
+@media screen and (max-width: 1370px){
   main{
     padding-top: 90px;
     height: 200vh;
@@ -385,7 +386,6 @@ footer{
   .secao{
     height: 480px;
     width: 854px;
-    overflow: hidden;
   }
 
   #div-botoes-trailer-em-alta{
@@ -447,7 +447,6 @@ footer{
   #conteiner-capas-2-em-alta{
     height: 150px;
     width: 540px;
-    margin-top: auto;
     gap: 10px;
   }
   
@@ -456,12 +455,9 @@ footer{
     width: 40px;
   }
 
-  /*começa invisível e sem clique*/
   #mudar-em-alta-esquerda{
-    opacity: 0;
     margin-top: -160px;
     margin-left: 10px;
-    pointer-events: none;
   }
 
   #mudar-em-alta-direita{
@@ -504,29 +500,15 @@ footer{
     right: 5.5vw;
   }
 
-  #div-titulos-generos{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
   .titulo-genero{
     line-height: 120px;
     width: 50px;
-    color: white;
-    text-align: center;
     font-size: 0.8rem;
     margin-left: -30px;
   }
 
-  #div-generos{
-    justify-content: space-evenly;
-  }
-
   .conteiner-capas-1-generos{
     height: 120px;
-    width: fit-content;
     border-radius: 10px;
   }
 
@@ -540,6 +522,157 @@ footer{
     width: 73px;
     height: 110px;
     font-size: 0.7rem;
+    border-radius: 7px;
+  }
+
+}
+
+@media screen and (min-width: 1371px) and (max-width: 1600px){
+  main{
+    padding-top: 105px;
+    height: 200vh;
+    gap: 12vh;
+  }
+
+  .secao{
+    min-height: 576px;
+    min-width: 1024px;
+    max-height: 576px;
+    max-width: 1024px;
+  }
+
+  #secao-em-alta{
+    height: 576px;
+    width: 1024px;
+  }
+
+  #div-botoes-trailer-em-alta{
+    right: 10px;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  #div-botoes-trailer-em-alta > button{
+    height: 25px;
+    font-size: 0.8rem;
+    line-height: 25px;
+    padding: 15px 8px;
+  }
+
+  .icone-em-alta{
+    font-size: 24px !important;
+  }
+
+  .div-trailer{
+    height: 576px;
+    width: 1024px;
+  }
+
+  .trailer{
+    width: 1024px;
+  }
+  
+  #div-boas-vindas{
+    min-height: 185px;
+  }
+
+  #div-logo img{
+    height: 130px;
+  }
+
+  #div-boas-vindas h1{
+    font-size: 1.1rem;
+  }
+
+  #conteiner-transparente-em-alta{
+    padding: 15px;
+  }
+
+  #titulo-filmes-em-alta{
+    font-size: 1.1rem;
+  }
+
+  #conteiner-capas-1-em-alta{
+    height: 195px;
+    width: 655px;
+  }
+
+  #conteiner-capas-2-em-alta{
+    height: 180px;
+    width: 640px;
+    gap: 10px;
+  }
+  
+  .botao-mudar-filmes{
+    height: 180px;
+    width: 45px;
+  }
+
+  #mudar-em-alta-esquerda{
+    margin-top: -188px;
+    margin-left: 7px;
+  }
+
+  #mudar-em-alta-direita{
+    margin-top: -180px;
+    margin-left: 92%;
+  }
+
+  .div-capa-filme-em-alta{
+    min-width: 120px;
+    height: 180px;
+  }
+
+  .curti-em-alta{
+    margin-top: 130px;
+    margin-left: 65px;
+    padding: 5px;
+  }
+
+  .div-botoes-generos{
+    margin-top: 43px;
+    margin-left: 55px;
+  }
+
+  .botao-generos{
+    font-size: 18px !important;
+    margin: 3px;
+    padding: 3px;
+    border-radius: 5px;
+  }
+
+  .div-capa-filme-em-alta img{
+    min-width: 120px;
+    height: 180px;
+  }
+
+  .rolar-tela{
+    height: 57px;
+    width: 57px;
+  }
+
+  .titulo-genero{
+    line-height: 138px;
+    width: 50px;
+    font-size: 0.9rem;
+    margin-left: -50px;
+    text-shadow: 0px 2px 2px black;
+  }
+
+  .conteiner-capas-1-generos{
+    height: 158px;
+    border-radius: 10px;
+  }
+
+  .conteiner-capas-2-generos{
+    min-height: 138px;
+    width: 825px;
+    gap: 10px;
+  }
+
+  .div-capa-filme-generos{
+    width: 92px;
+    height: 138px;
     border-radius: 7px;
   }
 }

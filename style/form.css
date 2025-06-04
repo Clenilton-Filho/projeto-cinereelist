@@ -38,25 +38,27 @@ main > video{
 
 /*imagem na div login*/
 #imagem-div{
-    height: 150px;
-    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    margin-bottom: -20px;
     border-radius: 50%;
     overflow: hidden;
 }
-#imagem-preview{
+#form-icon{
     height: 150px;
+    width: 150px;
+}
+#imagem-preview{
+    display: none;
+    height: 200px;
     opacity: 0;
 }
 #perfil-icon{
     height: 150px;
-}
-/*ícone de formulário*/
-#form-icon{
-    position: absolute;
-    left: 50%;
-    height: 150px;
-    opacity: 100%;
-    transform: translate(-50%,0);
 }
 /*elemento form na div login*/
 #login-form{
@@ -68,6 +70,9 @@ main > video{
     align-items: center;
     gap: 15px;
 }
+.cadastro{
+    min-height: 42vh;
+}
 /*divs onde ficam os input*/
 .login-div{
     background-color: var(--cor-preto-transparente);
@@ -75,7 +80,7 @@ main > video{
     justify-content: space-evenly;
     align-items: center;
     justify-items: center;
-    height: 45px;
+    height: 55px;
     width: 100%;
     color: var(--cor-login);
     border: 2px solid var(--cor-secundaria-destaque);
@@ -134,6 +139,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 }
 /*botão de login e cadastro*/
 .entrar-cadastrar{
+    margin-top: 10px;
     color: var(--cor-login);
     padding: 10px;
     border-radius: 10px;
@@ -174,7 +180,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 }
 /*div de input de imagem*/
 #imagem-input-div{
-    height: 45px;
+    height: 50px;
     width: 100%;
 }
 /*label para o input de imagem (botão)*/
@@ -182,7 +188,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     display: inline-block;
     background-color: var(--cor-preto-transparente);
     color: white;
-    height: 100%;
+    height: 50px;
     width: 100%;
     font-weight: 500;
     line-height: 40px;
@@ -352,16 +358,24 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     }
 }
 /*1366x768*/
-@media screen and (orientation: landscape) and (min-height: 550px){
+@media screen and (orientation: landscape) and (min-height: 550px) and (max-height: 749px){
     #login{
-        gap: 50px;
+        gap: 30px;
     }
     #imagem-div{
-        max-height: 100px;
-        max-width: 100px;
+        height: 120px;
+        width: 120px;
     }
-    #imagem-div img{
-        max-height: 100px;
+    #perfil-icon{
+        height: 120px;
+        width: 120px;
+    }
+    #form-icon{
+        height: 95px;
+        width: 95px;
+    }
+    #imagem-preview{
+        height: 120px;
     }
     .login-div{
         min-height: 35px;
@@ -375,7 +389,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         margin-left: 0px;
     }
     #login-form{
-        height: 40vh;
+        height: 49vh;
     }
     .login-div input{
         font-size: 0.75rem;
@@ -385,7 +399,9 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         max-height: 20px;
     }
     #imagem-input-div{
-        min-height: 35px;
+        margin-top: -8px;
+        min-height: 30px;
+        max-height: 40px;
     }
     #imagem-input-div label{
         font-size: 0.75rem;
@@ -393,22 +409,32 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
        line-height: 35px;
     }
     .entrar-cadastrar{
+        margin-top: 5px;
         height: 35px;
         font-size: 0.75rem;
         font-weight: 550;
+        line-height: 10px;
     }
 }
 /*1600x900*/
-@media screen and (orientation: landscape) and (min-height: 721px) {
+@media screen and (orientation: landscape) and (min-height: 750px) {
     #login{
-        gap: 30px;
+        gap: 50px;
     }
     #imagem-div{
-        max-height: 220px;
-        max-width: 220px;
+        margin-bottom: 0px;
+        max-height: 160px;
+        max-width: 160px;
     }
-    #imagem-div img{
-        max-height: 220px;
+    #perfil-icon{
+        margin-bottom: -50px;
+    }
+    #form-icon{
+        height: 120px;
+        width: 120px;
+    }
+    #imagem-preview{
+        max-height: 160px;
     }
     .login-div{
         min-height: 50px;
@@ -439,56 +465,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         height: 45px;
     }
 }
-/*1980x1080*/
-@media screen and (orientation: landscape) and (min-height: 920px){
-    #login{
-        gap: 30px;
-    }
-    #imagem-div{
-        min-height: 220px;
-        min-width: 220px;
-        max-height: 220px; 
-        max-width: 220px;
-    }
-    #imagem-div img{
-        min-height: 220px;
-        min-width: 220px;
-        max-height:  220px;
-    }
-    .login-div{
-        min-height: 60px;
-    }
-    .login-div label{
-        margin-top: -10px;
-        max-height: 60px;
-    }
-    .login-icone{
-        min-height: 40px;
-        margin-left: 30px !important;
-    }
-    .mostrar-senha-icone{
-        min-height: 30px;
-        margin-right: 30px;
-    }
-    #login-form{
-        height: 40vh;
-    }
-    .login-div input{
-        font-size: 1.2rem;
-    }
-    #imagem-input-div{
-        min-height: 60px;
-    }
-    #imagem-input-div label{
-        font-size: 1.2rem;
-       line-height: 60px;
-    }
-    .entrar-cadastrar{
-        height: 60px;
-        font-size: 1.2rem;
-        border-radius: 20px;
-    }
-}
 @media screen and (orientation: landscape) and (max-width: 800px){
     #login{
         min-width: 70%;
@@ -515,7 +491,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         min-width: 70%;
     }
     #login-form{
-        min-width: 45%;
+        min-width: 39%;
     }
 }
 @media screen and (orientation: landscape) and (min-width: 1367px){

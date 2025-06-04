@@ -23,8 +23,8 @@
     </div>
     <div id="header-direita">
       <?= imagemIcone($pdo);?>
-      <a class="link botao-cadastrar-entrar" href="pages/cadastro.php">CADASTRAR-SE</a>
-      <a class="link botao-cadastrar-entrar" href="pages/login.html">ENTRAR</a>
+      <a class="link botao-cadastrar-entrar" href="pages/cadastro.php">Cadastrar-se</a>
+      <a class="link botao-cadastrar-entrar" href="pages/login.html">Entrar</a>
     </div>
   </header>
 
