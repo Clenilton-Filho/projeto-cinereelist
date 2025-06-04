@@ -19,7 +19,7 @@
             </a>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/login.php">ENTRAR</a>
         </div>
     </header>
 
@@ -30,7 +30,7 @@
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.html">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/login.php">ENTRAR</a>
         </section>
     </nav>
 
@@ -43,19 +43,19 @@
                 <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
             </div>
 
-            <form id="login-form" class='cadastro' action="" method="post" enctype="multipart/form-data">
+            <form id="login-form" action="" method="post" enctype="multipart/form-data">
                 <div id="nome-div" class="login-div">
                     <label for="nome-input">
-                        <img class="invertido icon login-icone" src="../media/img/user-full-black.png">
+                        <img class="invertido icon login-icone" src="../media/img/user-black.png" alt="ícone de usuário">
                     </label>
-                    <input type="text" name="nome-input" id="nome-input" placeholder="NOME" required="true">
+                    <input type="text" name="nome-input" id="nome-input" placeholder="NOME" required>
                 </div>
-            
+
                 <div id="email-div" class="login-div">
                     <label for="email-input">
                         <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
                     </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
                 </div>
 
                 <div id="password-div" class="login-div">

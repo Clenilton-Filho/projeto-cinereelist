@@ -58,4 +58,26 @@ if (file_exists($caminho_absoluto)) {
     }
     echo "</pre>";
 }
+
+require_once 'php/dataContext.php';
+
+try {
+    $pdo = conectar();
+    
+    // SQL para criar a tabela usuarios
+    $sql = "CREATE TABLE IF NOT EXISTS usuarios (
+        id SERIAL PRIMARY KEY,
+        nome VARCHAR(100),
+        email VARCHAR(100) UNIQUE NOT NULL,
+        senha VARCHAR(255) NOT NULL,
+        foto TEXT
+    )";
+    
+    // Executar a query
+    $pdo->exec($sql);
+    echo "Tabela 'usuarios' criada com sucesso!";
+    
+} catch(PDOException $e) {
+    echo "Erro ao criar tabela: " . $e->getMessage();
+}
 ?>

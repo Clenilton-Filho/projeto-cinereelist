@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Se já estiver logado, redireciona para a página inicial
+if (isset($_COOKIE['idUsuario'])) {
+    header('Location: ../index.html');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +16,8 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/form.css">
     <link rel="stylesheet" href="../style/login-redefinir.css">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style/login.css">
+    <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
 </head>
 <body>
     <header id="header">
@@ -20,8 +30,7 @@
             </a>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="cadastro.html">CADASTRAR-SE</a>
-            <a class="link botao-cadastrar-entrar" href="login.php">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="cadastro.php">CADASTRAR-SE</a>
         </div>
     </header>
     <nav id="side-menu">
@@ -31,8 +40,7 @@
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.php">ENTRAR</a>
-            <a class="link botao-cadastrar-entrar" href="../pages/cadastro.html">CADASTRAR-SE</a>
+            <a class="link botao-cadastrar-entrar" href="cadastro.php">CADASTRAR-SE</a>
         </section>
     </nav>
     <main>
@@ -42,40 +50,32 @@
                 <img id="perfil-icon" class="icon" src="../media/img/user-black.png" alt="ícone de formulário">
                 <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
             </div>
-            <form id="login-form" action="../login.php">
+            <form id="login-form" method="POST"> 
                 <div id="email-div" class="login-div">
                     <label for="email-input">
                         <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
                     </label>
-                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL">
+                    <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
                 </div>
                 <div id="password-div" class="login-div">
                     <label for="password-input">
                         <img class="invertido icon login-icone" src="../media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
-                    <input type="password"name="nova-senha" id="nova-senha" class="senha-input" placeholder="NOVA SENHA">
-                    
+                    <input type="password" name="password-input" id="password-input" class="senha-input" placeholder="SENHA" required>
                     <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido mostrar-senha-icone">
                     </button>
                 </div>
-                <div id="repetir-senha-div" class="login-div">
-                    <input type="password" name="confirmar-senha" id="confirmar-senha" class="senha-input" placeholder="CONFIRME A SENHA">
-                    
-                    <button type="button" id="mostrar-senha" class="mostrar-senha" onclick="mostrarSenha(event)">
-                        <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="invertido mostrar-senha-icone">
-                    </button>
-                </div>
-                <button class="redefinir">REDEFINIR</button>
+                <button type="submit" id="entrar-botao" class="entrar-cadastrar">ENTRAR</button>
             </form>
+            <button class="esqueci-senha"><a href="redefinir-senha.html">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
         </div>
     </main>
     <footer>
         <p>&copy; CineREEList&trade; 2025</p>
     </footer>
-    <script src="../js/redefinir-senha.js"></script>
+    <script src="../js/loginHandler.js"></script>
     <script src="../js/sideMenu.js"></script>
     <script src="../js/mostrarSenha.js"></script>
-    <script src="../js/validarSenha.js"></script>
 </body>
-</html>
+</html> 
