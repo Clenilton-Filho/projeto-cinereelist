@@ -84,13 +84,13 @@
 
     <section id="secao-generos" class="secao">
       <div id="div-trailer-2" class="div-trailer" >
-        <video id="trailer-2" class="trailer" src="media/videos/the_matrix_trailer_2.mp4" autoplay="on" muted loop playsinline></video>
+        <video id="trailer-2" class="trailer" src="media/videos/the_matrix.mp4" autoplay="on" muted loop playsinline></video>
       </div>
 
       <div id="div-titulos-generos">
         <h2 class="titulo-genero">Ação</h2>
         <h2 class="titulo-genero">Terror</h2>
-        <h2 class="titulo-genero">Comé</h2>
+        <h2 class="titulo-genero">Comédia</h2>
       </div>
 
       <div id="div-generos">

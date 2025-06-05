@@ -25,12 +25,12 @@ if (isset($_COOKIE['idUsuario'])) {
             <button class="hamburguer-menu" onClick="sideMenu()">
                 <img class="hamburguer-icone invertido" class="icon" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
-            <a href="../index.html">
+            <a href="../index.php">
                 <h1>Cine<span>REEL</span>ist</h1>
             </a>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="cadastro.php">CADASTRAR-SE</a>
+            <a class="link botao-cadastrar-entrar" href="cadastro.php">Cadastrar-se</a>
         </div>
     </header>
     <nav id="side-menu">
@@ -40,20 +40,19 @@ if (isset($_COOKIE['idUsuario'])) {
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="cadastro.php">CADASTRAR-SE</a>
+            <a class="link botao-cadastrar-entrar" href="cadastro.php">Cadastrar-se</a>
         </section>
     </nav>
     <main>
         <video id="video-1" src="../media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
         <div id="login">
             <div id="imagem-div">
-                <img id="perfil-icon" class="icon" src="../media/img/user-black.png" alt="ícone de formulário">
-                <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
+                <img id="perfil-icon" class="icon" src="../media/img/user-black.png" alt="ícone de perfil">
             </div>
             <form id="login-form" method="POST"> 
                 <div id="email-div" class="login-div">
                     <label for="email-input">
-                        <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
+                        <img class="invertido icon login-icone" src="../media/img/email-full-black.png" alt="ícone de usuário">
                     </label>
                     <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
                 </div>
@@ -68,7 +67,7 @@ if (isset($_COOKIE['idUsuario'])) {
                 </div>
                 <button type="submit" id="entrar-botao" class="entrar-cadastrar">ENTRAR</button>
             </form>
-            <button class="esqueci-senha"><a href="redefinir-senha.html">ESQUECI MINHA SENHA &UpperRightArrow;</a></button>
+            <button class="esqueci-senha"><a href="redefinir-senha.html">Esqueci minha senha &UpperRightArrow;</a></button>
         </div>
     </main>
     <footer>

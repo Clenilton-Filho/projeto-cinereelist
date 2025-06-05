@@ -19,10 +19,10 @@ main > video{
 }
 /*div de login, cadastro e redefinição de senha*/
 #login{
+    display: flex;
     position: relative;
     background-image: url(../media/img/background-template-darker.png);
     background-size: cover;
-    display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
@@ -38,25 +38,20 @@ main > video{
 
 /*imagem na div login*/
 #imagem-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 150px;
     width: 150px;
-    border-radius: 50%;
     overflow: hidden;
-}
-#imagem-preview{
-    height: 150px;
-    opacity: 0;
 }
 #perfil-icon{
     height: 150px;
 }
 /*ícone de formulário*/
 #form-icon{
-    position: absolute;
-    left: 50%;
     height: 150px;
-    opacity: 100%;
-    transform: translate(-50%,0);
 }
 /*elemento form na div login*/
 #login-form{
@@ -88,11 +83,15 @@ main > video{
     filter: brightness(0) saturate(100%) invert(67%) sepia(82%) saturate(500%) hue-rotate(5deg);
 }
 /*ícones dos inputs*/
-.login-div label > img{
+.login-div label{
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    opacity: 0.9;
+}
+.login-div label img{
     position: absolute;
-    margin-top: -15px;
-    margin-left: 20px;
-    height: 30px;
+    height: 28px;
 }
 /*inputs*/
 .login-div input{
@@ -127,6 +126,9 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     background-color: transparent;
     opacity: 50%;
 }
+.mostrar-senha:hover{
+    opacity: 1 !important;
+}
 .mostrar-senha img{
     height: 22px;
     margin-top: 3px;
@@ -135,7 +137,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 /*botão de login e cadastro*/
 .entrar-cadastrar{
     color: var(--cor-login);
-    padding: 10px;
+    padding: 0 10px;
     border-radius: 10px;
     cursor: pointer;
     transition: all 150ms ease-in-out;
@@ -154,6 +156,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 }
 /*link para a página de redefinição de senha*/
 .esqueci-senha{
+    margin-top: -30px;
     padding: 5px 10px;
     border: 2px solid transparent;
 }
@@ -171,31 +174,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     color: black;
     font-weight: 600;
     border-color: white;
-}
-/*div de input de imagem*/
-#imagem-input-div{
-    height: 45px;
-    width: 100%;
-}
-/*label para o input de imagem (botão)*/
-#imagem-input-botao{
-    display: inline-block;
-    background-color: var(--cor-preto-transparente);
-    color: white;
-    height: 100%;
-    width: 100%;
-    font-weight: 500;
-    line-height: 40px;
-    border: 2px solid var(--cor-secundaria-destaque);
-    border-radius: 40px;
-    cursor: pointer;
-}
-#imagem-input-botao:hover{
-    border-color: white;
-}
-/*input de imagem padrão é ocultado*/ 
-#imagem-input{
-    display: none;
 }
 
 @media screen and (orientation: portrait){
@@ -219,9 +197,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         height: 5.5vh;
         min-width: 95vw;
     }
-    .login-div label{
-        padding-top: 0px;
-    }
     .login-icone{
         position: absolute;
         margin-left: 5vw;
@@ -229,13 +204,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     }
     .login-div input{
         font-size: 0.9rem;
-    }
-    #imagem-input-div{
-        max-height: 5.5vh;
-    }
-    #imagem-input-div label{
-        height: 5.5vh;
-        line-height: 5.2vh;
     }
     .entrar-cadastrar{
         min-height: 5.5vh;
@@ -268,9 +236,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     .login-div{
         min-height: 32px;
     }
-    .login-div label{
-        padding-top: 10px;
-    }
     .login-icone{
         max-height: 18px;
         margin-left: 15px !important;
@@ -287,14 +252,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     .mostrar-senha-icone{
         max-height: 15px;
         margin-right: -25px !important;
-    }
-    #imagem-input-div{
-        min-height: 32px;
-    }
-    #imagem-input-div label{
-        font-size: 0.6rem;
-        font-weight: 550;
-       line-height: 30px;
     }
     .entrar-cadastrar{
         min-height: 32px;
@@ -318,9 +275,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     .login-div{
         min-height: 30px;
     }
-    .login-div label{
-        padding-top: 10px;
-    }
     .login-icone{
         max-height: 18px;
     }
@@ -336,14 +290,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         max-height: 15px;
         margin-right: -20px !important;
     }
-    #imagem-input-div{
-        min-height: 30px;
-    }
-    #imagem-input-div label{
-        font-size: 0.6rem;
-        font-weight: 550;
-       line-height: 27px;
-    }
     .entrar-cadastrar{
         min-height: 30px !important;
         line-height: 0px;
@@ -354,25 +300,25 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 /*1366x768*/
 @media screen and (orientation: landscape) and (min-height: 550px){
     #login{
-        gap: 50px;
+        gap: 20px;
     }
     #imagem-div{
-        max-height: 100px;
-        max-width: 100px;
+        min-height: 140px;
+        min-width: 140px;
     }
     #imagem-div img{
-        max-height: 100px;
+        height: 140px;
     }
     .login-div{
         min-height: 35px;
     }
-    .login-div label{
-        max-height: 35px;
-        padding-top: 5px;
+    .login-div label img{
+        margin-left: 20px;
+        max-height: 22px;
     }
     .login-icone{
-        max-height: 25px;
-        margin-left: 0px;
+        max-height: 22px;
+        margin-top: -5px;
     }
     #login-form{
         height: 40vh;
@@ -384,16 +330,9 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     .mostrar-senha-icone{
         max-height: 20px;
     }
-    #imagem-input-div{
-        min-height: 35px;
-    }
-    #imagem-input-div label{
-        font-size: 0.75rem;
-        font-weight: 550;
-       line-height: 35px;
-    }
     .entrar-cadastrar{
         height: 35px;
+        line-height: 30px;
         font-size: 0.75rem;
         font-weight: 550;
     }
@@ -401,39 +340,33 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 /*1600x900*/
 @media screen and (orientation: landscape) and (min-height: 721px) {
     #login{
-        gap: 30px;
+        gap: 40px;
     }
     #imagem-div{
-        max-height: 220px;
-        max-width: 220px;
+        height: 180px;
+        width: 180px;
     }
     #imagem-div img{
-        max-height: 220px;
+        height: 180px;
     }
     .login-div{
         min-height: 50px;
     }
-    .login-div label{
-        max-height: 50px;
-        padding-top: 0px;
-        padding-left: 5px;
-        padding-right: -10px;
-    }
     .login-div img{
         max-height: 30px;
+    }
+    .login-div label img{
+        margin-left: 25px;
+        min-height: 27px;
+    }
+    .login-icone{
+        margin-top: 0px;
     }
     #login-form{
         height: 40vh;
     }
     .login-div input{
         font-size: 0.9rem;
-    }
-    #imagem-input-div{
-        min-height: 45px;
-    }
-    #imagem-input-div label{
-        font-size: 0.9rem;
-       line-height: 40px;
     }
     .entrar-cadastrar{
         height: 45px;
@@ -445,26 +378,21 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         gap: 30px;
     }
     #imagem-div{
-        min-height: 220px;
-        min-width: 220px;
-        max-height: 220px; 
-        max-width: 220px;
+        min-height: 200px;
+        min-width: 200px;
     }
     #imagem-div img{
-        min-height: 220px;
-        min-width: 220px;
-        max-height:  220px;
+        height: 200px;
     }
     .login-div{
         min-height: 60px;
     }
-    .login-div label{
-        margin-top: -10px;
-        max-height: 60px;
+    .login-div label img{
+        min-height: 35px ;
+        margin-left: 30px;
     }
     .login-icone{
-        min-height: 40px;
-        margin-left: 30px !important;
+        margin-top: 10px;
     }
     .mostrar-senha-icone{
         min-height: 30px;
@@ -475,13 +403,6 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
     }
     .login-div input{
         font-size: 1.2rem;
-    }
-    #imagem-input-div{
-        min-height: 60px;
-    }
-    #imagem-input-div label{
-        font-size: 1.2rem;
-       line-height: 60px;
     }
     .entrar-cadastrar{
         height: 60px;
@@ -515,7 +436,7 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         min-width: 70%;
     }
     #login-form{
-        min-width: 45%;
+        min-width: 40%;
     }
 }
 @media screen and (orientation: landscape) and (min-width: 1367px){

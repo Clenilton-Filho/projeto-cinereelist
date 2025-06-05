@@ -121,7 +121,7 @@ header span{
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    gap: 2vw;
+    gap: 2.5vw;
     height: 80px;
     width: fit-content;
     margin-right: 30px;
@@ -130,7 +130,11 @@ header span{
 .botao-cadastrar-entrar{
     font-size: 1rem;
     text-decoration: none;
-    min-width: fit-content;
+    min-width: calc(fit-content);
+}
+/*mudam a cor ao passar o mouse por cima*/
+.botao-cadastrar-entrar:hover{
+    color: var(--cor-secundaria);
 }
 button{
     background-color: var(--cor-preto-transparente);
@@ -284,7 +288,7 @@ footer p{
 /*1366x768*/
 @media screen and (orientation: landscape) and (min-height: 550px){
     .botao-cadastrar-entrar{
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     footer{
         font-size: 0.7rem;
@@ -292,7 +296,7 @@ footer p{
     }
 }
 /*1600x900*/
-@media screen and (orientation: landscape) and (min-height: 721px) {
+@media screen and (orientation: landscape) and (min-height: 721px){
     #nome-usuario-header{
         font-size: 1.10rem;
     }
@@ -300,7 +304,7 @@ footer p{
         height: 35px;
     }
     .botao-cadastrar-entrar{
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
     footer{
         font-size: 0.9rem;

@@ -14,12 +14,12 @@
             <button class="hamburguer-menu" onclick="sideMenu()">
                 <img class="hamburguer-icone invertido icon" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
-            <a href="../index.html">
+            <a href="../index.php">
                 <h1>Cine<span>REEL</span>ist</h1>
             </a>
         </div>
         <div id="header-direita">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.php">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
         </div>
     </header>
 
@@ -30,7 +30,7 @@
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.php">ENTRAR</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
         </section>
     </nav>
 
@@ -40,27 +40,26 @@
         <div id="login">
             <div id="imagem-div">
                 <img id="form-icon" class="icon" src="../media/img/form-icon.png" alt="ícone de formulário">
-                <img id="imagem-preview" src="../media/img/form-icon.png" alt="Preview da imagem">
             </div>
 
             <form id="login-form" action="" method="post" enctype="multipart/form-data">
                 <div id="nome-div" class="login-div">
                     <label for="nome-input">
-                        <img class="invertido icon login-icone" src="../media/img/user-black.png" alt="ícone de usuário">
+                        <img class="invertido icon" src="../media/img/user-full-black.png" alt="ícone de usuário">
                     </label>
-                    <input type="text" name="nome-input" id="nome-input" placeholder="NOME" required>
+                    <input type="text" name="nome-input" id="nome-input" placeholder="NOME DE USUÁRIO" required>
                 </div>
 
                 <div id="email-div" class="login-div">
                     <label for="email-input">
-                        <img class="invertido icon login-icone" src="../media/img/email-icon.png" alt="ícone de usuário">
+                        <img class="invertido icon" src="../media/img/email-full-black.png" alt="ícone de usuário">
                     </label>
                     <input type="email" name="email-input" id="email-input" placeholder="E-MAIL" required>
                 </div>
 
                 <div id="password-div" class="login-div">
                     <label for="password-input">
-                        <img class="invertido icon login-icone" src="../media/img/password-full-black-2.png" alt="ícone de senha">
+                        <img class="invertido icon" src="../media/img/password-full-black-2.png" alt="ícone de senha">
                     </label>
                     <input type="password" name="password-input" id="password-input" class="password-input senha-input" placeholder="SENHA">
                     <button type="button" class="mostrar-senha" onclick="mostrarSenha(event)">
@@ -74,13 +73,14 @@
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
                     </button>
                 </div>
-
+                
+                <!--
                 <div id="imagem-input-div">
                     <label id="imagem-input-botao" for="imagem-input">
                         ENVIAR IMAGEM
                     </label>
                     <input type="file" name="imagem-input" id="imagem-input" accept="image/*" onchange="previewImagem(event)">
-                </div>
+                </div>!-->
 
                 <button class="entrar-cadastrar">CADASTRAR-SE</button>
             </form>

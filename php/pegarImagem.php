@@ -23,8 +23,7 @@
                 
             //Html que será imprimido com echo
             $bloco = "
-            <div class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarIdFilme(this)'>
-                <img src='$imagem_url' alt='Capa do filme' class='img-capa-filme'>
+            <div style='background-image: url($imagem_url)' class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarIdFilme(this)'>
                 <div class='div-botoes-generos'>
                     <button class='curti material-symbols-outlined botao-generos botao-capas'>thumb_up</button>
                     <button class='favoritar material-symbols-outlined botao-generos botao-capas'>star</button>
@@ -85,9 +84,10 @@
 
         if (!$resultado) {
             // Se não encontrar o usuário, retorna os botões de login/cadastro
-            $bloco = "
-            <a class='link botao-cadastrar-entrar' href='pages/cadastro.php'>Cadastrar-se</a>
-            <a class='link botao-cadastrar-entrar' href='pages/login.php'>Entrar</a>";
+            $bloco = 
+            "<a class='link botao-cadastrar-entrar' href='pages/login.php'>Entrar</a>
+            <a class='link botao-cadastrar-entrar' href='pages/cadastro.php'>Cadastrar-se</a>"
+            ;
             echo $bloco;
             return;
         }

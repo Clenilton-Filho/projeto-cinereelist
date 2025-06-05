@@ -30,16 +30,3 @@
         transform: translateY(0);
     }
 }
-
-/* Estilo para o preview da imagem */
-#imagem-preview {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: all 0.3s ease-in-out;
-}
-
-#imagem-preview.loading {
-    opacity: 0.5;
-}
