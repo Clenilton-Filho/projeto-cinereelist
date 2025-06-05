@@ -5,8 +5,7 @@ function previewImagem(event) {
 
     reader.onload = function() {
         previewDaImagem.src = reader.result;
-        formIcon.style.display = "none";
-        previewDaImagem.style.display = "block"
+        formIcon.style.opacity = "0";
         previewDaImagem.style.opacity = "100%";
     };
     reader.readAsDataURL(event.target.files[0]);

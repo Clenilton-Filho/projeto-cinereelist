@@ -12,6 +12,11 @@ body{
   margin-right: 3vw;
 }
 
+.img-capa-filme{
+  height: 110px;
+  width: 73px;
+}
+
 main{
   display: flex;
   flex-direction: column;

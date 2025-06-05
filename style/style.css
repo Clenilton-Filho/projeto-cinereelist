@@ -63,12 +63,8 @@ h1{
 /*estilos para todos os headers*/
 header{
     align-items: center;
-    height: 70px;
+    height: 50px;
     justify-items: center;
-}
-/*cor para os textos destacados*/
-header span{
-    color: var(--cor-secundaria);
 }
 /*estilos para o header principal*/
 #header{
@@ -80,11 +76,10 @@ header span{
     background-color: black;
     z-index: 2;
 }
-
-#header h1{
-    font-size: 5rem;
+/*cor para os textos destacados*/
+header span{
+    color: var(--cor-secundaria);
 }
-
 .link{
     color: white;
     font-size: 0.8rem;
@@ -102,7 +97,7 @@ header span{
 }
 #header-esquerda h1{
     color: var(--cor-h1);
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 /*solução temporária para inverter as cores de elementos específicos*/
 .invertido{
@@ -133,7 +128,7 @@ header span{
 }
 /*links para as páginas 'cadastrar-se' e 'entrar'*/
 .botao-cadastrar-entrar{
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-decoration: none;
     min-width: fit-content;
 }
@@ -144,39 +139,27 @@ button{
     border-radius: 10px;
     cursor: pointer;
 }
-
 /*foto e nome de usuário no header*/
 #div-usuario{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20%;
-    height: fit-content;
-    min-width: 8vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  min-height: 70%;
+  min-width: 5vw;
 }
 #nome-usuario-header{
     font-size: 1.35rem;
 }
-#nome-usuario-header:hover{
-    color: var(--cor-principal-destaque);
-    cursor: pointer;
-}
-#div-foto-perfil-header{
-    display: flex;
-    background-color: red;
-    justify-content: center;
-    height: 55px;
-    min-width: 55px;
-    border: 2px solid var(--cor-secundaria-destaque);
-    border-radius: 50%;
-    overflow: hidden;
-}
-#div-foto-perfil-header:hover{
-    border-color: var(--cor-principal-destaque);
-}
 #foto-perfil-header{
-    height: 55px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 /*menu lateral no celular*/
 #side-menu{
@@ -299,27 +282,7 @@ footer p{
     }
 }
 /*1366x768*/
-@media screen and (orientation: landscape) and (min-height: 550px) and (max-height:750px){
-    header{
-        height: 45px;
-    }
-    #header-esquerda h1{
-        font-size: 1.5rem;
-    }
-    #nome-usuario-header{
-        font-size: 1rem;
-    }
-    #div-foto-perfil-header{
-        height: 35px;
-        min-width: 35px;
-        max-width: 35px;
-    }
-    #div-foto-perfil-header:hover{
-        border-color: var(--cor-principal-destaque);
-    }
-    #foto-perfil-header{
-        height: 35px;
-    }
+@media screen and (orientation: landscape) and (min-height: 550px){
     .botao-cadastrar-entrar{
         font-size: 0.9rem;
     }
@@ -329,32 +292,43 @@ footer p{
     }
 }
 /*1600x900*/
-@media screen and (orientation: landscape) and (min-height: 751px) and (max-height:900px){
-    header{
-        height: 50px;
-    }
-    #header-esquerda h1{
-        font-size: 1.7rem;
-    }
+@media screen and (orientation: landscape) and (min-height: 721px) {
     #nome-usuario-header{
         font-size: 1.10rem;
     }
-    #div-foto-perfil-header{
-        height: 40px;
-        min-width: 40px;
-        max-width: 40px;
-    }
-    #div-foto-perfil-header:hover{
-        border-color: var(--cor-principal-destaque);
-    }
     #foto-perfil-header{
-        height: 40px;
+        height: 35px;
     }
     .botao-cadastrar-entrar{
         font-size: 1rem;
     }
     footer{
         font-size: 0.9rem;
+    }
+}
+/*1980x1080*/
+@media screen and (orientation: landscape) and (min-height: 920px){
+    #header{
+        height: 70px;
+    }
+    #header h1{
+        font-size: 2.0rem;
+    }
+    #nome-usuario-header{
+        font-size: 1.35rem;
+    }
+    #foto-perfil-header{
+        height: 55px;
+        width: 55px;
+    }
+    .botao-cadastrar-entrar{
+        font-size: 1.25rem;
+    }
+    footer{
+        height: 30px;
+    }
+    footer p{
+        line-height: 30px;
     }
 }
 @media screen and (orientation: landscape) and (max-width: 800px){
@@ -364,4 +338,16 @@ footer p{
     #header-direita{
         min-width: 28vw;
     }
+}
+.botao-sair {
+    background-color: #ff3333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.botao-sair:hover {
+    background-color: #cc0000;
 }

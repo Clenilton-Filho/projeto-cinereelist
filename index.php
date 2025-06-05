@@ -2,14 +2,17 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CineREEList</title>
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/header.css">
   <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=starlibrary_adddouble_arrowkeyboard_double_arrow_left" />
 </head>
 <body>
   <?php
+    session_start();
     include "php/dataContext.php";
     include "php/pegarImagem.php";
     include "php/statusUsuario.php";  
@@ -17,14 +20,15 @@
   ?>
   <header id="header">
     <div id="header-esquerda">
-        <a href="index.html">
+        <button class="hamburguer-menu" onClick="sideMenu()">
+            <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
+        </button>
+        <a href="index.php">
           <h1>Cine<span>REEL</span>ist</h1>
         </a>
     </div>
     <div id="header-direita">
       <?= imagemIcone($pdo);?>
-      <a class="link botao-cadastrar-entrar" href="pages/cadastro.php">Cadastrar-se</a>
-      <a class="link botao-cadastrar-entrar" href="pages/login.html">Entrar</a>
     </div>
   </header>
 
