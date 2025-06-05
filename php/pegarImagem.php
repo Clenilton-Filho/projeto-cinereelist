@@ -1,8 +1,7 @@
 <?php
     function imagemIndex(string $genero, PDO $pdo, bool $limitado = true){
-        //Fazer o select com o gênero ação
+        //Fazer o select com o gênero específico
         $stmt = $pdo->prepare("SELECT id, imagem_url FROM filme WHERE genero LIKE :genero ORDER BY id DESC");
-        //Ação com porcentagem, para puxar qualquer filme que tenha genero ação no meio
         $stmt->bindValue(":genero", "%$genero%");
         $stmt->execute();
 
@@ -12,12 +11,11 @@
         $contador = 0;
         //Percorrer o array e colocar um bloco com a url do filme
         foreach ($resultado as $filme){
-            //Contador para limitar até 9
-            if($limitado = true){
+            //Contador para limitar até 8 filmes por categoria
+            if($limitado){
                 $contador++;
-                
-                if($contador == 9)
-                    return;
+                if($contador > 8)
+                    break;
             }
 
             //Pega o valor da url no banco
@@ -25,7 +23,8 @@
                 
             //Html que será imprimido com echo
             $bloco = "
-            <div style='background-image: url($imagem_url)' class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarIdFilme(this)'>
+            <div class='div-capa-filme-generos' data-id='{$filme['id']}' onmouseover='pegarIdFilme(this)'>
+                <img src='$imagem_url' alt='Capa do filme' class='img-capa-filme'>
                 <div class='div-botoes-generos'>
                     <button class='curti material-symbols-outlined botao-generos botao-capas'>thumb_up</button>
                     <button class='favoritar material-symbols-outlined botao-generos botao-capas'>star</button>
@@ -65,33 +64,50 @@
     }
 
     function imagemIcone(PDO $pdo){
-        $_COOKIE['idUsuario'] = '7';
+        if (!isset($_COOKIE['idUsuario'])) {
+            // Se não houver cookie, retorna os botões de login/cadastro
+            $bloco = "
+            <a class='link botao-cadastrar-entrar' href='pages/cadastro.php'>Cadastrar-se</a>
+            <a class='link botao-cadastrar-entrar' href='pages/login.php'>Entrar</a>";
+            echo $bloco;
+            return;
+        }
+
         $id = $_COOKIE["idUsuario"];
 
         //Fazer o select com o id do cookie
         $stmt = $pdo->prepare("SELECT id, nome, imagem_url FROM usuario WHERE id = :id");
-        $stmt->bindValue(":id", "$id");
+        $stmt->bindValue(":id", $id);
         $stmt->execute();
 
         //Receber um resultado
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        //Pega o valor da url no banco
-        $imagem_url = $resultado['imagem_url'];
+        if (!$resultado) {
+            // Se não encontrar o usuário, retorna os botões de login/cadastro
+            $bloco = "
+            <a class='link botao-cadastrar-entrar' href='pages/cadastro.php'>Cadastrar-se</a>
+            <a class='link botao-cadastrar-entrar' href='pages/login.php'>Entrar</a>";
+            echo $bloco;
+            return;
+        }
+
+        //Pega o valor da url no banco e define imagem padrão se necessário
+        $imagem_url = !empty($resultado['imagem_url']) ? $resultado['imagem_url'] : 'media/img/user-black.png';
         $nome = $resultado['nome'];
         
         $bloco = "
         <div id='div-usuario'>
-            <a href='pages/perfil.html'>
+            <a href='pages/perfil.php'>
                 <span id='nome-usuario-header' class='usuario'>$nome</span>
             </a>
             <div id='div-foto-perfil-header' class='usuario'>
-                <a href='pages/perfil.html'>
-                    <img id='foto-perfil-header' src='$imagem_url' alt='foto de perfil do usuário'>
+                <a href='pages/perfil.php'>
+                    <img id='foto-perfil-header' src='$imagem_url' alt='foto de perfil do usuário' onerror=\"this.src='media/img/user-black.png';\">
                 </a>
             </div>
-        </div>";
+        </div>
+        <a class='link botao-sair' href='php/logout.php'>SAIR</a>";
         echo $bloco; 
-        
     }
 ?>

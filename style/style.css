@@ -156,8 +156,10 @@ button{
     display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 45px;
-  max-width: 45px;
+  width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 /*menu lateral no celular*/
 #side-menu{
