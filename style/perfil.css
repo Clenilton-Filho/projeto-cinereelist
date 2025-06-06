@@ -1,99 +1,316 @@
-body {
+body{
   margin: 0;
   background: linear-gradient(to right, #3c0b0b, #8c3b0c);
   color: white;
 }
+
 main{
+  display: flex;
+  background-image: url(../media/img/background-template-darker.png);
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  max-height:calc(100vh - 50px);
-  min-width: 100vw;
+  height: calc(100vh - 70px);
+  bottom: 0;
+  width: 100vw;
   flex-direction: row;
   background-color: transparent;
   justify-content: center;
+  gap: 10vw;
   align-items: center;
-  padding: 20px;
 }
 
-.Seção-Perfil {
-  height: 500px;
-  width: 30vw;
-  padding: 20px;
-  margin-bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  text-align: center;
+.secao-perfil{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  width: 25vw;
+  gap: 20px;
 }
 
-.Foto-de-perfil {
-  width: 120px;
-  height: 120px;
+#principal-perfil{
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+  width: 100%;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+
+.foto-de-perfil{
+  margin-top: -90px;
+  height: 180px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
-.Nome {
-  margin: 10px 0 5px;
+.nome{
+  color: var(--cor-secundaria);
   font-size: 28px;
 }
 
-.Bio {
-  font-size: 16px;
-  margin: 10px 0;
+.bio{
+  font-size: 1.1rem;
+  text-align: justify;
+  padding: 0 20px;
+  width: 90%;
+  max-height: 20vh;
+  overflow-y: scroll;
+  border: 2px solid grey;
+  border-radius: 10px;
 }
 
-.Info {
-  margin-top: 20px;
-  font-size: 15px;
+#div-info{
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.Lista-de-Filmes {
-  width: 30%;
+#div-info h3{
+  color: var(--cor-secundaria);
+}
+
+.info{
+  color: white;
+}
+
+.lista-de-filmes{
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  width: fit-content;
   padding: 20px;
+  gap: 0;
 }
 
-.Lista {
-  margin-bottom: 30px;
+.lista{
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 10px 20px;
 }
 
-.Nome-Lista {
+.nome-lista{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: 20px;
+  width: 100%;
+  text-align: start;
+  font-size: 1.4rem;
+  gap: 8px;
   border-bottom: 2px solid goldenrod;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
 
-.Filmes {
+.div-filmes{
+  background-color: rgba(128, 128, 128, 0.521);
   display: flex;
-  gap: 10px;
   align-items: center;
+  max-width: 560px;
+  padding: 10px;
+  gap: 10px;
+  overflow: hidden;
 }
 
-.CapaFilme {
-  width: 80px;
-  height: 100px;
+.capa-filme{
+  min-width: 100px;
+  height: 150px;
   background-color: #ccc;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
-.Proximo {
-  font-size: 20px;
-  background-color: #ccc;
-  color: black;
-  width: 40px;
-  height: 100px;
+.div-botoes{
   display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.mudar-capas{
+  display: flex;
+  background-color: #4b4b4baf;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  color: var(--cor-secundaria);
+  width: 40px;
+  height: 150px;
+  margin-top: -160px;
+  border: 2px solid var(--cor-secundaria);
+  border-radius: 0px;
   cursor: pointer;
+}
+
+.mudar-capas-esquerda{
+  opacity: 0;
+  border-right: none;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.mudar-capas-direita{
+  border-left: none;
+}
+
+@media screen and (max-width: 1370px) {
+  main{
+    height: calc(100vh - 30px);
+  }
+
+  .secao-perfil{
+    width: 23vw;
+    gap: 20px;
+  }
+
+  #principal-perfil{
+    min-height: 250px;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .foto-de-perfil{
+    margin-top: -60px;
+    height: 120px;
+  }
+
+  .nome{
+    font-size: 1.2rem;
+  }
+
+  .bio{
+    font-size: 0.87rem;
+    padding: 8px 15px;
+    width: 90%;
+    max-height: 21.3vh;
+  }
+
+  #div-info{
+    font-size: 0.65rem;
+    padding: 10px;
+  }
+
+  .lista-de-filmes{
+    gap: 10px;
+  }
+
+  .lista{
+    padding: 7px 15px;
+  }
+
+  .nome-lista{
+    font-size: 13px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .material-material-symbols-outlined{
+    font-size: 5px !important;
+  }
+
+  .div-filmes{
+    padding: 5px;
+    gap: 10px;
+    height: 102px;
+    min-width: 350px;
+    max-width: 350px;
+  }
+
+  .capa-filme{
+    min-width: 60px;
+    height: 90px;
+  }
+
+  .div-botoes{
+    padding: 5px;
+  }
+
+  .mudar-capas{
+    margin-top: -101px;
+    font-size: 12px;
+    width: 25px;
+    height: 90px;
+  }
+}
+
+@media screen and (min-width:1371px) and (max-width: 1600px) {
+  main{
+    height: calc(100vh - 30px);
+  }
+
+  .secao-perfil{
+    width: 24vw;
+    gap: 20px;
+  }
+
+  #principal-perfil{
+    min-height: 250px;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+
+  .foto-de-perfil{
+    margin-top: -70px;
+    height: 140px;
+  }
+
+  .nome{
+    font-size: 1.3rem;
+  }
+
+  .bio{
+    font-size: 1rem;
+    padding: 8px 15px;
+    width: 90%;
+    max-height: 22vh;
+  }
+
+  #div-info{
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+
+  .lista-de-filmes{
+    gap: 20px;
+  }
+
+  .lista{
+    padding: 10px 25px;
+  }
+
+  .nome-lista{
+    font-size: 18px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .div-filmes{
+    padding: 8px;
+    gap: 10px;
+    height: 137px;
+    min-width: 455px;
+    max-width: 455px;
+  }
+
+  .capa-filme{
+    min-width: 80px;
+    height: 120px;
+  }
+
+  .div-botoes{
+    padding: 7px;
+  }
+
+  .mudar-capas{
+    margin-top: -136px;
+    font-size: 20px;
+    width: 35px;
+    height: 120px;
+  }
 }
