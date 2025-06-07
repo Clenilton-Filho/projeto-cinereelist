@@ -6,7 +6,6 @@
   <title>CineREEList</title>
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/index.css">
-  <link rel="stylesheet" href="style/header.css">
   <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=starlibrary_adddouble_arrowkeyboard_double_arrow_left" />
 </head>

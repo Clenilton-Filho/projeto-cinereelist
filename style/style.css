@@ -123,10 +123,10 @@ header span{
 }
 #header-direita{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 2vw;
+    gap: 1vw;
     height: 80px;
     width: fit-content;
     margin-right: 30px;
@@ -156,6 +156,7 @@ button{
     min-width: 8vw;
 }
 #nome-usuario-header{
+    color: var(--cor-secundaria-destaque);
     font-size: 1.35rem;
 }
 #nome-usuario-header:hover{
@@ -163,12 +164,12 @@ button{
     cursor: pointer;
 }
 #div-foto-perfil-header{
-    display: flex;
     background-color: red;
+    display: flex;
     justify-content: center;
+    align-items: center;
     height: 55px;
-    min-width: 55px;
-    border: 2px solid var(--cor-secundaria-destaque);
+    width: 55px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -176,7 +177,18 @@ button{
     border-color: var(--cor-principal-destaque);
 }
 #foto-perfil-header{
+    margin-top: 4px;
     height: 55px;
+}
+.botao-sair{
+    padding: 3% 5%;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+.botao-sair:hover{
+    background-color: rgba(255, 0, 0, 0.4);
 }
 /*menu lateral no celular*/
 #side-menu{
@@ -311,13 +323,13 @@ footer p{
     }
     #div-foto-perfil-header{
         height: 35px;
-        min-width: 35px;
-        max-width: 35px;
+        width: 35px;
     }
     #div-foto-perfil-header:hover{
         border-color: var(--cor-principal-destaque);
     }
     #foto-perfil-header{
+        margin-top: 3px;
         height: 35px;
     }
     .botao-cadastrar-entrar{

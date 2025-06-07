@@ -3,7 +3,7 @@ session_start();
 
 // Se já estiver logado, redireciona para a página inicial
 if (isset($_COOKIE['idUsuario'])) {
-    header('Location: ../index.html');
+    header('Location: ../index.php');
     exit;
 }
 ?>
@@ -47,7 +47,7 @@ if (isset($_COOKIE['idUsuario'])) {
         <video id="video-1" src="../media/videos/chairs-loop.mp4" autoplay="on" muted loop playsinline></video>
         <div id="login">
             <div id="imagem-div">
-                <img id="perfil-icon" class="icon" src="../media/img/user-black.png" alt="ícone de perfil">
+                <img id="perfil-icon" src="../media/img/user-gold.png" alt="ícone de perfil">
             </div>
             <form id="login-form" method="POST"> 
                 <div id="email-div" class="login-div">

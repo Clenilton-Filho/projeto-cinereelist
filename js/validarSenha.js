@@ -6,18 +6,9 @@ function errorMessage(mensagem) {
 
     const $errorElement = document.createElement("p");
     $errorElement.classList.add("error-message");
-    $errorElement.innerHTML = `⚠️ ${mensagem}`;          
+    $errorElement.innerHTML = `${mensagem} ⚠️`;          
     
-    //CSS da mensagem de erro
-    $errorElement.style.cssText = `
-        display: flex;
-        align-self: flex-end;
-        color: white;
-        font-size: 11px;
-        margin-bottom: -10px;
-    `;
-    
-    const $container = document.querySelector("#email-div");
+    const $container = document.querySelector("#nome-div");
     $container.before($errorElement); 
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -42,17 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if ($senhaInput.value.length < 5){ //Evitar senha muito curta.
-            errorMessage("A senha deve ter no mínimo 5 caracteres.");
+            errorMessage("A senha deve ter no mínimo 5 caracteres");
             return;
         }
         
         if (!haveNumber.test($senhaInput.value)){ //Obrigar usar número.
-            errorMessage("A senha deve conter ao menos 1 número.");
+            errorMessage("A senha deve conter ao menos 1 número");
             return;
         }
 
         if (!haveUppercase.test($senhaInput.value)){ //Obrigar letra maiúscula
-            errorMessage("A senha deve conter uma letra maiúscula.");
+            errorMessage("A senha deve conter uma letra maiúscula");
             return;
         }
 

@@ -44,14 +44,16 @@ main > video{
     align-items: center;
     height: 150px;
     width: 150px;
+    border-radius: 50%;
     overflow: hidden;
 }
 #perfil-icon{
     height: 150px;
 }
 /*ícone de formulário*/
+
 #form-icon{
-    height: 150px;
+    max-height: 79%;
 }
 /*elemento form na div login*/
 #login-form{
@@ -102,6 +104,13 @@ main > video{
     background-color: transparent;
     border-radius: 30px; 
     border: none;
+}
+/*mensagem de erro*/
+/*animação vindo de cima*/
+.error-message{
+    color: white;
+    font-size: 2vh;
+    margin-top: -10px;
 }
 /*div de senha*/
 #password-div{
@@ -303,8 +312,8 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
         gap: 20px;
     }
     #imagem-div{
-        min-height: 140px;
-        min-width: 140px;
+        height: 140px;
+        width: 140px;
     }
     #imagem-div img{
         height: 140px;

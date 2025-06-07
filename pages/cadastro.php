@@ -73,14 +73,6 @@
                         <img src="../media/img/mostrar-senha-full-black.png" alt="mostrar senha" class="mostrar-senha-icone invertido">
                     </button>
                 </div>
-                
-                <!--
-                <div id="imagem-input-div">
-                    <label id="imagem-input-botao" for="imagem-input">
-                        ENVIAR IMAGEM
-                    </label>
-                    <input type="file" name="imagem-input" id="imagem-input" accept="image/*" onchange="previewImagem(event)">
-                </div>!-->
 
                 <button class="entrar-cadastrar">CADASTRAR-SE</button>
             </form>
@@ -101,7 +93,6 @@
         }
     ?>
     <!-- Scripts -->
-    <script src="../js/cadastro.js"></script>
     <script src="../js/sideMenu.js"></script>
     <script src="../js/mostrarSenha.js"></script>
     <script src="../js/validarSenha.js"></script>

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const emailInput = document.getElementById('email-input');
-    const imagePreview = document.getElementById('imagem-preview');
-    const defaultImage = '../media/img/form-icon.png';
+    const imagePreview = document.getElementById('perfil-icon');
+    const defaultImage = '../media/img/user-gold.png';
     
     // Função para buscar a foto do usuário
     async function buscarFotoUsuario(email) {

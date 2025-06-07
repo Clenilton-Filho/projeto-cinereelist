@@ -41,7 +41,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
     <meta charset="UTF-8">
     <title>Perfil | CineREEList</title>
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/perfil.css">
+    <link rel="stylesheet" href="../style/modificar-perfil.css">
     <link rel="stylesheet" href="../style/header.css">
     <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
     <style>
