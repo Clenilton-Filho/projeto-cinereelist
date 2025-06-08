@@ -35,7 +35,6 @@ main > video{
     z-index: 1;
     transform: translate(-50%);
 }
-
 /*imagem na div login*/
 #imagem-div{
     display: flex;
@@ -51,7 +50,6 @@ main > video{
     height: 150px;
 }
 /*ícone de formulário*/
-
 #form-icon{
     max-height: 79%;
 }
@@ -106,11 +104,19 @@ main > video{
     border: none;
 }
 /*mensagem de erro*/
-/*animação vindo de cima*/
-.error-message{
+.active{
+    background-color: var(--cor-principal-destaque);
+    position: absolute;
+    top: -100px;
     color: white;
     font-size: 2vh;
-    margin-top: -10px;
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: top 0.5s ease-in-out;
 }
 /*div de senha*/
 #password-div{

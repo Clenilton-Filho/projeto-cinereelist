@@ -27,9 +27,23 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(() => {
             if (this.value && this.value.includes('@')) {
+
+                //animação para mudar a imagem
+                imagePreview.style.opacity = 0;
                 buscarFotoUsuario(this.value);
+                setTimeout( () => {
+                    imagePreview.style.opacity = 1;
+                },700);
             } else {
-                imagePreview.src = defaultImage;
+                
+                //animação para voltar à imagem padrão
+                imagePreview.style.opacity = 0;
+                setTimeout( () => {
+                    imagePreview.src = defaultImage;
+                },700);
+                setTimeout( () => {
+                    imagePreview.style.opacity = 1;
+                },700);
             }
         }, 500); // Delay de 500ms para evitar muitas requisições
     });

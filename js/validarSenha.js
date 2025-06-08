@@ -1,16 +1,28 @@
 function errorMessage(mensagem) {
-    const errorCheck = document.querySelector(".error-message");
-    if (errorCheck){ //Checar se a mensagem já existe, para apagar.
+    const errorCheck = document.querySelector(`.error-message`);
+
+    // Remove a mensagem existente antes de criar uma nova
+    if (errorCheck) {
         errorCheck.remove();
     }
 
     const $errorElement = document.createElement("p");
-    $errorElement.classList.add("error-message");
-    $errorElement.innerHTML = `${mensagem} ⚠️`;          
+    const tamanhoHeader = document.getElementById("header").offsetHeight;
+    $errorElement.innerHTML = `${mensagem} ⚠️`;
+    document.querySelector("#login-form").before($errorElement);
+    $errorElement.classList.add('active');
     
-    const $container = document.querySelector("#nome-div");
-    $container.before($errorElement); 
+    // Move para dentro da tela
+    setTimeout(() => {
+        $errorElement.style.top = (tamanhoHeader + 10) + 'px';
+    }, 0);
+
+    //Move para fora da tela depois de 3s
+    setTimeout(() => {
+        $errorElement.style.top = `-${tamanhoHeader}px`;
+    }, 3000);
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     const $emailInput = document.querySelector("#email-input");
     const $senhaInput = document.querySelector(".senha-input");

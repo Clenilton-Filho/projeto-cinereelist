@@ -30,6 +30,18 @@
       <?= imagemIcone($pdo);?>
     </div>
   </header>
+  <nav id="side-menu">
+        <header>
+            <button class="hamburguer-menu" onclick="sideMenu()">
+                <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
+            </button>
+        </header>
+        <section id="links">
+            <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/cadastro.php">Cadastrar-se</a>
+            <a class="link botao-cadastrar-entrar" href="../pages/Sobre.php">Sobre</a>
+        </section>
+    </nav>
 
   <main id="main">
     <div id="div-cadeiras">
@@ -119,15 +131,8 @@
   </main>
 
   <footer>
-    <p>&copy; CineREEList&trade; 2025</p>
+    <a href="pages/sobre.html">&copy; CineREEList&trade; 2025</a>
   </footer>
-
-  <?php
-    //Se teve algum post, faz a função
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-      status($pdo);
-    }
-  ?>
   <!--Scripts-->
   <script src="js/sideMenu.js"></script>
   <script src="js/index.js"></script>

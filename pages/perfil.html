@@ -43,13 +43,26 @@
     </section>
   </nav>
 
+  <!--Seção principal-->
   <main>
+
+    <!--Seção do perfil-->
     <section class="secao-perfil">
+
+      <!--Informações principais-->
       <div id="principal-perfil">
+        
+        <!--Foto de Perfil-->
         <img src="../media/img/lp_logo.jpg" alt="Foto de perfil" class="foto-de-perfil">
+
+        <!--Nome-->
         <h2 class="nome">Comé</h2>
+        
+        <!--Bio do Perfil-->
         <p class="bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, numquam. Fugiat facilis at iure, delectus earum eius, veniam possimus enim voluptas sunt aspernatur minus tempora molestiae natus unde corporis? Autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aliquid error eligendi esse asperiores assumenda nam dolorum quo quasi ex excepturi consequatur minus illum, accusantium nulla dolores vitae, qui expedita. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione vero nemo debitis, quia quibusdam, harum, nostrum quaerat ipsam ipsum minus magnam deleniti exercitationem? Repudiandae totam iste officiis libero minus eaque.</p>
       </div>
+
+      <!--informações secundárias-->
       <div id="div-info">
           <h3>
             Cadastro em: <span class="info">05/06/2025</span>
@@ -59,10 +72,22 @@
           </h3>
       </div>
     </section>
+
+    <!--Seção das capas de filmes/séries-->
     <section class="lista-de-filmes">
+
+      <!--Primeira lista (Curtidos)-->
       <div class="lista">
-        <div class="nome-lista"><span class="material-symbols-outlined">thumb_up</span>Curtidos</div>
+        <div class="nome-lista">
+
+          <!--Ícone da lista (span) e Nome da lista (fora do span)-->
+          <span class="material-symbols-outlined">thumb_up</span>Curtidos
+      </div>
+
+        <!--Div que agrupa as outras-->
         <div class="div-filmes">
+
+          <!--Cada div contém uma capa como background-image no CSS-->
           <div class="capa-filme">1</div>
           <div class="capa-filme">2</div>
           <div class="capa-filme">3</div>
@@ -73,12 +98,15 @@
           <div class="capa-filme">8</div>
           <div class="capa-filme">9</div>
         </div>
+
+        <!--div com os botões referentes a essa lista, está fora da div com as capas, mas por cima dela-->
         <div class="div-botoes">
           <button class="mudar-capas mudar-capas-esquerda material-symbols-outlined" onClick="rolarEsquerda(event)">keyboard_double_arrow_left</button>
           <button class="mudar-capas mudar-capas-direita material-symbols-outlined" onClick="rolarDireita(event)">keyboard_double_arrow_right</button>
         </div>
       </div>
 
+      <!--Segunda lista (Favoritos)-->
       <div class="lista">
         <div class="nome-lista"><span class="material-symbols-outlined">star</span>Favoritos</div>
         <div class="div-filmes">
@@ -98,6 +126,7 @@
         </div>
       </div>
 
+      <!--Terceira lista (Assistir mais tarde)-->
       <div class="lista">
         <div class="nome-lista"><span class="material-symbols-outlined">library_add</span>Assistir mais tarde</div>
         <div class="div-filmes">
@@ -118,9 +147,12 @@
       </div>
     </section>
   </main>
+
   <footer>
     <p>&copy; CineREEList&trade; 2025</p>
   </footer>
+  
+  <!--Scripts-->
   <script src="../js/sideMenu.js"></script>
   <script src="../js/perfil.js"></script>
 

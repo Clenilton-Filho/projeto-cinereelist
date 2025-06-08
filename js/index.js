@@ -145,7 +145,7 @@ function rolarDireita(event){
     $rolarEsquerda.style.opacity = 1;
     $rolarEsquerda.style.pointerEvents = 'auto';
 
-    //reposicionando os botões de curtir
+    //reposicionando os botões de curtir conforme a largura da tela
     switch (mainWidth){
         case 1360:
             curti.forEach($botao => {
@@ -159,7 +159,7 @@ function rolarDireita(event){
             break
         case 1600:
             curti.forEach($botao => {
-                $botao.style.marginRight = "64.7%";
+                $botao.style.marginRight = "65.2%";
             });
             break
         default:

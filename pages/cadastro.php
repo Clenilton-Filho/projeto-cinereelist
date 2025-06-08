@@ -30,11 +30,12 @@
             </button>
         </header>
         <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
+            <a class="link" href="../pages/login.php">Entrar</a>
+            <a class="link" href="../pages/sobre.php">Sobre</a>
         </section>
     </nav>
 
-    <main>
+    <main id="main">
         <video id="video-1" src="../media/videos/chairs-loop.mp4" autoplay muted loop playsinline></video>
 
         <div id="login">
