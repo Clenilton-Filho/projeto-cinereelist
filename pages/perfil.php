@@ -1,3 +1,40 @@
+<?php
+// Verificar se o usuário está logado usando o cookie
+if (!isset($_COOKIE['idUsuario'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$rootPath = dirname(__DIR__);
+require_once $rootPath . "/php/dataContext.php";
+
+// Buscar informações do usuário
+$pdo = conectar();
+$stmt = $pdo->prepare("SELECT nome, email, imagem_url FROM usuario WHERE id = :id");
+$stmt->execute([':id' => $_COOKIE['idUsuario']]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$usuario) {
+    // Se não encontrar o usuário, remove o cookie e redireciona para login
+    setcookie("idUsuario", "", time() - 3600, "/");
+    header("Location: login.php");
+    exit;
+}
+
+// Definir caminho da foto
+$fotoUrl = '../media/img/user-black.png'; // Imagem padrão
+if (!empty($usuario['imagem_url'])) {
+    $caminhoFoto = $rootPath . '/' . $usuario['imagem_url'];
+    if (file_exists($caminhoFoto)) {
+        $fotoUrl = '../' . $usuario['imagem_url'];
+    }
+}
+
+// Debug para verificar os caminhos
+error_log("Caminho da foto: " . $fotoUrl);
+error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,33 +46,26 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=starlibrary_adddouble_arrowkeyboard_double_arrow_left" />
 </head>
 <body>
-  <header id="header">
-    <div id="header-esquerda">
-        <button class="hamburguer-menu" onClick="sideMenu()">
-            <img class="hamburguer-icone invertido" class="icon" src="media/img/hamburger-menu-black.png" alt="menu icon">
-        </button>
-        <a href="../index.php">
-          <h1>Cine<span>REEL</span>ist</h1>
-        </a>
-    </div>
-    <div id="header-direita">
-      <div id="div-usuario">
-        <span id="nome-usuario-header">Usuário</span>
-        <div id="foto-perfil-header">
-          <a href="perfil.html">
-            <img id="foto-perfil-header" src="../media/img/user-black.png" class="icon" alt="foto de perfil do usuário">
-          </a>
+    <header id="header">
+        <div id="header-esquerda">
+            <button class="hamburguer-menu" onClick="sideMenu()">
+                <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
+            </button>
+            <a href="../index.html">
+                <h1>Cine<span>REEL</span>ist</h1>
+            </a>
         </div>
-      </div>
-      <a class="link botao-cadastrar-entrar" href="cadastro.php">Cadastrar-se</a>
-      <a class="link botao-cadastrar-entrar" href="login.php">Entrar</a>
-    </div>
-  </header>
-  <nav id="side-menu">
-    <header>
-        <button class="hamburguer-menu" onClick="sideMenu()">
-            <img class="hamburguer-icone invertido" src="media/img/hamburger-menu-black.png" alt="menu icon">
-        </button>
+        <div id="header-direita">
+            <div id="div-usuario">
+                <span id="nome-usuario-header"><?php echo htmlspecialchars($usuario['nome'] ?? ''); ?></span>
+                <img src="<?php echo htmlspecialchars($fotoUrl); ?>" 
+                     class="<?php echo empty($usuario['imagem_url']) ? 'icon' : ''; ?>" 
+                     alt="foto de perfil do usuário" 
+                     onerror="this.src='../media/img/user-black.png';"
+                     style="display: block; width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <a class="link botao-sair" href="../php/logout.php">SAIR</a>
+        </div>
     </header>
     <section id="links">
         <a class="link botao-cadastrar-entrar" href="pages/cadastro.php">Cadastrar-se</a>
@@ -70,6 +100,10 @@
           <h3>
             Último login: <span class="info">05/06/2025</span>
           </h3>
+      </div>
+
+      <div id="div-link-modificar">
+        <a id="link-modificar" href="modificar-perfil.php">Atualizar Perfil</a>
       </div>
     </section>
 

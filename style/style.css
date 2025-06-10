@@ -126,7 +126,7 @@ header span{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 1vw;
+    gap: 1.5vw;
     height: 80px;
     width: fit-content;
     margin-right: 30px;
@@ -149,22 +149,19 @@ button{
 #div-usuario{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20%;
-    height: fit-content;
-    min-width: 8vw;
+    gap: 15px;
 }
 #nome-usuario-header{
     color: var(--cor-secundaria-destaque);
-    font-size: 1.35rem;
+    font-size: 1.25rem;
 }
 #nome-usuario-header:hover{
     color: var(--cor-principal-destaque);
     cursor: pointer;
 }
 #div-foto-perfil-header{
-    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,18 +316,22 @@ footer p{
         font-size: 1.5rem;
     }
     #nome-usuario-header{
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     #div-foto-perfil-header{
         height: 35px;
         width: 35px;
     }
-    #div-foto-perfil-header:hover{
-        border-color: var(--cor-principal-destaque);
-    }
     #foto-perfil-header{
         margin-top: 3px;
         height: 35px;
+    }
+    .botao-sair{
+        padding: 5px 10px;
+        background-color: rgba(255, 0, 0, 0.2);
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
     }
     .botao-cadastrar-entrar{
         font-size: 0.9rem;

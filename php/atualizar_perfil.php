@@ -66,13 +66,13 @@ try {
     $stmt->execute($params);
     
     if ($stmt->rowCount() > 0) {
-        header("Location: ../pages/perfil.php?success=1");
+        header("Location: ../pages/modificar-perfil.php?success=1");
     } else {
-        header("Location: ../pages/perfil.php?error=1");
+        header("Location: ../pages/modificar-perfil.php?error=1");
     }
 } catch (PDOException $e) {
     error_log("Erro ao atualizar perfil: " . $e->getMessage());
-    header("Location: ../pages/perfil.php?error=1");
+    header("Location: ../pages/modificar-perfil.php?error=1");
 }
 exit;
 ?> 

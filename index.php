@@ -39,7 +39,6 @@
         <section id="links">
             <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
             <a class="link botao-cadastrar-entrar" href="../pages/cadastro.php">Cadastrar-se</a>
-            <a class="link botao-cadastrar-entrar" href="../pages/Sobre.php">Sobre</a>
         </section>
     </nav>
 

@@ -80,6 +80,23 @@ main{
   color: white;
 }
 
+#div-link-modificar{
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 10px;
+  
+  text-shadow: 0px 2px 4px black,
+  0px 2px 4px black,
+  0px 2px 4px black;
+}
+
+#div-link-modificar:hover{
+  background-color: var(--cor-secundaria-transparente); 
+}
+#div-link-modificar:hover a{
+  text-decoration: underline;
+}
+
 .lista-de-filmes{
   display: flex;
   flex-direction: column;

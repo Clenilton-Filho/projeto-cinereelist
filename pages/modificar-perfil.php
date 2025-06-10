@@ -42,65 +42,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
     <title>Perfil | CineREEList</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/modificar-perfil.css">
-    <link rel="stylesheet" href="../style/header.css">
     <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
-    <style>
-        .edit-profile-form {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #fff;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #444;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-        .preview-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 10px 0;
-            border: 3px solid #ffffff;
-        }
-        .btn-save {
-            background: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .btn-save:hover {
-            background: #45a049;
-        }
-        .alert {
-            padding: 10px;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-        .alert-success {
-            background: rgba(76, 175, 80, 0.1);
-            color: #4CAF50;
-        }
-        .alert-error {
-            background: rgba(244, 67, 54, 0.1);
-            color: #f44336;
-        }
-    </style>
 </head>
 <body>
     <header id="header">
