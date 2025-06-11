@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . "/../php/pegarImagem.php"; 
+
 // Verificar se o usuário está logado usando o cookie
 if (!isset($_COOKIE['idUsuario'])) {
     header("Location: login.php");
@@ -33,10 +35,6 @@ if (!empty($usuario['imagem_url'])) {
         $fotoUrl = '../' . $usuario['imagem_url'];
     }
 }
-
-// Debug para verificar os caminhos
-error_log("Caminho da foto: " . $fotoUrl);
-error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
 ?>
 
 <!DOCTYPE html>
@@ -50,31 +48,36 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=starlibrary_adddouble_arrowkeyboard_double_arrow_left" />
 </head>
 <body>
-    <header id="header">
-        <div id="header-esquerda">
+  <header id="header">
+    <div id="header-esquerda">
+        <button class="hamburguer-menu" onClick="sideMenu()">
+            <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
+        </button>
+        <a href="../index.php">
+            <h1>Cine<span>REEL</span>ist</h1>
+        </a>
+    </div>
+    <div id="header-direita">
+        <div id="div-usuario">
+            <a href="perfil.php">
+              <span id="nome-usuario-header"><?php echo htmlspecialchars($usuario['nome'] ?? ''); ?></span>
+            </a>
+            <a href="perfil.php">
+              <div id="div-foto-perfil-header" style="background-image: url(<?php echo htmlspecialchars($fotoUrl); ?>)"></div>
+            </a>
+        </div>
+        <a class="link botao-sair" href="../php/logout.php">SAIR</a>
+    </div>
+  </header>
+  <nav id="side-menu">
+        <header>
             <button class="hamburguer-menu" onClick="sideMenu()">
                 <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
-            <a href="../index.html">
-                <h1>Cine<span>REEL</span>ist</h1>
-            </a>
-        </div>
-        <div id="header-direita">
-            <div id="div-usuario">
-                <span id="nome-usuario-header"><?php echo htmlspecialchars($usuario['nome'] ?? ''); ?></span>
-                <img src="<?php echo htmlspecialchars($fotoUrl); ?>" 
-                     class="<?php echo empty($usuario['imagem_url']) ? 'icon' : ''; ?>" 
-                     alt="foto de perfil do usuário" 
-                     onerror="this.src='../media/img/user-black.png';"
-                     style="display: block; width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
-            </div>
-            <a class="link botao-sair" href="../php/logout.php">SAIR</a>
-        </div>
-    </header>
-    <section id="links">
-        <a class="link botao-cadastrar-entrar" href="pages/cadastro.php">Cadastrar-se</a>
-        <a class="link botao-cadastrar-entrar" href="login.php">Entrar</a>
-    </section>
+        </header>
+        <section id="links">
+            <a class="link botao-cadastrar-entrar" href="cadastro.php">Cadastrar-se</a>
+        </section>
   </nav>
 
   <!--Seção principal-->
@@ -93,7 +96,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
         <h2 class="nome"><?=$nomeUsuario?></h2>
         
         <!--Bio do Perfil-->
-        <p class="bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, numquam. Fugiat facilis at iure, delectus earum eius, veniam possimus enim voluptas sunt aspernatur minus tempora molestiae natus unde corporis? Autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aliquid error eligendi esse asperiores assumenda nam dolorum quo quasi ex excepturi consequatur minus illum, accusantium nulla dolores vitae, qui expedita. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione vero nemo debitis, quia quibusdam, harum, nostrum quaerat ipsam ipsum minus magnam deleniti exercitationem? Repudiandae totam iste officiis libero minus eaque.</p>
+        <p class="bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, numquam. Fugiat facilis at iure, delectus earum eius, veniam possimus enim voluptas sunt aspernatur minus tempora molestiae natus unde corporis? Autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aliquid error eligendi esse asperiores assumenda nam dolorum quo quasi ex excepturi consequatur minus illum, accusantium nulla dolores vitae, qui expedita.</p>
       </div>
 
       <!--informações secundárias-->
@@ -102,7 +105,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
             Cadastro em: <span class="info">05/06/2025</span>
           </h3>
           <h3>
-            Último login: <span class="info">05/06/2025</span>
+            Último login: <span class="info">12/06/2025</span>
           </h3>
       </div>
 
@@ -124,17 +127,8 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
 
         <!--Div que agrupa as outras-->
         <div class="div-filmes">
-
           <!--Cada div contém uma capa como background-image no CSS-->
-          <div style="background-image: url(media/capas/um_filme_minecraft.jpg)" class="capa-filme">1</div>
-          <div class="capa-filme">2</div>
-          <div class="capa-filme">3</div>
-          <div class="capa-filme">4</div>
-          <div class="capa-filme">5</div>
-          <div class="capa-filme">6</div>
-          <div class="capa-filme">7</div>
-          <div class="capa-filme">8</div>
-          <div class="capa-filme">9</div>
+          <?=popularPerfil($_COOKIE["idUsuario"], "curtido", $pdo);?>
         </div>
 
         <!--div com os botões referentes a essa lista, está fora da div com as capas, mas por cima dela-->
@@ -148,16 +142,10 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
       <div class="lista">
         <div class="nome-lista"><span class="material-symbols-outlined">star</span>Favoritos</div>
         <div class="div-filmes">
-          <div class="capa-filme">1</div>
-          <div class="capa-filme">2</div>
-          <div class="capa-filme">3</div>
-          <div class="capa-filme">4</div>
-          <div class="capa-filme">5</div>
-          <div class="capa-filme">6</div>
-          <div class="capa-filme">7</div>
-          <div class="capa-filme">8</div>
-          <div class="capa-filme">9</div>
+          <!--Cada div contém uma capa como background-image no CSS-->
+          <?=popularPerfil($_COOKIE["idUsuario"], "favorito", $pdo);?>
         </div>
+
         <div class="div-botoes">
           <button class="mudar-capas mudar-capas-esquerda material-symbols-outlined" onClick="rolarEsquerda(event)">keyboard_double_arrow_left</button>
           <button class="mudar-capas mudar-capas-direita material-symbols-outlined" onClick="rolarDireita(event)">keyboard_double_arrow_right</button>
@@ -168,15 +156,8 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
       <div class="lista">
         <div class="nome-lista"><span class="material-symbols-outlined">library_add</span>Assistir mais tarde</div>
         <div class="div-filmes">
-          <div class="capa-filme">1</div>
-          <div class="capa-filme">2</div>
-          <div class="capa-filme">3</div>
-          <div class="capa-filme">4</div>
-          <div class="capa-filme">5</div>
-          <div class="capa-filme">6</div>
-          <div class="capa-filme">7</div>
-          <div class="capa-filme">8</div>
-          <div class="capa-filme">9</div>
+          <!--Cada div contém uma capa como background-image no CSS-->
+          <?=popularPerfil($_COOKIE["idUsuario"], "assistir_mais_tarde", $pdo);?>
         </div>
         <div class="div-botoes">
           <button class="mudar-capas mudar-capas-esquerda material-symbols-outlined" onClick="rolarEsquerda(event)">keyboard_double_arrow_left</button>
@@ -187,7 +168,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
   </main>
 
   <footer>
-    <p>&copy; CineREEList&trade; 2025</p>
+    <a href="sobre.php">&copy; CineREEList&trade; 2025</a>
   </footer>
   
   <!--Scripts-->

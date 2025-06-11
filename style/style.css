@@ -154,24 +154,27 @@ button{
     gap: 15px;
 }
 #nome-usuario-header{
-    color: var(--cor-secundaria-destaque);
+    color: white;
     font-size: 1.25rem;
 }
 #nome-usuario-header:hover{
-    color: var(--cor-principal-destaque);
+    color: var(--cor-secundaria-destaque);
     cursor: pointer;
 }
 #div-foto-perfil-header{
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 55px;
     width: 55px;
+    border: 1px solid white;
     border-radius: 50%;
     overflow: hidden;
 }
 #div-foto-perfil-header:hover{
-    border-color: var(--cor-principal-destaque);
+    border-color: var(--cor-secundaria-destaque);
 }
 #foto-perfil-header{
     margin-top: 4px;
@@ -220,10 +223,11 @@ button{
     left: 0%;
     text-align: center;
     height: 30px;
-    width: 100%;
+    width: 90%;
     border: 1px solid var(--cor-secundaria);
     border-right: none;
     border-left: none;
+    text-decoration: none;
     line-height: 30px;
 }
 /*tirar a borda de cima para os links a cada 2 links*/
@@ -247,7 +251,7 @@ footer{
     width: 100%;
     z-index: 2;
 }
-footer p{
+footer p,footer a{
     line-height: 22px;
 }
 /*estilos para celular na vertical*/
@@ -279,7 +283,7 @@ footer p{
     .botao-cadastrar-entrar{
         font-size: 0.95rem;
     }
-    footer{
+    footer p, footer a{
         font-size: 0.6rem;
         font-weight: 550;
     }
@@ -302,7 +306,7 @@ footer p{
     .botao-cadastrar-entrar{
         font-size: 0.75rem;
     }
-    footer{
+    footer p, footer a{
         font-size: 0.6rem;
         font-weight: 550;
     }
@@ -336,7 +340,7 @@ footer p{
     .botao-cadastrar-entrar{
         font-size: 0.9rem;
     }
-    footer{
+    footer p,footer a{
         font-size: 0.7rem;
         font-weight: normal;
     }
@@ -366,7 +370,7 @@ footer p{
     .botao-cadastrar-entrar{
         font-size: 1rem;
     }
-    footer{
+    footer p, footer a{
         font-size: 0.9rem;
     }
 }

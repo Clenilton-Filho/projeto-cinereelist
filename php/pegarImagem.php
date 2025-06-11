@@ -12,10 +12,8 @@
         //Percorrer o array e colocar um bloco com a url do filme
         foreach ($resultado as $filme){
             //Contador para limitar até 8 filmes por categoria
-            if($limitado){
-                $contador++;
-                if($contador > 8)
-                    break;
+            if ($limitado && ++$contador > 8) {
+                break;
             }
 
             //Pega o valor da url no banco
@@ -111,28 +109,35 @@
         echo $bloco; 
     }
 
-    function popularPerfil(string $usuarioId, string $statusUser, PDO $pdo){
+    function popularPerfil(string $usuarioId, string $statusUser, PDO $pdo) {
         //Fazer o select com o gênero específico
         $stmt = $pdo->prepare(
-                              "SELECT f.imagem_url,f.nome, f.ano, f.genero
-                              FROM usuario_filme uf
-                              JOIN 
-                              filme f ON uf.filme_id = f.id
-                              WHERE uf.usuario_id = :idUsuario AND uf.status_user = :statusUser
-                              ORDER BY uf.id DESC;");                        
-        $stmt->bindValue(":statusUser", "$statusUser");
-        $stmt->bindValue(":idUsuario", "$usuarioId");
+            "SELECT f.imagem_url
+            FROM usuario_filme uf
+            JOIN filme f ON uf.filme_id = f.id
+            WHERE uf.usuario_id = :idUsuario AND uf.status_user = :statusUser
+            ORDER BY uf.id DESC"
+        );                        
+        
+        $stmt->bindValue(":statusUser", $statusUser);
+        $stmt->bindValue(":idUsuario", $usuarioId);
         $stmt->execute();
-
-        //Transformar em array
-        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        //Pega o valor da url no banco
-        $imagem_url = $resultado["imagem_url"];
+        
+        $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        if (empty($resultados)) {
+            echo "<div class='capa-filme'></div>";
+            return;
+        }
+        
+        foreach ($resultados as $filme) {
+            //Adicionando ../ antes da URL da imagem e salvando ela
+            $imagemUrl = '../' . $filme["imagem_url"];
+  
+            $html = "<div style=\"background-image: url('$imagemUrl');\" class=\"capa-filme\"></div>";
             
-        //Html que será imprimido com echo
-        $bloco = "";
+            echo $html;
+        }
 
-        echo $bloco; 
-    }    
+    }
 ?>

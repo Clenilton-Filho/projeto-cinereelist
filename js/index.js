@@ -50,6 +50,7 @@ function mudarTrailer(event){
 function pegarIdFilme(elemento){
     const dataId = elemento.getAttribute("data-id");
     filmeSelecionadoId = dataId;
+    console.log("Eita");
 }
 
 function pegarIdUsuario(){
@@ -81,6 +82,7 @@ function postInteresses(elemento, func, usuario_id){
                 },
                 body: `id=${filmeSelecionadoId}&func=${func}&usuario_id=${usuario_id}`
             });
+            console.log(`FILME ${filmeSelecionadoId} FUNC ${func} ID USUARIO${usuario_id}`);
         }
     });
 }
@@ -92,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     
     //Verificar se algum botão de favorito foi clicado
     favoritoElements.forEach(element => {
-        //Passa o id do usuário, o status e cria um post pro PH
+        //Passa o id do usuário, o status e cria um post 
         postInteresses(element, 'favorito', pegarIdUsuario());
     });
     maisTardeElements.forEach(element => {

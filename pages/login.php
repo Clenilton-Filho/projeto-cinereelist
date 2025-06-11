@@ -15,7 +15,6 @@ if (isset($_COOKIE['idUsuario'])) {
     <title>CineREEList - Entrar</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/form.css">
-    <link rel="stylesheet" href="../style/login-redefinir.css">
     <link rel="stylesheet" href="../style/login.css">
     <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
 </head>
@@ -71,7 +70,7 @@ if (isset($_COOKIE['idUsuario'])) {
         </div>
     </main>
     <footer>
-        <p>&copy; CineREEList&trade; 2025</p>
+        <a href="sobre.php">&copy; CineREEList&trade; 2025</a>
     </footer>
     <script src="../js/loginHandler.js"></script>
     <script src="../js/sideMenu.js"></script>

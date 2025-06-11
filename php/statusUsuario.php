@@ -13,43 +13,47 @@ function status(PDO $pdo){
     }
 
 }
-function guardarInteresses(PDO $pdo, int $usuarioId, int $filmeId, string $func  )
+function guardarInteresses(PDO $pdo, int $usuarioId, int $filmeId, string $func)
 {
-    //Query para ver se usuario já tem aquele filme com o status(favorito e etc) que marcou
-    $stmt = $pdo->prepare("SELECT status_user 
-    FROM usuario_filme 
-    WHERE usuario_id = :usuario_id 
-    AND filme_id = :filme_id 
-    AND status_user LIKE :status_user");
-
-    $stmt->bindValue(":usuario_id", $usuarioId);
-    $stmt->bindValue(":filme_id", $filmeId);
-    $stmt->bindValue(":status_user", "%$func%");
-    $stmt->execute();  
-    
-    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    //Se o resultado não retornar nulo, retira o status(favorito e etc)
-    if(!empty($resultado)){
-        $stmt = $pdo->prepare("UPDATE usuario_filme 
-        SET status_user = REPLACE(status_user, :func, null)
+    //Verifica se já existe o status
+    $selectStmt = $pdo->prepare("SELECT status_user 
+        FROM usuario_filme 
         WHERE usuario_id = :usuario_id 
-        AND filme_id = :filme_id
+        AND filme_id = :filme_id 
         AND status_user LIKE :status_user");
 
-        $stmt->bindValue(":usuario_id", $usuarioId);
-        $stmt->bindValue(":filme_id", $filmeId);
-        $stmt->bindValue(":status_user", "%$func%");
-        $stmt->bindValue(":func", $func); 
-        $stmt->execute();
-        return; //Retorna e para a função
-    } 
-    //Insere o status no filme que o usuário escolheu
-    $stmt = $pdo->prepare("INSERT INTO usuario_filme (usuario_id, filme_id, status_user) 
-    VALUES (:usuario_id, :filme_id, :status_user)");
-    $stmt->bindValue(":usuario_id", $usuarioId);
-    $stmt->bindValue(":filme_id", $filmeId);
-    $stmt->bindValue(":status_user", $func);
-    $stmt->execute();   
+    $selectStmt->bindValue(":usuario_id", $usuarioId);
+    $selectStmt->bindValue(":filme_id", $filmeId);
+    $selectStmt->bindValue(":status_user", "%$func%");
+    $selectStmt->execute();
+
+    $resultado = $selectStmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!empty($resultado)) {
+        //Remove o status existente
+        $updateStmt = $pdo->prepare(
+            "UPDATE usuario_filme 
+            SET status_user = REPLACE(status_user, :func, null)
+            WHERE usuario_id = :usuario_id 
+            AND filme_id = :filme_id
+            AND status_user LIKE :status_user");
+
+        $updateStmt->bindValue(":usuario_id", $usuarioId);
+        $updateStmt->bindValue(":filme_id", $filmeId);
+        $updateStmt->bindValue(":status_user", "%$func%");
+        $updateStmt->bindValue(":func", $func);
+        $updateStmt->execute();
+        return;
+    }
+
+    //Insere o novo status
+    $insertStmt = $pdo->prepare(
+            "INSERT INTO usuario_filme (usuario_id, filme_id, status_user) 
+        VALUES (:usuario_id, :filme_id, :status_user)");
+    $insertStmt->bindValue(":usuario_id", $usuarioId);
+    $insertStmt->bindValue(":filme_id", $filmeId);
+    $insertStmt->bindValue(":status_user", $func);
+    $insertStmt->execute();
 }
+
 ?>
