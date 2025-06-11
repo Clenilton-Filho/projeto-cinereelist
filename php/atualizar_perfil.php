@@ -29,7 +29,7 @@ if (isset($_FILES['foto-perfil']) && $_FILES['foto-perfil']['error'] === UPLOAD_
         
         // Mover arquivo para diretório de upload
         if (move_uploaded_file($tempFile, $targetFile)) {
-            $imagemUrl = 'media/upload/' . $newFileName;
+            $imagemUrl = '/media/upload/' . $newFileName;
         }
     }
 }
