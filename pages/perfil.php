@@ -21,6 +21,10 @@ if (!$usuario) {
     exit;
 }
 
+// Variáveis para nome e descrição do usuário
+$nomeUsuario = $usuario['nome'] ?? '';
+$descricaoUsuario = $usuario['descricao'] ?? '';
+
 // Definir caminho da foto
 $fotoUrl = '../media/img/user-black.png'; // Imagem padrão
 if (!empty($usuario['imagem_url'])) {
@@ -83,10 +87,10 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
       <div id="principal-perfil">
         
         <!--Foto de Perfil-->
-        <img src="../media/img/lp_logo.jpg" alt="Foto de perfil" class="foto-de-perfil">
+        <img src="<?=$fotoUrl?>" alt="Foto de perfil" class="foto-de-perfil">
 
         <!--Nome-->
-        <h2 class="nome">Comé</h2>
+        <h2 class="nome"><?=$nomeUsuario?></h2>
         
         <!--Bio do Perfil-->
         <p class="bio">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, numquam. Fugiat facilis at iure, delectus earum eius, veniam possimus enim voluptas sunt aspernatur minus tempora molestiae natus unde corporis? Autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, aliquid error eligendi esse asperiores assumenda nam dolorum quo quasi ex excepturi consequatur minus illum, accusantium nulla dolores vitae, qui expedita. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione vero nemo debitis, quia quibusdam, harum, nostrum quaerat ipsam ipsum minus magnam deleniti exercitationem? Repudiandae totam iste officiis libero minus eaque.</p>
@@ -122,7 +126,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
         <div class="div-filmes">
 
           <!--Cada div contém uma capa como background-image no CSS-->
-          <div class="capa-filme">1</div>
+          <div style="background-image: url(media/capas/um_filme_minecraft.jpg)" class="capa-filme">1</div>
           <div class="capa-filme">2</div>
           <div class="capa-filme">3</div>
           <div class="capa-filme">4</div>

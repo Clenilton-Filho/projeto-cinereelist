@@ -110,4 +110,29 @@
         <a class='link botao-sair' href='php/logout.php'>SAIR</a>";
         echo $bloco; 
     }
+
+    function popularPerfil(string $usuarioId, string $statusUser, PDO $pdo){
+        //Fazer o select com o gênero específico
+        $stmt = $pdo->prepare(
+                              "SELECT f.imagem_url,f.nome, f.ano, f.genero
+                              FROM usuario_filme uf
+                              JOIN 
+                              filme f ON uf.filme_id = f.id
+                              WHERE uf.usuario_id = :idUsuario AND uf.status_user = :statusUser
+                              ORDER BY uf.id DESC;");                        
+        $stmt->bindValue(":statusUser", "$statusUser");
+        $stmt->bindValue(":idUsuario", "$usuarioId");
+        $stmt->execute();
+
+        //Transformar em array
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        //Pega o valor da url no banco
+        $imagem_url = $resultado["imagem_url"];
+            
+        //Html que será imprimido com echo
+        $bloco = "";
+
+        echo $bloco; 
+    }    
 ?>
