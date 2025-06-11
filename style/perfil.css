@@ -6,7 +6,6 @@ body{
 
 main{
   display: flex;
-  background-image: url(../media/img/background-template-darker.png);
   position: absolute;
   height: calc(100vh - 70px);
   bottom: 0;
@@ -34,7 +33,7 @@ main{
   align-items: center;
   text-align: center;
   min-height: 300px;
-  width: 100%;
+  width: 400px;
   gap: 30px;
   padding-bottom: 30px;
   border-radius: 10px;
@@ -54,11 +53,11 @@ main{
 .bio{
   font-size: 1.1rem;
   text-align: justify;
-  padding: 0 20px;
+  padding: 20px;
+  margin-bottom: 50px;
   width: 90%;
-  max-height: 20vh;
+  height: 25vh;
   overflow-y: scroll;
-  border: 2px solid grey;
   border-radius: 10px;
 }
 
