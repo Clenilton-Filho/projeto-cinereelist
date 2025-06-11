@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
+
+/*estilos padrão*/
 *{
     font-family: "Fira Code", sans-serif;
     font-optical-sizing: auto;
@@ -9,6 +11,7 @@
     font-style: normal;
 }
 
+/*Body sem rolagem quando em desktop*/
 body{
     background-color: black;
     position: relative;
@@ -16,12 +19,13 @@ body{
     overflow-y: hidden;
 }
 
-#header {
+#header{
     position: relative;
     z-index: 10;
     height: 50px;
 }
 
+/*Nome do projeto*/
 #header-esquerda h1{
     font-size: 1.25rem;
     color: white;
@@ -33,6 +37,29 @@ body{
     color: rgb(0, 170, 43);
 }
 
+/*Equipe CRL*/
+#div-nome-equipe{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 15px;
+    border-radius: 100px;
+    gap: 10px;
+}
+
+#div-nome-equipe h1{
+    font-size: 0.9rem;
+    text-shadow: none;
+}
+
+/*logo do projeto*/
+#logo{
+    height: 22px;
+    filter: hue-rotate(90deg) saturate(150%) brightness(2.5);
+}
+
+/*Nome e foto do usuário no header*/
 #nome-usuario-header{
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
@@ -52,6 +79,7 @@ body{
     border: 1px solid rgb(0, 170, 43);
 }
 
+/*vídeo fixo ao fundo*/
 #div-video{
     position: fixed;
     top: 0;
@@ -86,34 +114,14 @@ main{
     padding-top: 50px;
 }
 
-#div-nome-equipe{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 15px;
-    border-radius: 100px;
-    box-shadow:
-    0px 0px 10px rgb(0, 255, 64);
-    gap: 10px;
-}
-
-#div-nome-equipe h1{
-    font-size: 0.9rem;
-    text-shadow: none;
-}
-
+/*fonte e cor dos títulos*/
 h1,h2{
     font-family: "Orbitron", sans-serif;
     font-weight: 500;
     color: #f0fff0d0;
 }
 
-#logo{
-    height: 22px;
-    filter: hue-rotate(90deg) saturate(150%) brightness(2.5);
-}
-
+/*a seção que cobre os colaboradores*/
 #secao-colaboradores{
     display: flex;
     flex-direction: row;
@@ -124,6 +132,7 @@ h1,h2{
     gap: 20px;
 }
 
+/*Estilos para os colaboradores*/
 .colaborador{
     display: flex;
     flex-direction: column;
@@ -140,10 +149,13 @@ h1,h2{
     transition: all 1.5s ease-in-out;
 }
 
+/*Ao passar o mouse em cima de um colaborador aparecem as informações*/
+
 .colaborador:hover{
     max-height: 100vh;
 }
 
+/*textos para os colaboradores*/
 .colaborador, .colaboracao {
     color: white;
     text-shadow: 0px 2px 4px black,
@@ -151,6 +163,7 @@ h1,h2{
     0px 2px 4px black;
 }
 
+/*fotos dos colaboradores*/
 .div-foto{
     background-size: cover;
     display: flex;
@@ -161,10 +174,14 @@ h1,h2{
     overflow: hidden;
 }
 
+/*o gif não aparece de início, só ao passar o mouse*/
 .div-foto img{
     display: none;
     height: 130px;
 }
+
+
+/*Cada colaborador tem sua imagem em background*/
 
 #Erick .div-foto{
     background-image: url('../media/img/contribuidores/spawn.png');
@@ -194,6 +211,7 @@ h1,h2{
     background-image: url('../media/img/contribuidores/zer0.png');
 }
 
+/*nome do colaborador*/
 .nome{
     color: white;
     padding: 15px;
@@ -203,6 +221,7 @@ h1,h2{
     0px 0px 20px black;
 }
 
+/*informações de colaboração*/
 .colaboracao{
     width: 90%;
     padding: 5px;
@@ -223,6 +242,7 @@ h1,h2{
     margin: 10px 0;
 }
 
+/*footer fixo*/
 footer {
     position: fixed;
     bottom: 0;
@@ -236,6 +256,7 @@ footer p{
     font-weight: 500;
 }
 
+/*Estilos para quando está em mobile*/
 @media screen and (orientation: portrait) {
     body{
         overflow-y: scroll;

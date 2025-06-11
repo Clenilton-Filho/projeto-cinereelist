@@ -66,7 +66,6 @@ if (!empty($usuario['imagem_url'])) {
     <main>
         <section class="Seção-Perfil">
             <div class="edit-profile-form">
-                <h2>Editar Perfil</h2>
                 
                 <?php if (isset($_GET['success'])): ?>
                     <div class="alert alert-success">Perfil atualizado com sucesso!</div>
@@ -77,20 +76,19 @@ if (!empty($usuario['imagem_url'])) {
                 <?php endif; ?>
 
                 <form action="../php/atualizar_perfil.php" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <img src="<?php echo htmlspecialchars($fotoUrl); ?>" 
-                             alt="Foto de perfil"
-                             class="preview-image"
-                             id="preview-image"
-                             onerror="this.src='../media/img/user-black.png';">
-                        <label for="foto-perfil">Foto de Perfil</label>
-                        <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*">
-                    </div>
+                    <h2>Editar Perfil</h2>
+                    <img src="<?php echo htmlspecialchars($fotoUrl); ?>" 
+                            alt="Foto de perfil"
+                            class="preview-image"
+                            id="preview-image"
+                            onerror="this.src='../media/img/user-black.png';">
 
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($usuario['nome'] ?? ''); ?>" required>
-                    </div>
+                    <h3>Foto de Perfil</h3>
+                    <label id="label-foto" for="foto-perfil">Enviar Foto</label>
+                    <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*">
+
+                    <h3>Nome</h3>
+                    <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($usuario['nome'] ?? ''); ?>" required>
 
                     <button type="submit" class="btn-save">Salvar Alterações</button>
                 </form>

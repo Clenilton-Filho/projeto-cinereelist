@@ -1,13 +1,16 @@
 /*aparece quando o usuário erra a senha*/
 .mensagem-erro {
-    color: #ff3333;
-    background-color: rgba(255, 51, 51, 0.1);
-    border: 1px solid #ff3333;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px 0;
+    background-color: var(--cor-principal-destaque);
+    position: absolute;
+    top: 55px;
+    color: white;
+    font-size: 2vh;
     text-align: center;
-    font-size: 14px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
     animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -55,7 +58,6 @@
         font-size: 0.9rem;
     }
 }
-
 
 @media screen and (orientation: landscape) and (max-height: 570px) {
     #header-direita{
@@ -114,6 +116,7 @@
         font-weight: 550;
     }
 }
+
 @media screen and (orientation: landscape) and (min-height: 571px){
     #login{
         gap: 7vh !important;

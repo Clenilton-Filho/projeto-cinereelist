@@ -23,78 +23,114 @@ main{
   justify-content: center;
   align-items: center;
   color: white;
-  min-height: 500px;
-  width: 28vw;
-  padding: 5px;
-  border-radius: 25px;
+  height: fit-content;
+  width: 32vw;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .edit-profile-form{
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 30px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  height: 450px;
+  width: 320px;
+  padding: 5px;
+  background: rgba(131, 70, 0, 0.432);
+  border-radius: 10px;
 }
 
-.edit-profile-form form{
+form{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  height: 450px;
+  width: 100%;
+  gap: 18px;
 }
 
-.form-group{
-    margin-bottom: 15px;
-    width: 90%;
-}
-.form-group label{
-    display: block;
-    margin-bottom: 5px;
-    color: #fff;
-}
-.form-group input{
-  height: 30px;
-    min-width: 90%;
-    padding: 5px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
 .preview-image{
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px 0;
-    border: 3px solid #ffffff;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
 }
+
+h2{
+  margin-top: -20px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+h3{
+  display: block;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: -5px;
+}
+
+input{
+  height: 30px;
+  min-width: 70%;
+  padding: 5px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: rgba(185, 185, 185, 0.281);
+  color: #fff;
+}
+
+/*label para o input de imagem*/
+#label-foto{
+  background-color: rgba(0, 0, 0, 0.712);
+  width: 50%;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#label-foto:hover{
+  background-color: rgba(122, 122, 122, 0.452);
+}
+
+/*label substitui o input original*/
+#foto-perfil{
+  display: none;
+}
+
 .btn-save{
-    background: #00a005a9;
-    color: white;
-    text-shadow: 0px 2px 5px black,
-    0px 2px 5px black,
-    0px 2px 5px black;
-    padding: 7px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background: #ddc7009a;
+  color: white;
+  text-shadow: 0px 2px 5px black,
+  0px 2px 5px black,
+  0px 2px 5px black;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
 }
+
 .btn-save:hover{
-    background: #00a005;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.575);
+  background: #ffe600cc;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.575);
 }
+
 .alert{
-    padding: 10px;
-    border-radius: 4px;
-    margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 10px 0;
 }
+
 .alert-success{
-    background: rgba(76, 175, 80, 0.1);
-    color: #4CAF50;
+  position: absolute;
+  top: 30px;
+  background: rgba(76, 175, 79, 0.562);
+  color: #29f700;
+  text-shadow: 0px 0px 5px black;
 }
+
 .alert-error{
-    background: rgba(244, 67, 54, 0.1);
-    color: #f44336;
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
 }
