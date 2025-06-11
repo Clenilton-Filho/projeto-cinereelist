@@ -80,7 +80,7 @@
         </div>
     </main>
     <footer>
-        <p>&copy; CineREEList&trade; 2025</p>
+        <a href="pages/sobre.php">&copy; CineREEList&trade; 2025</a>
     </footer>
     
     <?php

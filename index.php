@@ -31,16 +31,16 @@
     </div>
   </header>
   <nav id="side-menu">
-        <header>
-            <button class="hamburguer-menu" onclick="sideMenu()">
-                <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
-            </button>
-        </header>
-        <section id="links">
-            <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
-            <a class="link botao-cadastrar-entrar" href="../pages/cadastro.php">Cadastrar-se</a>
-        </section>
-    </nav>
+      <header>
+          <button class="hamburguer-menu" onclick="sideMenu()">
+              <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
+          </button>
+      </header>
+      <section id="links">
+          <a class="link botao-cadastrar-entrar" href="../pages/login.php">Entrar</a>
+          <a class="link botao-cadastrar-entrar" href="../pages/cadastro.php">Cadastrar-se</a>
+      </section>
+  </nav>
 
   <main id="main">
     <div id="div-cadeiras">
@@ -130,7 +130,7 @@
   </main>
 
   <footer>
-    <a href="pages/sobre.html">&copy; CineREEList&trade; 2025</a>
+    <a href="pages/sobre.php">&copy; CineREEList&trade; 2025</a>
   </footer>
   <!--Scripts-->
   <script src="js/sideMenu.js"></script>

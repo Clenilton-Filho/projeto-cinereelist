@@ -29,10 +29,6 @@ if (!empty($usuario['imagem_url'])) {
         $fotoUrl = '../' . $usuario['imagem_url'];
     }
 }
-
-// Debug para verificar os caminhos
-error_log("Caminho da foto: " . $fotoUrl);
-error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
 ?>
 
 <!DOCTYPE html>
@@ -50,18 +46,18 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
             <button class="hamburguer-menu" onClick="sideMenu()">
                 <img class="hamburguer-icone invertido" src="../media/img/hamburger-menu-black.png" alt="menu icon">
             </button>
-            <a href="../index.html">
+            <a href="../index.php">
                 <h1>Cine<span>REEL</span>ist</h1>
             </a>
         </div>
         <div id="header-direita">
             <div id="div-usuario">
-                <span id="nome-usuario-header"><?php echo htmlspecialchars($usuario['nome'] ?? ''); ?></span>
-                <img src="<?php echo htmlspecialchars($fotoUrl); ?>" 
-                     class="<?php echo empty($usuario['imagem_url']) ? 'icon' : ''; ?>" 
-                     alt="foto de perfil do usuário" 
-                     onerror="this.src='../media/img/user-black.png';"
-                     style="display: block; width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                <a href="perfil.php">
+                  <span id="nome-usuario-header"><?php echo htmlspecialchars($usuario['nome'] ?? ''); ?></span>
+                </a>
+                <a href="perfil.php">
+                  <div id="div-foto-perfil-header" style="background-image: url(<?php echo htmlspecialchars($fotoUrl); ?>)"></div>
+                </a>
             </div>
             <a class="link botao-sair" href="../php/logout.php">SAIR</a>
         </div>
@@ -108,7 +104,7 @@ error_log("Caminho completo: " . $caminhoFoto ?? 'Não definido');
     </main>
 
     <footer>
-        <p>&copy; CineREEList&trade; 2025</p>
+        <a href="pages/sobre.php">&copy; CineREEList&trade; 2025</a>
     </footer>
 
     <script>

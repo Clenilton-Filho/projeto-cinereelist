@@ -21,7 +21,8 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25vw;
+  max-height: 80%;
+  width: 27vw;
   gap: 20px;
 }
 
@@ -32,8 +33,9 @@ main{
   justify-content: start;
   align-items: center;
   text-align: center;
-  min-height: 300px;
-  width: 400px;
+  margin-top: 50px;
+  min-height: 350px;
+  width: 100%;
   gap: 30px;
   padding-bottom: 30px;
   border-radius: 10px;
@@ -51,13 +53,13 @@ main{
 }
 
 .bio{
+  background-color: rgba(0, 0, 0, 0.466);
   font-size: 1.1rem;
   text-align: justify;
   padding: 20px;
-  margin-bottom: 50px;
   width: 90%;
-  height: 25vh;
-  overflow-y: scroll;
+  min-height: 60%;
+  overflow-y: auto;
   border-radius: 10px;
 }
 
@@ -83,14 +85,13 @@ main{
   font-size: 1rem;
   padding: 5px 10px;
   border-radius: 10px;
-  
   text-shadow: 0px 2px 4px black,
   0px 2px 4px black,
   0px 2px 4px black;
 }
 
 #div-link-modificar:hover{
-  background-color: var(--cor-secundaria-transparente); 
+  background-color: rgba(0, 0, 0, 0.678); 
 }
 #div-link-modificar:hover a{
   text-decoration: underline;
@@ -102,7 +103,7 @@ main{
   min-height: 200px;
   width: fit-content;
   padding: 20px;
-  gap: 0;
+  gap: 20px;
 }
 
 .lista{
@@ -110,7 +111,7 @@ main{
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px 15px 15px;
 }
 
 .nome-lista{
@@ -134,14 +135,18 @@ main{
   max-width: 560px;
   padding: 10px;
   gap: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
 .capa-filme{
+  background-image: url("../media/capas/deadpool_e_wolverine.jpeg");
+  background-size: 100% 100%;
   min-width: 100px;
   height: 150px;
+  border: 2px solid grey;
   background-color: #ccc;
-  border-radius: 0px;
+  border-radius: 5px;
 }
 
 .div-botoes{
@@ -152,7 +157,7 @@ main{
 
 .mudar-capas{
   display: flex;
-  background-color: #4b4b4baf;
+  background-color: #000000af;
   justify-content: center;
   align-items: center;
   color: var(--cor-secundaria);
@@ -160,8 +165,14 @@ main{
   height: 150px;
   margin-top: -160px;
   border: 2px solid var(--cor-secundaria);
-  border-radius: 0px;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.mudar-capas:hover{
+  color: var(--cor-principal-destaque);
+  border-color: var(--cor-principal-destaque);
+  box-shadow: 10px 0px 15px rgba(255, 0, 0, 0.267);
 }
 
 .mudar-capas-esquerda{
@@ -169,10 +180,18 @@ main{
   border-right: none;
   cursor: auto;
   pointer-events: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .mudar-capas-direita{
   border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.mudar-capas-direita:hover{
+  box-shadow: -10px 0px 15px rgba(255, 0, 0, 0.267);
 }
 
 @media screen and (max-width: 1370px) {
@@ -181,12 +200,12 @@ main{
   }
 
   .secao-perfil{
-    width: 23vw;
+    width: 28vw;
     gap: 20px;
   }
 
   #principal-perfil{
-    min-height: 250px;
+    min-height: 300px;
     gap: 20px;
     padding-bottom: 20px;
   }
@@ -204,12 +223,20 @@ main{
     font-size: 0.87rem;
     padding: 8px 15px;
     width: 90%;
-    max-height: 21.3vh;
+    max-height: 60%;
   }
 
   #div-info{
     font-size: 0.65rem;
     padding: 10px;
+  }
+
+  #div-link-modificar{
+    margin-top: -10px;
+  }
+
+  #link-modificar{
+    font-size: 0.9rem;
   }
 
   .lista-de-filmes{
@@ -253,6 +280,7 @@ main{
     width: 25px;
     height: 90px;
   }
+  
 }
 
 @media screen and (min-width:1371px) and (max-width: 1600px) {
@@ -297,7 +325,7 @@ main{
   }
 
   .lista{
-    padding: 10px 25px;
+    padding: 10px 15px 0px 15px;
   }
 
   .nome-lista{
