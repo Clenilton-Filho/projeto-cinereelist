@@ -1,160 +1,100 @@
-body {
-  margin: 0;
+body{
   background: linear-gradient(to right, #3c0b0b, #8c3b0c);
-  color: white;
+}
+
+#header{
+    position: relative;
+    z-index: 10;
 }
 
 main{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  max-height:calc(100vh - 50px);
-  min-width: 100vw;
+  position: relative;
+  display: flex;
   flex-direction: row;
-  background-color: transparent;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  height:calc(100vh - 55px);
+  width: 100%;
 }
 
-.Seção-Perfil {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  height: 500px;
-  width: 30vw;
-  padding: 20px;
-  margin-bottom: 0;
+.Seção-Perfil{
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  min-height: 500px;
+  width: 28vw;
+  padding: 5px;
+  border-radius: 25px;
 }
 
-
-.Foto-de-perfil {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.Nome {
-  margin: 10px 0 5px;
-  font-size: 28px;
-}
-
-.Bio {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.Info {
-  margin-top: 20px;
-  font-size: 15px;
-}
-
-.Lista-de-Filmes {
-  width: 30%;
-  padding: 20px;
-}
-
-.Lista {
-  margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  padding: 10px 20px;
-}
-
-.Nome-Lista {
-  font-size: 20px;
-  border-bottom: 2px solid goldenrod;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-}
-
-.Filmes {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.CapaFilme {
-  width: 80px;
-  height: 100px;
-  background-color: #ccc;
-  border-radius: 5px;
-}
-
-.Proximo {
-  font-size: 20px;
-  background-color: #ccc;
-  color: black;
-  width: 40px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.edit-profile-form {
+.edit-profile-form{
     max-width: 600px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px 15px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 20px;
 }
-.form-group {
+
+.edit-profile-form form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-group{
     margin-bottom: 15px;
+    width: 90%;
 }
-.form-group label {
+.form-group label{
     display: block;
     margin-bottom: 5px;
     color: #fff;
 }
-.form-group input {
-    width: 100%;
-    padding: 8px;
+.form-group input{
+  height: 30px;
+    min-width: 90%;
+    padding: 5px;
     border: 1px solid #444;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
-.preview-image {
-    width: 150px;
-    height: 150px;
+.preview-image{
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin: 10px 0;
     border: 3px solid #ffffff;
 }
-.btn-save {
-    background: #4CAF50;
+.btn-save{
+    background: #00a005a9;
     color: white;
-    padding: 10px 20px;
+    text-shadow: 0px 2px 5px black,
+    0px 2px 5px black,
+    0px 2px 5px black;
+    padding: 7px 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
-.btn-save:hover {
-    background: #45a049;
+.btn-save:hover{
+    background: #00a005;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.575);
 }
-.alert {
+.alert{
     padding: 10px;
     border-radius: 4px;
     margin: 10px 0;
 }
-.alert-success {
+.alert-success{
     background: rgba(76, 175, 80, 0.1);
     color: #4CAF50;
 }
-.alert-error {
+.alert-error{
     background: rgba(244, 67, 54, 0.1);
     color: #f44336;
 }

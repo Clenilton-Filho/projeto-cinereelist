@@ -41,12 +41,18 @@ main{
   border-radius: 10px;
 }
 
-.foto-de-perfil{
-  margin-top: -90px;
-  height: 180px;
+#div-foto-de-perfil{
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+  min-width: 160px;
+  margin-top: -80px;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 50%;
 }
-
 .nome{
   color: var(--cor-secundaria);
   font-size: 28px;

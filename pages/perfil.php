@@ -88,9 +88,10 @@ if (!empty($usuario['imagem_url'])) {
 
       <!--Informações principais-->
       <div id="principal-perfil">
-        
-        <!--Foto de Perfil-->
-        <img src="<?=$fotoUrl?>" alt="Foto de perfil" class="foto-de-perfil">
+
+        <div id="div-foto-de-perfil" style="background-image: url('<?=$fotoUrl?>'">
+          <!--Foto de Perfil-->
+        </div>
 
         <!--Nome-->
         <h2 class="nome"><?=$nomeUsuario?></h2>

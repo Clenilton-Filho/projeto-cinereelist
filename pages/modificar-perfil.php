@@ -35,7 +35,7 @@ if (!empty($usuario['imagem_url'])) {
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Perfil | CineREEList</title>
+    <title>Modificar Perfil | CineREEList</title>
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/modificar-perfil.css">
     <link rel="shortcut icon" href="../favicon-2.ico" type="image/x-icon">
@@ -79,8 +79,8 @@ if (!empty($usuario['imagem_url'])) {
                 <form action="../php/atualizar_perfil.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <img src="<?php echo htmlspecialchars($fotoUrl); ?>" 
-                             alt="Foto de perfil" 
-                             class="preview-image" 
+                             alt="Foto de perfil"
+                             class="preview-image"
                              id="preview-image"
                              onerror="this.src='../media/img/user-black.png';">
                         <label for="foto-perfil">Foto de Perfil</label>
@@ -90,11 +90,6 @@ if (!empty($usuario['imagem_url'])) {
                     <div class="form-group">
                         <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($usuario['nome'] ?? ''); ?>" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" value="<?php echo htmlspecialchars($usuario['email'] ?? ''); ?>" disabled>
                     </div>
 
                     <button type="submit" class="btn-save">Salvar Alterações</button>
