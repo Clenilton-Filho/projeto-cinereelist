@@ -60,22 +60,22 @@ BackEnd:
 
 ## 🖼️ Imagens do projeto
 ### Tela de cadastro:
-<img src="https://cdn.discordapp.com/attachments/1042956157041524746/1383192208404119704/image.png?ex=684de5a0&is=684c9420&hm=55eedb5df7cd6b18e4e0451a337c6d3584dd817f972a51bfe234892c25c0dae7&">
+<img src="media\layout\cadastro.png">
 
 ### Tela de login:
-<img src="https://cdn.discordapp.com/attachments/1042956157041524746/1383192132990406716/image.png?ex=684de58e&is=684c940e&hm=fd6eebdf1d6e0ec6ff2b38470d453ad983745bc6c8d28bea30295f208ad9ec8c&">
+<img src="media\layout\login.png">
 
 ### Tela principal:
-<img src="https://media.discordapp.net/attachments/1042956157041524746/1383167972398334143/image.png?ex=684dcf0e&is=684c7d8e&hm=e5fe9c2ba6b95c822458525ed0ca244058af2effb49a7f5b6e4f161d9ad800f8&=&format=webp&quality=lossless&width=1242&height=624">
+<img src="media\layout\menu2.png">
 
 ### Tela principal 2:
-<img src="https://cdn.discordapp.com/attachments/1042956157041524746/1383193051375206440/image.png?ex=684de669&is=684c94e9&hm=6c58e69454d8dcd79991c59ef75055aefa75c8c5bf18effe70f344b9dc93f164&">
+<img src="media\layout\menu.png">
 
 ### Tela de perfil:
-<img src="https://media.discordapp.net/attachments/1042956157041524746/1383193412122972321/image.png?ex=684de6bf&is=684c953f&hm=fdac70a2e8bf1e7ecab2f0f2c5cf1a183885b48bfd936f257d4dac03d85ecafa&=&format=webp&quality=lossless&width=1242&height=624">
+<img src="media\layout\perfil.png">
 
 ### Tela de modificar perfil:
-<img src="https://media.discordapp.net/attachments/1042956157041524746/1383193565378773054/image.png?ex=684de6e4&is=684c9564&hm=56a612524184b00590a17525a11ec55282d32b57b6992b6bfb0afb89dee17d5d&=&format=webp&quality=lossless&width=1242&height=624">
+<img src="media\layout\modificar_perfil.png">
 
 ## 🤝 Equipe de Criação
 
@@ -94,19 +94,19 @@ BackEnd:
         </sub>
     </td>
     <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/1042956157041524746/1383189688608624691/image.png?ex=684de348&is=684c91c8&hm=ae50e4011f562c9dbfa0d96d9ffb06178b3dd0b060c3aa084103a82e6b1d13f0&" width="100px;"/><br>
+        <img src="media\layout\anthony.png" width="100px;"/><br>
         <sub>
           <b>Antony</b>
         </sub>
     </td>
        <td align="center">
-        <img src="https://media.discordapp.net/attachments/1042956157041524746/1383190003361779753/image.png?ex=684de393&is=684c9213&hm=6a1a4ee0375d449202e70c81053e05fbdea5af93de15b962b59330488ba7638f&=&format=webp&quality=lossless&width=746&height=747" width="100px;"/><br>
+        <img src="media\layout\jesus.png" width="100px;"/><br>
         <sub>
           <b>Jesus</b>
         </sub>
     </td>
        <td align="center">
-        <img src="https://cdn.discordapp.com/attachments/1042956157041524746/1383191506457858220/image.png?ex=684de4f9&is=684c9379&hm=b1bcaf291c17283c258dc67f8883a8fd5ac4391f88d54f6267aaf0d0f75af585&" width="100px;"/><br>
+        <img src="media\layout\eduardo.png" width="100px;"/><br>
         <sub>
           <b>Eduardo</b>
         </sub>
